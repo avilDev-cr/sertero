@@ -1,0 +1,226 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1.5em 0;
+    text-align: center;
+}
+.logo {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+header h1 {
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.0em;
+    margin-top: 0.5em;
+}
+
+/* Contenedor para los botones de contacto */
+/* Contenedor para los botones de contacto */
+.contact-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 80%; /* Limita el ancho total del contenedor de botones */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ajuste para los botones en porcentajes */
+.contact-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    width: 26%; /* El ancho de cada botón es del 22% del contenedor */
+    font-size: 5vw; /* El tamaño del icono se ajusta al ancho de la pantalla */
+    padding: 5%; /* El padding también es en porcentaje */
+    border-radius: 10%;
+    text-align: center; /* Centra el contenido dentro del botón */
+    margin: 3%;
+}
+
+/* Estilos específicos para cada botón */
+.btn-whatsapp {
+    background-color: #25D366; /* Verde de WhatsApp */
+}
+
+.btn-telefono {
+    background-color: #7d7d7d; /* Azul */
+}
+
+.btn-correo {
+    background-color: #b3190b; /* Rojo */
+}
+
+.btn-instagram {
+    background-color: #ffa500;/* Rosa Instagram */
+}
+
+/* Estilos generales para los botones */
+.contact-buttons a:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* Media Query para pantallas grandes */
+@media (min-width: 600px) {
+    .contact-buttons a {
+        width: 65px; /* Tamaño fijo para los botones en pantallas grandes */
+        height: 65px; /* Tamaño fijo para los botones en pantallas grandes */
+        font-size: 28px; /* Tamaño del icono fijo */
+        padding: 10px; /* Padding fijo */
+        margin: 5px; /* Espacio entre los botones */
+    }
+}
+
+
+header nav ul {
+    list-style: none;
+    margin-top: 1em;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Servicios */
+#servicios {
+    background-color: #fff;
+    padding: 3em 0;
+}
+
+#servicios h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+.service {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.service h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.service p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Testimonios */
+#testimonios {
+    background-color: #ecf0f1;
+    padding: 3em 0;
+}
+
+#testimonios h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+.testimonial {
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.testimonial p {
+    font-size: 1.2em;
+    color: #34495e;
+    font-style: italic;
+}
+
+/* Contacto */
+#contacto {
+    background-color: #fff;
+    padding: 3em 0;
+}
+
+#contacto h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+#contacto p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #27ae60;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2ecc71;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1.5em 0;
+}
+
+footer p {
+    font-size: 1em;
+}
