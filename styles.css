@@ -98,6 +98,14 @@ header p {
     }
 }
 
+.fondo-agendar {
+    background-image: url('/ruta-de-tu-imagen.jpg');
+    background-size: cover;  /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    padding: 50px 0;  /* Espacio alrededor del contenido dentro de la sección */
+    color: white;  /* Cambia el color del texto a blanco para mejor visibilidad */
+}
 
 header nav ul {
     list-style: none;

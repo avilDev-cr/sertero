@@ -1,0 +1,55 @@
+#reporte-averias {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+#reporte-averias .container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#reporte-averias h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#reporte-averias form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#reporte-averias label {
+    font-weight: bold;
+}
+
+#reporte-averias select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#reporte-averias input,
+#reporte-averias textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#reporte-averias button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#reporte-averias button:hover {
+    background-color: #218838;
+}
