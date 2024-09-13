@@ -12,8 +12,12 @@
 </head>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <div class="container">
             <img src="/imgs/logosertero.JPG" alt="Logo de Sertero" class="logo">
             <h1>Sertero</h1>
@@ -32,14 +36,18 @@
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-            <nav>
-                <!-- <ul>
+            <nav id="hamburgerMenu" class="menu">
+                <ul>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                </ul> -->
+                    <li><a href="#agendar-servicio">Agendar Servicio</a></li>
+                    <li><a href="tel:+50660941802">Llamar Ahora</a></li> <!-- CTA para llamada rápida -->
+                </ul>
             </nav>
+            
         </div>
+        
     </header>
 
     <section id="agendar-servicio" class="fondo-agendar">
@@ -104,5 +112,7 @@
             <p>&copy; 2024 Sertero. Todos los derechos reservados. Servicio técnico para gimnasios y residenciales.</p>
         </div>
     </footer>
+
+    <script src="/index.js"></script>
 </body>
 </html>

@@ -12,7 +12,69 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
+/* Contenedor del menú hamburguesa */
+.hamburger {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+}
 
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Empieza fuera de la pantalla */
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    color: white;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+}
+
+/* Cuando el menú está activo, se desplaza hacia la pantalla */
+.menu.active {
+    right: 0;
+}
+
+/* Estilo adicional para los botones de contacto en el header */
+/* .contact-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+} */
+
+.contact-buttons a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #333;
+}
 /* Container */
 .container {
     width: 90%;
@@ -103,7 +165,7 @@ header p {
     background-size: cover;  /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* Evita que la imagen se repita */
-    padding: 60px 0;  /* Espacio alrededor del contenido dentro de la sección */
+    padding: 20% 0;  /* Espacio alrededor del contenido dentro de la sección */
     color: white;  /* Cambia el color del texto a blanco para mejor visibilidad */
     text-align: center;  /* Centra el contenido dentro de la sección */
 }
