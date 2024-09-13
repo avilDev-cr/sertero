@@ -14,9 +14,10 @@ body {
 }
 /* Contenedor del menú hamburguesa */
 .hamburger {
+    position: fixed;
     cursor: pointer;
     font-size: 30px;
-    position: absolute;
+
     right: 20px;
     top: 20px;
     z-index: 1000;
@@ -59,16 +60,17 @@ body {
 }
 
 /* Cuando el menú está activo, se desplaza hacia la pantalla */
-.menu.active {
+.menu.open {
     right: 0;
 }
+/* Estilo para mostrar/ocultar el menú */
+.menu {
+    display: none;
+}
 
-/* Estilo adicional para los botones de contacto en el header */
-/* .contact-buttons {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-} */
+.menu.open {
+    display: block;
+}
 
 .contact-buttons a {
     margin: 0 10px;
