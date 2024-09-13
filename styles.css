@@ -104,7 +104,7 @@ header p {
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* Evita que la imagen se repita */
     padding: 60px 0;  /* Espacio alrededor del contenido dentro de la sección */
-    color: rgb(255, 238, 5);  /* Cambia el color del texto a blanco para mejor visibilidad */
+    color: white;  /* Cambia el color del texto a blanco para mejor visibilidad */
     text-align: center;  /* Centra el contenido dentro de la sección */
 }
 
