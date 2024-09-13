@@ -189,37 +189,73 @@ header nav ul li a {
     font-size: 1.2em;
 }
 
-/* Servicios */
-#servicios {
-    background-color: #fff;
-    padding: 3em 0;
+/* Contenedor principal */
+#servicios .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 
+/* Título */
 #servicios h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 1.5em;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #333;
 }
 
-.service {
-    text-align: center;
-    margin-bottom: 2em;
+/* Flexbox para alinear las cards */
+#servicios .services {
+    display: flex;
+    gap: 20px; /* Espacio entre cards */
+    justify-content: center; /* Centra las cards */
+    flex-wrap: wrap; /* Permite que las cards se ajusten en varias filas */
 }
 
-.service img{
-    max-width: 80%;
+/* Estilos de las cards */
+#servicios .service {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 20px;
+    width: calc(50% - 20px); /* Dos cards por fila */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service h3 {
-    color: #2c3e50;
-    font-size: 1.8em;
-    margin-bottom: 0.5em;
+/* Efecto hover para las cards */
+#servicios .service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
-.service p {
-    font-size: 1.2em;
+/* Imagen dentro de las cards */
+#servicios .service img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Títulos y párrafos */
+#servicios .service h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#servicios .service p {
+    font-size: 1em;
     color: #666;
 }
+
+/* Responsive: una card por fila en pantallas más pequeñas */
+@media (max-width: 768px) {
+    #servicios .service {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    }
+}
+
 
 /* Testimonios */
 #testimonios {
