@@ -15,3 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+window.addEventListener('scroll', function() {
+    const button = document.querySelector('.hamburguer');
+    if (window.scrollY > 100) { // Cambia el valor según cuando quieras que cambie
+        button.style.backgroundColor = '#007BFF'; // Cambiar el color de fondo
+        button.style.color = 'white'; // Cambiar el color del texto o icono
+    } else {
+        button.style.backgroundColor = 'transparent'; // Fondo transparente
+        button.style.color = '#007BFF'; // Color del icono
+    }
+});
