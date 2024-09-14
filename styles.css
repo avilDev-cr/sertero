@@ -123,7 +123,7 @@ header p {
     color: white;
     width: 26%; /* El ancho de cada botón es del 22% del contenedor */
     font-size: 5vw; /* El tamaño del icono se ajusta al ancho de la pantalla */
-    padding: 5%; /* El padding también es en porcentaje */
+    padding: 4%; /* El padding también es en porcentaje */
     border-radius: 10%;
     text-align: center; /* Centra el contenido dentro del botón */
     margin: 3%;
