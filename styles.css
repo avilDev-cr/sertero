@@ -5,6 +5,9 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -196,7 +199,26 @@ header nav ul li a {
     padding: 20px;
     text-align: center;
 }
+/* Artículos */
+#services {
+    margin-bottom: 7ch;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 3rem; /* Arreglado: unidad de medida correcta */
+    opacity: 0;
+    transform: translateY(20px); /* Mueve los artículos hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
+.service:last-of-type {
+    border-bottom: none;
+}
+
+/* Clase que se aplica cuando el artículo entra en la vista */
+.service-visible {
+    opacity: 1;
+    transform: translateY(0); /* Volvemos a la posición original */
+}
 /* Título */
 #servicios h2 {
     font-size: 2em;

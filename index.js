@@ -17,4 +17,40 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const services = document.querySelectorAll(".service");  // Cambiado para seleccionar elementos con clase 'service'
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("service-visible");
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    services.forEach(service => {
+        observer.observe(service);  // Observa cada servicio individualmente
+    });
+});
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const articles = document.querySelectorAll("article");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("article-visible");
+                }
+            });
+        }, {
+            threshold: 0.1 
+        });
+
+        articles.forEach(article => {
+            observer.observe(article);
+        });
+    });
 
