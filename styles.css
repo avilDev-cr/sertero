@@ -101,6 +101,7 @@ background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, 
     height: auto;
 }
 header h1 {
+    margin-top: .2rem;
     font-size: 3em;
 }
 
