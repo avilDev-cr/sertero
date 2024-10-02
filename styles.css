@@ -90,7 +90,8 @@ body {
 
 /* Header */
 header {
-    background-color: #2c3e50;
+    background: rgb(14,14,14);
+background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 90%);
     color: #fff;
     padding: 1.5em 0;
     text-align: center;
