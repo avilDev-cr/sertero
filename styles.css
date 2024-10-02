@@ -201,18 +201,18 @@ header nav ul li a {
     padding: 20px;
     text-align: center;
 }
-/* Artículos */
-/* Ocultamos los elementos inicialmente */
+
+
 .service {
-    opacity: 0; /* Inicia completamente invisible */
-    transform: translateY(25px); /* Se desplaza hacia abajo fuera de la vista */
+    opacity: 0; 
+    transform: translateY(25px); 
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Clase que se aplicará cuando el elemento esté visible */
+
 .service-visible {
-    opacity: 1; /* Aparece gradualmente */
-    transform: translateY(0); /* Se mueve hacia su posición original */
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 
@@ -220,7 +220,9 @@ header nav ul li a {
     border-bottom: none;
 }
 
-
+.btn-right{
+    float: right;
+}
 /* Título */
 #servicios h2 {
     font-size: 2em;
@@ -386,10 +388,3 @@ footer {
 footer p {
     font-size: 1em;
 }
-
-
-
-
-
-
-
