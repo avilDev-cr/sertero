@@ -3,12 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const menuItems = hamburgerMenu.querySelectorAll('a');
 
-    // Alterna la clase 'open' en el menú cuando se hace clic en el ícono
+   
     hamburger.addEventListener('click', function() {
         hamburgerMenu.classList.toggle('open');
     });
 
-    // Cierra el menú cuando se selecciona una opción
     menuItems.forEach(function(item) {
         item.addEventListener('click', function() {
             hamburgerMenu.classList.remove('open');
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const services = document.querySelectorAll(".service");  // Cambiado para seleccionar elementos con clase 'service'
+    const services = document.querySelectorAll(".service"); 
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     services.forEach(service => {
-        observer.observe(service);  // Observa cada servicio individualmente
+        observer.observe(service);
     });
 });
 

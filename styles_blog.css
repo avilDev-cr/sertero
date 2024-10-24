@@ -1,11 +1,13 @@
-/* Títulos y párrafos */
+
 h1 {
     margin: 2rem 0 1rem;
     font-size: 1.8rem;
 }
 
 h2 {
+    text-align: start;
     margin-bottom: 1rem;
+    
 }
 
 h3 {
@@ -19,29 +21,37 @@ p {
 li {
     margin-bottom: .8rem;
 }
+ul{
+   list-style-type: none;
+}
 
 .fondo-hero {
     background-image: url('imgs/Black\ And\ Green\ Geometric\ Gym\ Center\ Presentation-2.svg');
-    background-size: cover;  /* Ajusta la imagen para que cubra todo el fondo */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat;  /* Evita que la imagen se repita */
-    padding: 20% 0;  /* Espacio alrededor del contenido dentro de la sección */
-    color: white;  /* Cambia el color del texto a blanco para mejor visibilidad */
-    text-align: center;  /* Centra el contenido dentro de la sección */
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat; 
+    padding: 20% 0;  
+    color: white;  
+    text-align: center; 
 }
 
 .titulo {
     margin-bottom: 2rem;
 }
 
+.imgs-blog{
+    width: 100%;
+}
+
 /* Artículos */
 article {
+    
     margin-bottom: 7ch;
     border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
-    margin-bottom: 3rem; /* Arreglado: unidad de medida correcta */
+    margin-bottom: 3rem; 
     opacity: 0;
-    transform: translateY(20px); /* Mueve los artículos hacia abajo */
+    transform: translateY(20px); 
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -72,7 +82,12 @@ article:last-of-type {
     content: "\F26B"; 
     font-size: 1.1em;
     margin-right: 10px;
-    color: #007bff; /* Color del ícono */
+    color: #007bff; 
 }
 
+@media (min-width: 600px) {
+    .container-blog {
+        width: 65%;
+    }
+}
 

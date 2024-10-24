@@ -1,10 +1,10 @@
-/* General Styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -15,22 +15,24 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-/* Contenedor del menú hamburguesa */
+
+
+
 .hamburger {
     position: fixed;
     cursor: pointer;
     font-size: 30px;
-
     right: 20px;
     top: 20px;
     z-index: 1000;
-    filter:drop-shadow( 0 0 10px rgba(0, 0, 0, .8))
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));
 }
+
 
 .menu {
     position: fixed;
     top: 0;
-    right: -250px; /* Empieza fuera de la pantalla */
+    right: -250px;
     height: 100%;
     width: 250px;
     background-color: #333;
@@ -40,6 +42,10 @@ body {
     flex-direction: column;
     padding-top: 60px;
     z-index: 999;
+}
+
+.menu.open {
+    right: 0; 
 }
 
 .menu ul {
@@ -63,24 +69,6 @@ body {
     background-color: #555;
 }
 
-/* Cuando el menú está activo, se desplaza hacia la pantalla */
-.menu.open {
-    right: 0;
-}
-/* Estilo para mostrar/ocultar el menú */
-.menu {
-    display: none;
-}
-
-.menu.open {
-    display: block;
-}
-
-.contact-buttons a {
-    margin: 0 10px;
-    font-size: 24px;
-    color: #333;
-}
 /* Container */
 .container {
     width: 90%;
@@ -90,16 +78,17 @@ body {
 
 /* Header */
 header {
-    background: rgb(14,14,14);
-background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
+    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
     color: #fff;
     padding: 1.5em 0;
     text-align: center;
 }
+
 .logo {
-    width: 150px; /* Ajusta el tamaño del logo */
+    width: 15px; 
     height: auto;
 }
+
 header h1 {
     margin-top: .2rem;
     font-size: 3em;
@@ -110,134 +99,73 @@ header p {
     margin-top: 0.5em;
 }
 
-/* Contenedor para los botones de contacto */
-/* Contenedor para los botones de contacto */
+
+
 .contact-buttons {
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
-    max-width: 80%; /* Limita el ancho total del contenedor de botones */
+    max-width: 80%; 
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Ajuste para los botones en porcentajes */
+
 .contact-buttons a {
     display: inline-block;
     text-decoration: none;
     color: white;
-    width: 26%; /* El ancho de cada botón es del 22% del contenedor */
-    font-size: 5vw; /* El tamaño del icono se ajusta al ancho de la pantalla */
-    padding: 4%; /* El padding también es en porcentaje */
+    width: 26%; 
+    font-size: 5vw;
+    padding: 4%; 
     border-radius: 10%;
-    text-align: center; /* Centra el contenido dentro del botón */
+    text-align: center;
     margin: 3%;
 }
 
-/* Estilos específicos para cada botón */
+
 .btn-whatsapp {
-    background-color: #25D366; /* Verde de WhatsApp */
+    background-color: #25D366;
 }
 
 .btn-telefono {
-    background-color: #7d7d7d; /* Azul */
+    background-color: #7d7d7d; 
 }
 
 .btn-correo {
-    background-color: #b3190b; /* Rojo */
+    background-color: #b3190b; 
 }
 
 .btn-instagram {
-    background-color: #ffa500;/* Rosa Instagram */
+    background-color: #ffa500; 
 }
 
-/* Estilos generales para los botones */
+
 .contact-buttons a:hover {
     opacity: 0.8;
     transition: 0.3s;
 }
 
-/* Media Query para pantallas grandes */
 @media (min-width: 600px) {
     .contact-buttons a {
-        width: 65px; /* Tamaño fijo para los botones en pantallas grandes */
-        height: 65px; /* Tamaño fijo para los botones en pantallas grandes */
-        font-size: 28px; /* Tamaño del icono fijo */
-        padding: 10px; /* Padding fijo */
-        margin: 5px; /* Espacio entre los botones */
+        width: 65px;
+        height: 65px; 
+        font-size: 28px; 
+        padding: 10px; 
+        margin: 5px;
     }
+
+    
+}
+.service-place-section h2{
+    margin-top: 3rem;
 }
 
-.fondo-agendar {
-    background-image: url('/imgs/1337-c2803d6c-7160-11ef-a580-22091eb7342f.png');
-    background-size: cover;  /* Ajusta la imagen para que cubra todo el fondo */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat;  /* Evita que la imagen se repita */
-    padding: 20% 0;  /* Espacio alrededor del contenido dentro de la sección */
-    color: white;  /* Cambia el color del texto a blanco para mejor visibilidad */
-    text-align: center;  /* Centra el contenido dentro de la sección */
-}
-
-header nav ul {
-    list-style: none;
-    margin-top: 1em;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-
-
-/* Contenedor principal */
-#servicios .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
-
-.service {
-    opacity: 0; 
-    transform: translateY(25px); 
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-
-.service-visible {
-    opacity: 1; 
-    transform: translateY(0); 
-}
-
-
-.service:last-of-type {
-    border-bottom: none;
-}
-
-.btn-right{
-    float: right;
-}
-/* Título */
-#servicios h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-/* Flexbox para alinear las cards */
 #servicios .services {
     display: flex;
-    gap: 20px; /* Espacio entre cards */
-    justify-content: center; /* Centra las cards */
-    flex-wrap: wrap; /* Permite que las cards se ajusten en varias filas */
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Estilos de las cards */
@@ -247,41 +175,50 @@ header nav ul li a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
     padding: 30px;
     margin-bottom: 20px;
-    width: calc(50% - 20px); /* Dos cards por fila */
+    width: calc(50% - 20px);
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; 
+    transform: translateY(25px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease; /* Unifica transiciones */
 }
 
-/* Efecto hover para las cards */
-#servicios .service:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), 0 15px 25px rgba(0, 0, 0, 0.1);
+.service-visible {
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
-/* Imagen dentro de las cards */
-#servicios .service img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+.service:last-of-type {
+    border-bottom: none;
 }
 
-/* Títulos y párrafos */
-#servicios .service h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+/* Título */
+#servicios h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
     color: #333;
 }
 
-#servicios .service p {
-    font-size: 1em;
-    color: #666;
+.fondo-agendar {
+    position: relative;
+    background-image: url('/imgs/1337-c2803d6c-7160-11ef-a580-22091eb7342f.png');
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    padding: 20% 0;  
+    color: white;  
+    text-align: center;
+    z-index: 1;
 }
 
-/* Responsive: una card por fila en pantallas más pequeñas */
-@media (max-width: 768px) {
-    #servicios .service {
-        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
-    }
+.fondo-agendar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
 }
 
 
@@ -298,7 +235,7 @@ header nav ul li a {
 }
 
 .testimonial {
-    margin-bottom: 1.5em;
+    margin-bottom: 9.5em;
     text-align: center;
 }
 
@@ -375,18 +312,217 @@ form button:hover {
 }
 
 .whatsapp-float:hover {
-    background-color: #128c7e;
-    color: white;
+    box-shadow: 0 0 10px #999;
 }
+
 
 /* Footer */
 footer {
     background-color: #2c3e50;
     color: #fff;
     text-align: center;
-    padding: 1.5em 0;
+    padding: 5em 0;
 }
 
 footer p {
-    font-size: 1em;
+    font-size: 1.2em;
+}/* Header */
+header {
+    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
+    color: #fff;
+    padding: 1.5em 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
 }
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.logo {
+    width: 150px; 
+    height: auto;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 2rem; 
+    margin-top: 0.5em;
+    text-align: center;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px; 
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 0;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -250px; 
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        flex-direction: column;
+        padding-top: 60px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .menu.open {
+        right: 0; 
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hamburger {
+        display: block; 
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    ul li:nth-child(4),
+    ul li:nth-child(6), 
+    ul li:nth-child(7) { 
+        
+        display: none;
+    }
+    .contact-buttons{
+        display: none;
+    }
+    h2{
+        text-align: center;
+        padding-top: 3rem;
+   
+    }
+    
+    .hamburger {
+        display: none; 
+    }
+
+    .menu {
+        padding-left: 20rem;
+        position: static; 
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        display: flex; 
+        justify-content: flex-end; 
+        align-items: center; 
+    }
+
+    .menu ul {
+        display: flex; 
+        gap: 1.8rem;
+        width: 40rem;
+    }
+
+    .menu ul li {
+        margin: 0;
+    }
+
+    .menu ul li a {
+        color: #fff; 
+    }
+
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        justify-content: center; 
+        width: 13rem;
+    }
+
+    .logo {
+        margin-bottom: 0.2rem;
+    }
+
+    .logo {
+        width: 8rem; 
+        height: auto;
+       
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-evenly; 
+        align-items: center; 
+    }
+    .contact-buttons a {
+        width: 30px;
+        height: 30px; 
+        font-size: 16px;
+        padding: 3px; 
+        margin: 3px; 
+    }
+
+    .service-place {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .place {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .place img {
+        display: block;
+        width: 100%;
+    }
+    .hero-text{
+        font-size: 4rem;
+    }
+   
+   
+}
+.place img {
+    display: block;
+    width: 100%;
+}
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding-bottom: 80px;
+    font-size: 2.2em;
+    box-sizing: border-box;
+}
+

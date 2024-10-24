@@ -13,15 +13,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
+   
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="/imgs/logosertero.JPG" alt="Logo de Sertero" class="logo">
+               
+                <a href="/index.html">SERTERO</a>
+             
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+       
+            <nav id="hamburgerMenu" class="menu">
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="/pag/blog.html">Blog</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+    
+                    <li><a href="tel:+50660941802">Llamar Ahora</a></li>
+                    <li><a href="javascript:history.back()">Volver</a></li>
+                </ul>
+            </nav>
 
-        <div class="container">
-            <img src="/imgs/logosertero.JPG" alt="Logo de Sertero" class="logo">
-            <h1>Sertero</h1>
-            <p>Servicio técnico especializado para gimnasios y residenciales</p>
+            
             <div class="contact-buttons">
                 <a href="https://wa.link/lwjuvu" target="_blank" class="btn-whatsapp">
                     <i class="fab fa-whatsapp"></i>
@@ -36,21 +53,10 @@
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-            <nav id="hamburgerMenu" class="menu">
-                <ul class="nav-list">
-                    <li><a href="/index.html#servicios">Servicios</a></li>
-                    <li><a href="/index.html#testimonios">Testimonios</a></li>
-                    <li><a href="/index.html#contacto">Contacto</a></li>
-                    <li><a href="/index.html#agendar-servicio">Agendar Servicio</a></li>
-                    <li><a href="tel:+50660941802">Llamar Ahora</a></li>
-                    <li><a href="javascript:history.back()">Volver</a></li>
-
-                </ul>
-            </nav>
-            
         </div>
         
     </header>
+
     
     <section id="agendar-servicio" class="fondo-hero">
         <div class="container">
@@ -59,7 +65,7 @@
         </div>
     </section>
        
-    <main class="container">
+    <main id="servicios" class="container container-blog">
 
         <div class="titulo">
             <h1>Blog  Mantenimiento de Máquinas de Gimnasio</h1>
@@ -70,6 +76,7 @@
         <article id="mantenimiento-regular">
             <h2>La importancia del mantenimiento regular de tus máquinas de gimnasio</h2>
             <p>El equipo de gimnasio, tanto en hogares como en instalaciones comerciales, está diseñado para soportar entrenamientos intensos. Sin embargo, el <strong>mantenimiento regular</strong> es esencial para prolongar la vida útil de las máquinas y garantizar su correcto funcionamiento.</p>
+           <img class="imgs-blog" src="/imgs/stationary-bike.jpg" alt="" srcset="">
             <h3>Beneficios del mantenimiento regular:</h3>
             <ul class="icon-list-check">
                 <li>Reducción de averías inesperadas.</li>
@@ -83,6 +90,7 @@
         <article id="senales-mantenimiento">
             <h2>Señales de que tu equipo de gimnasio necesita mantenimiento</h2>
             <p>Identificar problemas temprano puede evitar costosas reparaciones. Aquí te mostramos las señales más comunes de que tu máquina de gimnasio necesita atención.</p>
+            <img class="imgs-blog" src="/imgs/bodegon-equipamiento-gimnasio_23-2148197730.jpg" alt="" srcset="">
             <h3>Señales comunes:</h3>
             <ul class="icon-list-exclamacion">
                 <li><strong>Ruidos extraños:</strong> Chirridos o golpes pueden indicar desgaste interno.</li>
@@ -95,6 +103,7 @@
         <article id="cuidado-diario">
             <h2>Consejos para el cuidado diario de las máquinas de gimnasio</h2>
             <p>El mantenimiento diario es crucial para garantizar que las máquinas de gimnasio sigan funcionando correctamente. Aquí te dejamos algunos consejos para cuidar tu equipo día a día.</p>
+            <img class="imgs-blog" src="/imgs/3d-gym-equipment.jpg" alt="" srcset="">
             <h3>Consejos:</h3>
             <ul class="icon-list-check">
                 <li>Limpieza después de cada uso.</li>
@@ -107,6 +116,7 @@
         <article id="servicio-tecnico-especializado">
             <h2>Beneficios de contratar un servicio técnico especializado para máquinas de gimnasio</h2>
             <p>Contar con un servicio técnico especializado tiene muchas ventajas para asegurar el rendimiento y la durabilidad de tus equipos de gimnasio.</p>
+            <img class="imgs-blog" src="/imgs/hombre-trabajando-bicicleta-ejercicio-rueda_1303953-2323.jpg" alt="" srcset="">
             <h3>Ventajas de un servicio técnico especializado:</h3>
             <ul class="icon-list-check">
                 <li>Diagnóstico profesional.</li>
@@ -119,6 +129,7 @@
         <article id="maquinas-hogar">
             <h2>Cómo elegir las mejores máquinas de gimnasio para tu hogar</h2>
             <p>Si estás pensando en montar un gimnasio en casa, elegir el equipo adecuado es clave. Aquí te ofrecemos algunas recomendaciones para tomar la mejor decisión.</p>
+            <img class="imgs-blog" src="/imgs/modern-equipment-gym-indoors-interior-fitness-hall-with-fitness-bicycles.jpg" alt="" srcset="">
             <h3>Factores a considerar:</h3>
             <ul class="icon-list-check">
                 <li>Espacio disponible.</li>
@@ -132,6 +143,7 @@
         <article id="errores-comunes">
             <h2>Los errores más comunes al usar máquinas de gimnasio y cómo evitarlos</h2>
             <p>Usar incorrectamente las máquinas de gimnasio puede acortar su vida útil y aumentar el riesgo de lesiones. Aquí te mostramos los errores más frecuentes y cómo evitarlos.</p>
+            <img class="imgs-blog" src="/imgs/adulto-joven-haciendo-deporte-interior-gimnasio_23-2149205553.avif" alt="" srcset="">
             <h3>Errores comunes:</h3>
             <ul class="icon-list-exclamacion">
                 <li>Sobrecargar las máquinas.</li>
@@ -144,6 +156,7 @@
         <article id="actualizaciones-tecnologicas">
             <h2>Actualizaciones tecnológicas en equipos de gimnasio: ¿Es hora de renovar?</h2>
             <p>La tecnología de los equipos de gimnasio ha avanzado considerablemente en los últimos años. Descubre si es hora de actualizar tu equipo con las últimas innovaciones.</p>
+            <img class="imgs-blog" src="/imgs/hotelsgym.jpeg" alt="" srcset="">
             <h3>Innovaciones tecnológicas:</h3>
             <ul class="icon-list-check">
                 <li>Máquinas inteligentes.</li>
@@ -153,21 +166,12 @@
             </ul>
         </article>
 
-        <article id="mantenimiento-preventivo">
-            <h2>Ahorra dinero con un plan de mantenimiento preventivo para tus máquinas de gimnasio</h2>
-            <p>Un plan de mantenimiento preventivo te ayudará a mantener tus equipos en óptimas condiciones y te permitirá ahorrar dinero a largo plazo.</p>
-            <h3>Ventajas del mantenimiento preventivo:</h3>
-            <ul class="icon-list-check">
-                <li>Detección temprana de problemas.</li>
-                <li>Ahorro en reparaciones.</li>
-                <li>Mayor vida útil del equipo.</li>
-                <li>Menor tiempo de inactividad.</li>
-            </ul>
-        </article>
+       
 
         <article id="sertero">
             <h2>¿Por qué elegir Sertero para el mantenimiento de tus máquinas de gimnasio?</h2>
             <p>En <strong>Sertero</strong>, somos expertos en el mantenimiento y reparación de máquinas de gimnasio. Descubre por qué somos la mejor opción para cuidar tus equipos.</p>
+            <img class="imgs-blog" src="/imgs/1337-c2803d6c-7160-11ef-a580-22091eb7342f.png" alt="" srcset="">
             <h3>¿Por qué elegirnos?</h3>
             <ul class="icon-list-check">
                 <li>Experiencia comprobada.</li>
@@ -178,9 +182,16 @@
         </article>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Sertero - Mantenimiento de Máquinas de Gimnasio</p>
-    </footer>
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 Sertero. Todos los derechos reservados. Servicio técnico para gimnasios y residenciales.</p>
+            <p><strong>Acerca de Sertero:</strong> En Sertero nos especializamos en el mantenimiento, reparación e instalación de equipos de gimnasio, tanto para uso comercial como residencial. Nos comprometemos a brindar un servicio confiable y eficiente, asegurando que tus equipos funcionen en su máximo rendimiento.</p>
+            <p>Desarrollado por <strong>Andrés Avilés Rodríguez</strong>.</p>
+        </div>
+    </div>
+</footer>
     <script src="/index.js"></script>
 </body>
 </html>
