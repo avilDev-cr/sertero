@@ -1,0 +1,134 @@
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sertero - Servicio técnico para gimnasios y residenciales">
+    <title>Sertero</title>
+    <link rel="icon" href="/imgs/faviconsertero.jpg" type="image/jpg">
+    <link rel="shortcut icon" href="/imgs/faviconsertero.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="/imgs/logosertero.JPG" alt="Logo de Sertero" class="logo">
+               
+                <a href="/index.html">SERTERO</a>
+             
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+       
+            <nav id="hamburgerMenu" class="menu">
+                <ul>
+                    
+                    <li><a href="#servicios" class="">Servicios</a></li>
+                    <li><a href="/pag/blog.html">Blog</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+    
+                    <li><a href="/pag/nosotros.html">Nosostros</a></li>
+                    <li><a href="javascript:history.back()">Volver</a></li>
+                </ul>
+            </nav>
+
+            
+            <div class="contact-buttons">
+                <a href="https://wa.link/lwjuvu" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="tel:+50660941802" class="btn-telefono">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:serterorayo@gmail.com" class="btn-correo">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.instagram.com/sertero_mantenimiento_rayo?igsh=ZGUzMzM3NWJiOQ==" target="_blank" class="btn-instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        
+    </header>
+
+<main>
+    <div class="faq-container container">
+        
+        <h2 class="faqfreq">Preguntas Frecuentes</h2>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>¿Qué servicios ofrece Sertero?</h3>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sertero ofrece mantenimiento de equipos de gimnasio y servicios de reparación residencial.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>¿Cómo puedo solicitar un servicio?</h3>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Puedes solicitar un servicio a través de nuestra página web o llamándonos directamente.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>¿Ofrecen garantía en sus servicios?</h3>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, ofrecemos garantía en todos nuestros servicios de mantenimiento y reparación.</p>
+          </div>
+        </div>
+      </div>
+
+</main>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Información</h3>
+                <p>Aquí puedes agregar información relevante sobre la empresa o el servicio.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="#">Página Principal</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-5">&copy; 2024 Sertero. Todos los derechos reservados. Servicio técnico para gimnasios y residenciales.</p>
+        <p>Desarrollado por <strong>Andrés Avilés Rodríguez</strong>.</p>
+    </div>
+</footer>
+
+
+    <script src="/index.js"></script>
+</body>
+</html>

@@ -16,6 +16,28 @@ body {
     color: #333;
 }
 
+header h1 {
+    margin-top: .2rem;
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.0em;
+    margin-top: 0.5em;
+}
+header {
+    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
+    color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo {
+    width: 10px; 
+    height: auto;
+}
 
 
 .hamburger {
@@ -69,35 +91,15 @@ body {
     background-color: #555;
 }
 
-/* Container */
+
 .container {
     width: 90%;
     margin: 0 auto;
     max-width: 1200px;
 }
 
-/* Header */
-header {
-    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
-    color: #fff;
-    padding: 1.5em 0;
-    text-align: center;
-}
 
-.logo {
-    width: 15px; 
-    height: auto;
-}
 
-header h1 {
-    margin-top: .2rem;
-    font-size: 3em;
-}
-
-header p {
-    font-size: 1.0em;
-    margin-top: 0.5em;
-}
 
 
 
@@ -146,7 +148,7 @@ header p {
     transition: 0.3s;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     .contact-buttons a {
         width: 65px;
         height: 65px; 
@@ -154,7 +156,15 @@ header p {
         padding: 10px; 
         margin: 5px;
     }
-
+    .padre{
+        display: flex;
+        padding-left: 4rem;
+    }
+    .nav{
+        width: auto;
+        align-items: start;
+        margin-left: 30rem;
+    }
     
 }
 .service-place-section h2{
@@ -191,7 +201,7 @@ header p {
     border-bottom: none;
 }
 
-/* Título */
+
 #servicios h2 {
     font-size: 2em;
     margin-bottom: 40px;
@@ -292,49 +302,6 @@ form button:hover {
     background-color: #2ecc71;
 }
 
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
-}
-
-.whatsapp-float i {
-    margin-top: 16px;
-}
-
-.whatsapp-float:hover {
-    box-shadow: 0 0 10px #999;
-}
-
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 5em 0;
-}
-
-footer p {
-    font-size: 1.2em;
-}/* Header */
-header {
-    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
-    color: #fff;
-    padding: 1.5em 0;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-}
 
 .logo-container {
     display: flex;
@@ -435,20 +402,20 @@ header a {
     }
 
     .menu {
-        padding-left: 20rem;
+       
+      padding: 0;
         position: static; 
         width: auto;
         height: auto;
         background-color: transparent;
         display: flex; 
-        justify-content: flex-end; 
-        align-items: center; 
+        
     }
 
     .menu ul {
         display: flex; 
-        gap: 1.8rem;
-        width: 40rem;
+        gap: 3rem;
+        width: 0rem;
     }
 
     .menu ul li {
@@ -461,10 +428,10 @@ header a {
 
     .logo-container {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start; 
-        justify-content: center; 
-        width: 13rem;
+        flex-direction: row;
+       
+     
+        width: 12rem;
     }
 
     .logo {
@@ -472,14 +439,16 @@ header a {
     }
 
     .logo {
+      
         width: 8rem; 
         height: auto;
        
     }
     .header-content {
         display: flex;
-        justify-content: space-evenly; 
-        align-items: center; 
+        justify-content: space-between; 
+        align-items: flex-end;
+        width: 100%; 
     }
     .contact-buttons a {
         width: 30px;
@@ -532,6 +501,73 @@ header a {
     padding-bottom: 80px;
     font-size: 2.2em;
     box-sizing: border-box;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-float i {
+    margin-top: 16px;
+}
+
+.whatsapp-float:hover {
+    box-shadow: 0 0 10px #999;
+}
+
+.footer {
+    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
+    padding: 20px 0; 
+    color: #fff;
+    
+}
+
+.footer ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer h3 {
+    margin-bottom: 15px; /* Espaciado debajo de los encabezados */
+}
+
+.footer p {
+    margin: 10px 0; /* Espaciado de los párrafos */
+}
+
+.footer a {
+    
+    text-decoration: none;
+    color: #4a94e4; 
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
+}
+
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu ul li {
+    padding: 10px 0; 
+    margin: 0;
+    display: block;
+    
 }
 
 

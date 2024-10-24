@@ -53,3 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+        element.classList.toggle("active");
+      }
+      
