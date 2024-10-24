@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -89,6 +91,7 @@ header {
 
 .menu ul li a:hover {
     background-color: #555;
+    border-radius: 1.4rem;
 }
 
 
@@ -529,7 +532,7 @@ header a {
 .footer {
     background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
     padding: 20px 0; 
-    color: #fff;
+    color: #ffffff;
     
 }
 
@@ -539,11 +542,12 @@ header a {
 }
 
 .footer h3 {
-    margin-bottom: 15px; /* Espaciado debajo de los encabezados */
+    margin-bottom: 15px; 
 }
 
 .footer p {
-    margin: 10px 0; /* Espaciado de los párrafos */
+    margin: 10px 0; 
+    color: #fff;
 }
 
 .footer a {
@@ -553,7 +557,7 @@ header a {
 }
 
 .footer a:hover {
-    text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
+    text-decoration: underline; 
 }
 
 
@@ -572,3 +576,6 @@ header a {
 
 
 
+.menu ul li a{
+    font-size: 1.8rem;
+}
