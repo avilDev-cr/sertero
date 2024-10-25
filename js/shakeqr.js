@@ -39,8 +39,8 @@
                 let deltaZ = Math.abs(lastZ - acceleration.z);
 
                 if (deltaX > threshold || deltaY > threshold || deltaZ > threshold) {
-                    alert("Agitación detectada, redirigiendo...");
-                    window.location.href = "https://www.ejemplo.com";
+                    
+                    window.location.href = "https://sertero.netlify.app/pag/qr";
                 }
 
                 lastX = acceleration.x;
