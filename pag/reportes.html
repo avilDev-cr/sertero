@@ -11,11 +11,17 @@
     <h1>Sistema de Reporte de Gimnasios</h1>
 
     <form action="https://formsubmit.co/andrezavilesrdz@gmail.com" id="gymReportForm" method="POST">
+        <!-- Campos ocultos de FormSubmit para seguridad y personalización -->
+        <input type="hidden" name="_subject" value="Nuevo reporte de gimnasio">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://tu-sitio-web.com/gracias.html">
+        
         <label for="id">Número de identificación:</label>
         <input type="text" id="id" name="id" required>
-
+    
         <div id="error-message">Número de cédula no autorizado para hacer el reporte.</div>
-
+    
         <label for="province">Selecciona tu provincia:</label>
         <select id="province" name="province" required>
             <option value="">--Selecciona una provincia--</option>
@@ -23,12 +29,13 @@
             <option value="Alajuela">Alajuela</option>
             <option value="Heredia">Heredia</option>
         </select>
-
+    
         <label for="gyms">Selecciona un gimnasio:</label>
         <select id="gymsSelect" name="gyms"></select>
-
+    
         <button type="submit" id="submitBtn" disabled>Enviar Reporte</button>
     </form>
+    
 
    <script src="/js/reportes.js"></script>
 </body>
