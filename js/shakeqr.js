@@ -2,7 +2,7 @@
 let lastX = null;
 let lastY = null;
 let lastZ = null;
-let threshold = 15;  // Sensibilidad del "shake" (ajusta este valor según sea necesario)
+let threshold = 10;  // Sensibilidad del "shake" (ajusta este valor según sea necesario)
 
 window.addEventListener('devicemotion', function(event) {
     let acceleration = event.accelerationIncludingGravity;
