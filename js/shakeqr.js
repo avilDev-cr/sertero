@@ -1,3 +1,4 @@
+
 function requestMotionPermission() {
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
         DeviceMotionEvent.requestPermission()
@@ -37,6 +38,7 @@ function startMotionDetection() {
         let deltaZ = Math.abs(lastZ - acceleration.z);
 
         if (deltaX > threshold || deltaY > threshold || deltaZ > threshold) {
+            alert("Agitación detectada, redirigiendo...");
             window.location.href = "https://www.ejemplo.com";
         }
 
@@ -46,5 +48,5 @@ function startMotionDetection() {
     });
 }
 
-// Botón para solicitar permiso
-document.getElementById('requestPermission').addEventListener('click', requestMotionPermission);
+// Solicitar permiso al hacer clic en cualquier parte del cuerpo del HTML
+document.body.addEventListener('click', requestMotionPermission);
