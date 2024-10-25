@@ -40,7 +40,7 @@
 
                 if (deltaX > threshold || deltaY > threshold || deltaZ > threshold) {
                     
-                    window.location.href = "https://sertero.netlify.app/pag/qr";
+                    window.location.href = "https://sertero.netlify.app";
                 }
 
                 lastX = acceleration.x;
