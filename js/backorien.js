@@ -4,7 +4,7 @@ window.addEventListener('deviceorientation', function(event) {
     const tilt = event.gamma; // Inclinación lateral
 
     // Ajusta el umbral de inclinación según sea necesario
-    const threshold = -60; // Umbral para inclinación hacia la izquierda
+    const threshold = -70; // Umbral para inclinación hacia la izquierda
 
     // Si el dispositivo se inclina hacia la izquierda lo suficiente
     if (tilt < threshold && !isBackTriggered) {
