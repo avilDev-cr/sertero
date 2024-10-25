@@ -39,6 +39,7 @@ header {
 .logo {
     width: 10px; 
     height: auto;
+    border-radius: 0.5rem;
 }
 
 
@@ -393,6 +394,7 @@ header a {
     .logo-container {
         margin-left: 0;
     }
+    
 
     .service-place {
         
@@ -486,14 +488,12 @@ header a {
         width: 12rem;
     }
 
+    
     .logo {
         margin-bottom: 0.2rem;
-    }
-
-    .logo {
-      
         width: 8rem; 
         height: auto;
+        border-radius: 0.5rem;
        
     }
     .header-content {
