@@ -395,7 +395,12 @@ header a {
     }
 
     .service-place {
+        
         display: flex; /* Para alinear los elementos en una fila */
+    }
+    .service-place-section h2{
+        margin-top: 5rem;
+        text-align: center;
     }
     
     .place {
@@ -408,7 +413,9 @@ header a {
         width: 100%; /* Para que la imagen ocupe todo el ancho del contenedor */
         height: auto; /* Mantiene la proporción de la imagen */
     }
-    
+    .servicios{
+        margin-top: 5rem;
+    }
     .text-overlay {
         position: absolute; /* Posición absoluta para el texto */
         top: 50%; /* Centra verticalmente */
