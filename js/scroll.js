@@ -1,11 +1,19 @@
+let isBackTriggered = false; // Para evitar múltiples llamadas
+
 window.addEventListener('deviceorientation', function(event) {
-    // Ajusta el factor de sensibilidad según sea necesario
-    const sensitivity = 10;
+    const tilt = event.gamma; // Inclinación lateral
 
-    // Determina la dirección de inclinación vertical
-    const tilt = event.beta; // Inclinación hacia adelante y atrás
-    const scrollAmount = tilt / sensitivity;
+    // Ajusta el umbral de inclinación según sea necesario
+    const threshold = -15; // Umbral para inclinación hacia la izquierda
 
-    // Realiza el scroll
-    window.scrollBy(0, scrollAmount);
+    // Si el dispositivo se inclina hacia la izquierda lo suficiente
+    if (tilt < threshold && !isBackTriggered) {
+        isBackTriggered = true; // Evita volver múltiples veces
+        window.history.back(); // Vuelve a la página anterior
+
+        // Restablece el indicador después de un pequeño tiempo
+        setTimeout(() => {
+            isBackTriggered = false;
+        }, 1000); // Ajusta el tiempo según sea necesario
+    }
 });
