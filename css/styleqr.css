@@ -17,7 +17,7 @@ body {
 }
 
 div {
-  border-radius: 2rem;
+  border-radius: 0.2rem;
   position: relative;
   width: 40vw;
   height: 40vw;
@@ -68,6 +68,6 @@ div:after {
 img{
   margin: 0.3rem;
   width: 98%;
-  border-radius: 2.7rem;
+  border-radius: 1.2rem;
 }
 /*# sourceMappingURL=styleqr.css.map */
