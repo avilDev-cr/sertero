@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Gimnasios</title>
-  <link rel="stylesheet" href="/css/reportes.css">
+    <link rel="stylesheet" href="/css/reportes.css">
 </head>
 <body>
 
-    <h1>Sistema de Reporte de Gimnasios</h1>
+    
 
+    <main class="container">
+        <h1>Sistema de Reporte de Gimnasios</h1>
+   
     <form action="https://formsubmit.co/andrezavilesrdz@gmail.com" id="gymReportForm" method="POST">
         <!-- Campos ocultos de FormSubmit para seguridad y personalización -->
         <input type="hidden" name="_subject" value="Nuevo reporte de gimnasio">
@@ -25,9 +28,6 @@
         <label for="province" style="display: none;">Selecciona tu provincia:</label>
         <select id="province" name="province" style="display: none;" required>
             <option value="">--Selecciona una provincia--</option>
-            <option value="San Jose">San José</option>
-            <option value="Alajuela">Alajuela</option>
-            <option value="Heredia">Heredia</option>
         </select>
     
         <label for="gymsSelect" style="display: none;">Selecciona un gimnasio:</label>
@@ -35,102 +35,16 @@
     
         <button type="submit" id="submitBtn" disabled>Enviar Reporte</button>
     </form>
-    
-    <script>
-        // Cedula permitida
-        const validID = "207760909";
-    
-        // Definimos los gimnasios por provincia
-        const gymsByProvince = {
-            "San Jose": [
-                "CrossFit San Pedro", "Power Gym SJ", "O2 Fitness San José", 
-                "Arena Trek San José", "Multispa San Pedro", "World Gym San José", 
-                "Muscle Gym Escazú", "Titanium Fitness Center"
-            ],
-            "Alajuela": [
-                "Fit Gym Alajuela", "Gold's Gym Alajuela", "Total Fitness Alajuela", 
-                "Power Fit Gym", "Extreme Fitness Alajuela", "CrossFit Alajuela", 
-                "24/7 Fitness Alajuela", "ViveFit Alajuela"
-            ],
-            "Heredia": [
-                "Fit Heredia", "Body Factory Heredia", "O2 Fitness Heredia", 
-                "World Gym Heredia", "Gold's Gym Heredia", "CrossFit Heredia", 
-                "Smart Fit Heredia", "Iron House Gym"
-            ]
-        };
-    
-        // Referencias de los elementos del DOM
-        const idInput = document.getElementById('id');
-        const provinceSelect = document.getElementById('province');
-        const gymsSelect = document.getElementById('gymsSelect');
-        const submitBtn = document.getElementById('submitBtn');
-        const errorMessage = document.getElementById('error-message');
-        const provinceLabel = document.querySelector('label[for="province"]');
-        const gymsLabel = document.querySelector('label[for="gymsSelect"]');
-    
-        // Función para validar la cédula
-        function validateID() {
-            const id = idInput.value.trim();
-    
-            // Si la cédula es correcta, mostramos los selects y activamos el botón
-            if (id === validID) {
-                provinceSelect.style.display = 'block';
-                gymsSelect.style.display = 'none'; // Ocultamos el select de gimnasios hasta seleccionar provincia
-                errorMessage.style.display = 'none';
-                submitBtn.disabled = false;
-                provinceLabel.style.display = 'block'; // Mostramos el label de provincia
-            } else {
-                // Si no es correcta, ocultamos los selects y mostramos el mensaje de error
-                provinceSelect.style.display = 'none';
-                gymsSelect.style.display = 'none';
-                errorMessage.style.display = 'block';
-                submitBtn.disabled = true;
-                provinceLabel.style.display = 'none'; // Ocultamos el label de provincia
-                gymsLabel.style.display = 'none'; // Ocultamos el label de gimnasios
-            }
-        }
-    
-        // Al cambiar la cédula, validamos
-        idInput.addEventListener('input', validateID);
-    
-        // Al seleccionar la provincia, actualizar los gimnasios
-        provinceSelect.addEventListener('change', function () {
-            const province = this.value;
-    
-            // Limpiamos las opciones anteriores de gimnasios
-            gymsSelect.innerHTML = '';
-    
-            // Si la provincia es válida, llenamos el select con gimnasios y mostramos el label
-            if (gymsByProvince[province]) {
-                gymsSelect.style.display = 'block';
-                gymsLabel.style.display = 'block';
-    
-                gymsByProvince[province].forEach(gym => {
-                    const option = document.createElement('option');
-                    option.value = gym;
-                    option.textContent = gym;
-                    gymsSelect.appendChild(option);
-                });
-            } else {
-                gymsSelect.style.display = 'none';
-                gymsLabel.style.display = 'none';
-            }
-        });
-    
-        // Manejo del envío del formulario
-        document.getElementById('gymReportForm').addEventListener('submit', function (event) {
-            const id = idInput.value;
-            const province = provinceSelect.value;
-            const gym = gymsSelect.value;
-    
-            if (!id || !province || !gym) {
-                alert("Por favor, completa todos los campos antes de enviar.");
-                event.preventDefault();
-            }
-        });
-    </script>
-    
-<!-- 
-   <script src="/js/reportes.js"></script> -->
+    <!-- Modal de confirmación -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>¡Reporte enviado con éxito!</p>
+    </div>
+  </div>
+
+</main>
+   
+    <script src="/js/reportes.js"></script>
 </body>
 </html>
