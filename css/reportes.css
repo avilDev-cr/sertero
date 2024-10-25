@@ -4,7 +4,9 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-
+html{
+    width: 100%;
+}
 h1 {
     color: #333;
 }

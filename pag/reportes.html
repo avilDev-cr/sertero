@@ -9,18 +9,9 @@
 <body>
 
     <h1>Sistema de Reporte de Gimnasios</h1>
-
-    <form action="https://formsubmit.co/andrezavilesrdz@gmail.com" id="gymReportForm" method="POST">
-        <!-- Campos ocultos de FormSubmit para seguridad y personalización -->
-        <input type="hidden" name="_subject" value="Nuevo reporte de gimnasio">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://tu-sitio-web.com/gracias.html">
-        
+    <form id="gymReportForm">
         <label for="id">Número de identificación:</label>
         <input type="text" id="id" name="id" required>
-    
-        <div id="error-message">Número de cédula no autorizado para hacer el reporte.</div>
     
         <label for="province">Selecciona tu provincia:</label>
         <select id="province" name="province" required>
@@ -33,10 +24,34 @@
         <label for="gyms">Selecciona un gimnasio:</label>
         <select id="gymsSelect" name="gyms"></select>
     
-        <button type="submit" id="submitBtn" disabled>Enviar Reporte</button>
+        <button type="button" onclick="generateWhatsAppLink()">Generar enlace de reporte</button>
     </form>
     
+    <a id="whatsappLink" href="#" target="_blank" style="display:none;">Enviar reporte por WhatsApp</a>
+    
+    <script>
+    function generateWhatsAppLink() {
+        const id = document.getElementById("id").value;
+        const province = document.getElementById("province").value;
+        const gym = document.getElementById("gymsSelect").value;
+        
+        if (id && province && gym) {
+            const message = `Hola, mi cédula es ${id}. Quiero reportar un gimnasio en ${province}: ${gym}.`;
+            const encodedMessage = encodeURIComponent(message);
+            const phoneNumber = "50662412024"; // Número de WhatsApp del técnico
+            
+            const link = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            const whatsappLink = document.getElementById("whatsappLink");
+            whatsappLink.href = link;
+            whatsappLink.style.display = "inline";
+        } else {
+            alert("Por favor, completa todos los campos antes de generar el enlace.");
+        }
+    }
+    </script>
+    
 
-   <script src="/js/reportes.js"></script>
+   <script src=""></script>
 </body>
 </html>
