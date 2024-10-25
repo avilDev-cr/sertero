@@ -1,24 +1,23 @@
-body {
+body, html {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    
     padding: 0;
     background-color: #f4f4f4;
+    box-sizing: border-box;
+    height: 100%; /* Necesario para que el contenedor principal ocupe toda la altura */
+    margin: 0;
    
-    justify-content: center;
-   
-    height: 100vh; 
-    display: grid;
-  place-items: center;/* Hace que el cuerpo ocupe toda la altura de la ventana */
   }
    
 
-html{
-    width: 100%;
-}
 
-.container{
-    width: 100%;
-    justify-content: center;
+
+.container-report{
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    min-height: 100vh;
+    padding-top: 4rem;
 
 }
 h1 {
