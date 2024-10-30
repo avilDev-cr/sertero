@@ -7,12 +7,13 @@ button {
     width: 6.2em;
     height: 2em;
     transition: 0.5s;
-    font-size: 17px;
-    border-radius: 0.4em;
+    font-size: 16px;
+    border-radius: 0.8em;
   }
   
   button p {
     position: absolute;
+    
     top: 0.4em;
     left: 1.15em;
     margin: 0;
