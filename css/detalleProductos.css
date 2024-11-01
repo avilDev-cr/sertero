@@ -1,0 +1,24 @@
+
+
+/* Estilos del contenedor del detalle del producto */
+.product-detail {
+    display: flex; /* Utiliza flexbox para el diseño en dos columnas */
+    justify-content: space-between; /* Espacia las columnas */
+}
+
+/* Estilos para la imagen */
+.image-container {
+    flex: 1; /* La columna de imagen ocupa un espacio */
+    text-align: center; /* Centra la imagen */
+}
+
+.product-image {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilos para la información del producto */
+.info-container {
+    flex: 1; /* La columna de información ocupa el mismo espacio */
+    padding-left: 20px; /* Espacio a la izquierda de la columna de información */
+}

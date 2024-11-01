@@ -1,0 +1,39 @@
+/* Estilos para las tarjetas de productos */
+.product-card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    border: 1px solid #dee2e6; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Alinear texto al centro */
+}
+
+.product-card img {
+    width: 200px;
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de la tarjeta */
+    border-radius: 4px; /* Bordes redondeados para las imágenes */
+    margin-bottom: 10px; /* Espaciado debajo de la imagen */
+}
+
+.product-card h2 {
+    font-size: 1.2em; /* Tamaño de fuente para el título */
+    color: #343a40; /* Color del texto */
+    margin: 10px 0; /* Espaciado arriba y abajo del título */
+}
+
+/* Efecto de hover en las tarjetas */
+.product-card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta ligeramente al pasar el mouse */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra en hover */
+}
+
+/* Botón dentro de la tarjeta */
+.product-card .btn {
+    color: #007bff; /* Color del texto del botón */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.product-card .btn:hover {
+    color: #0056b3; /* Cambia el color al pasar el mouse */
+}

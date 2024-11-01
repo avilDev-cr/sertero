@@ -28,7 +28,7 @@ header p {
     margin-top: 0.5em;
 }
 header {
-    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
+    background: #000;
     color: #fff;
     padding: 0.5rem;
     display: flex;
@@ -236,46 +236,8 @@ header {
 }
 
 
-/* Testimonios */
-#testimonios {
-    background-color: #ecf0f1;
-    padding: 3em 0;
-}
 
-#testimonios h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 1.5em;
-}
 
-.testimonial {
-    margin-bottom: 9.5em;
-    text-align: center;
-}
-
-.testimonial p {
-    font-size: 1.2em;
-    color: #34495e;
-    font-style: italic;
-}
-
-/* Contacto */
-#contacto {
-    background-color: #fff;
-    padding: 3em 0;
-}
-
-#contacto h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 1.5em;
-}
-
-#contacto p {
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 2em;
-}
 
 form {
     max-width: 600px;
@@ -435,12 +397,12 @@ header a {
 }
 
 @media (min-width: 768px) {
-    ul li:nth-child(4),
+    /* ul li:nth-child(4),
     ul li:nth-child(6), 
     ul li:nth-child(7) { 
         
         display: none;
-    }
+    } */
     .contact-buttons{
         display: none;
     }
@@ -449,7 +411,10 @@ header a {
         padding-top: 3rem;
    
     }
-    
+    .h2footer{
+        text-align: center;
+      
+    }
     .hamburger {
         display: none; 
     }
@@ -581,7 +546,7 @@ header a {
 }
 
 .footer {
-    background: linear-gradient(95deg, rgb(16, 15, 15) 10%, rgb(155, 153, 153) 76%, rgb(21, 20, 20) 100%);
+    background: #000;
     padding: 20px 0; 
     color: #ffffff;
     
@@ -628,6 +593,23 @@ header a {
 
 
 .menu ul li a{
-    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
 
+
+
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 3 / 5; }
+    .div2 { grid-area: 3 / 1 / 5 / 5; }
+    .div3 { grid-area: 1 / 5 / 5 / 6; }
