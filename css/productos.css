@@ -5,12 +5,13 @@
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
-    padding: 20px; /* Espaciado interno */
+    
     text-align: center; /* Alinear texto al centro */
 }
 
 .product-card img {
-    width: 200px;
+    width: 19rem;
+    background-color: #ffffff;
     max-width: 100%; /* Asegura que la imagen no exceda el ancho de la tarjeta */
     border-radius: 4px; /* Bordes redondeados para las imágenes */
     margin-bottom: 10px; /* Espaciado debajo de la imagen */
@@ -21,11 +22,18 @@
     color: #343a40; /* Color del texto */
     margin: 10px 0; /* Espaciado arriba y abajo del título */
 }
+.product-card h3 {
+    font-size: 1.3em; /* Tamaño de fuente para el título */
+    color: #136cc0; /* Color del texto */
+    margin: 10px 0; /* Espaciado arriba y abajo del título */
+}
+
 
 /* Efecto de hover en las tarjetas */
 .product-card:hover {
     transform: translateY(-5px); /* Eleva la tarjeta ligeramente al pasar el mouse */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra en hover */
+    
 }
 
 /* Botón dentro de la tarjeta */
@@ -34,6 +42,21 @@
     text-decoration: none; /* Sin subrayado */
 }
 
+
 .product-card .btn:hover {
     color: #0056b3; /* Cambia el color al pasar el mouse */
+}
+
+.btn-add {
+    background-color: #000; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado dentro del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cursor en forma de mano */
+    border-radius: 0.4rem;
+
+}
+.btn-add:hover {
+    background-color: #b31414; /* Color de fondo del botón */
 }

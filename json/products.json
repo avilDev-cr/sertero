@@ -1,0 +1,70 @@
+ [
+        {
+            "id": 0,
+            "name": "Caminadora Profesional PWG-EVOT4",
+            "specs": ["Uso doméstico / profesional.", "Potencia de 4 CV", "Peso máximo de usuario 180 kg"],
+            "description": "Descripción del producto 1",
+            "price": "$1000",
+            "quantity": 5,
+            "image": "../imgs/Bodytone-Caminadora-Profesional-EVOT4-110V-Motor-4HP-AC.jpg.webp"
+        },
+        {
+            "id": 1,
+            "name": "BICICLETA VERTICAL PWG-EVOU4",
+            "description": "Descripción del producto 2",
+            "price": "$720",
+            "quantity": 5,
+            "image": "../imgs/BT-EVOU4-Bodytone-Bicicleta-Vertical-BT-EVOU4.jpg.webp"
+        },
+        {
+            "id": 2,
+            "name": "Elíptica evoe2 PWG-EVOE2",
+            "description": "Descripción del producto 3",
+            "price": "$535",
+            "quantity": 5,
+             "image": "/imgs/PWG-SF-RB4616_17.jpg.webp"
+        },
+        {
+            "id": 3,
+            "name": "Eliptica semiprofesional PWG-BT-EVOE4",
+            "description": "Descripción del producto 4",
+            "price": "$470",
+            "quantity": 5,
+            "image": "/imgs/PWG-BT-EVOE4-ELIPTICA-SEMI-PROFESI0NAL-MARCA-BODYTONE.webp"
+        },
+        {
+            "id": 4,
+            "name": "Press de pecho inclinado E03 PWG-E03",
+            "description": "Descripción del producto 5",
+            "price": "$640",
+            "quantity": 5,
+            "image": "/imgs/BT-E03-Bodytone-Press-de-pecho-inclinado-incline-Chest-Press-Mod-600x600.webp"
+        },
+        {
+            "id": 5,
+            "name": "Press de pecho vertical E01 PWG-E01",
+            "description": "Descripción del producto 6",
+            "price": "$950",
+            "quantity": 5,
+            "image": "/imgs/BT-E01-Bodytone-Press-de-pecho-vertical-Chest-Press-95-kg-Mod-600x600.webp"
+           
+        },
+        {
+            "id": 6,
+            "name": "Aperturas y deltoides E23 PWG-E23",
+            "description": "Descripción del producto 7",
+            "price": "$390",
+            "quantity": 5,
+            "image": "/imgs/BT-E23-Bodytone-Aperturas-y-deltoides-Pec-Fly-and-Rear-Delt-BT-E23.webp"
+        },
+        {
+            "id": 7,
+            "name": "PContractor de pecho E02 PWG-E02",
+            "description": "Descripción del producto 8",
+            "price": "$560",
+            "quantity": 5,
+            "image": "/imgs/BT-E02-Bodytone-Contractor-de-pecho-Butterfly-95-kg-Mod-600x600.webp"
+        }
+    ]
+
+ 
