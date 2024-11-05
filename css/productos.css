@@ -60,3 +60,20 @@
 .btn-add:hover {
     background-color: #b31414; /* Color de fondo del botón */
 }
+
+.styled-select {
+    margin-bottom: 1.2rem;
+    width: 210px; /* Ancho */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo */
+    color: #333; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    appearance: none; /* Elimina el estilo por defecto del navegador */
+    background-image: url('path/to/arrow-icon.png'); /* Añadir un icono para la flecha */
+    background-repeat: no-repeat; /* No repetir el icono */
+    background-position: right 10px center; /* Posicionar el icono */
+    background-size: 10px; /* Tamaño del icono */
+}
+

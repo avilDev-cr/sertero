@@ -6,7 +6,8 @@
             "description": "Descripción del producto 1",
             "price": "$1000",
             "quantity": 5,
-            "image": "../imgs/Bodytone-Caminadora-Profesional-EVOT4-110V-Motor-4HP-AC.jpg.webp"
+            "image": "../imgs/Bodytone-Caminadora-Profesional-EVOT4-110V-Motor-4HP-AC.jpg.webp",
+            "category": "Maquinas de cardio"
         },
         {
             "id": 1,
@@ -14,7 +15,8 @@
             "description": "Descripción del producto 2",
             "price": "$720",
             "quantity": 5,
-            "image": "../imgs/BT-EVOU4-Bodytone-Bicicleta-Vertical-BT-EVOU4.jpg.webp"
+            "image": "../imgs/BT-EVOU4-Bodytone-Bicicleta-Vertical-BT-EVOU4.jpg.webp",
+            "category": "Maquinas de cardio"
         },
         {
             "id": 2,
@@ -22,7 +24,8 @@
             "description": "Descripción del producto 3",
             "price": "$535",
             "quantity": 5,
-             "image": "/imgs/PWG-SF-RB4616_17.jpg.webp"
+             "image": "/imgs/PWG-SF-RB4616_17.jpg.webp",
+             "category": "Maquinas de cardio"
         },
         {
             "id": 3,
@@ -30,7 +33,8 @@
             "description": "Descripción del producto 4",
             "price": "$470",
             "quantity": 5,
-            "image": "/imgs/PWG-BT-EVOE4-ELIPTICA-SEMI-PROFESI0NAL-MARCA-BODYTONE.webp"
+            "image": "/imgs/PWG-BT-EVOE4-ELIPTICA-SEMI-PROFESI0NAL-MARCA-BODYTONE.webp",
+            "category": "Maquinas de cardio"
         },
         {
             "id": 4,
@@ -38,7 +42,8 @@
             "description": "Descripción del producto 5",
             "price": "$640",
             "quantity": 5,
-            "image": "/imgs/BT-E03-Bodytone-Press-de-pecho-inclinado-incline-Chest-Press-Mod-600x600.webp"
+            "image": "/imgs/BT-E03-Bodytone-Press-de-pecho-inclinado-incline-Chest-Press-Mod-600x600.webp",
+            "category": "Maquinas de pecho"
         },
         {
             "id": 5,
@@ -46,7 +51,8 @@
             "description": "Descripción del producto 6",
             "price": "$950",
             "quantity": 5,
-            "image": "/imgs/BT-E01-Bodytone-Press-de-pecho-vertical-Chest-Press-95-kg-Mod-600x600.webp"
+            "image": "/imgs/BT-E01-Bodytone-Press-de-pecho-vertical-Chest-Press-95-kg-Mod-600x600.webp",
+            "category": "Maquinas de pecho"
            
         },
         {
@@ -55,7 +61,8 @@
             "description": "Descripción del producto 7",
             "price": "$390",
             "quantity": 5,
-            "image": "/imgs/BT-E23-Bodytone-Aperturas-y-deltoides-Pec-Fly-and-Rear-Delt-BT-E23.webp"
+            "image": "/imgs/BT-E23-Bodytone-Aperturas-y-deltoides-Pec-Fly-and-Rear-Delt-BT-E23.webp",
+            "category": "Maquinas de pecho"
         },
         {
             "id": 7,
@@ -63,7 +70,8 @@
             "description": "Descripción del producto 8",
             "price": "$560",
             "quantity": 5,
-            "image": "/imgs/BT-E02-Bodytone-Contractor-de-pecho-Butterfly-95-kg-Mod-600x600.webp"
+            "image": "/imgs/BT-E02-Bodytone-Contractor-de-pecho-Butterfly-95-kg-Mod-600x600.webp",
+            "category": "Maquinas de pecho"
         }
     ]
 

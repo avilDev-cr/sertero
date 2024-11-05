@@ -26,7 +26,7 @@
                     <li><a href="/index.html#servicios" class="">Servicios</a></li>
                     <li><a href="/pag/blog.html">Blog</a></li>
                     <li><a href="/pag/nosotros.html">Nosotros</a></li>
-                    <li><i class="fa-solid fa-cart-shopping"></i></li>
+                    <li><a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
                     
                 </ul>
             </nav>
@@ -55,6 +55,15 @@
 
 <section class="productos container mt-4 mb-4">
     <h1 class="mb-4">Maquinas de Gimnasio</h1>
+    <select id="categorySelect" class="styled-select" onchange="filterProductos(this.value)">
+        <option value="">Selecciona una categoría</option>
+        <option value="Maquinas de cardio">Maquinas de cardio</option>
+        <option value="Maquinas de pecho">Maquinas de pecho</option>
+        <option value="">Todas</option>
+  
+        <!-- Agrega más categorías según sea necesario -->
+    </select>
+    
     <div id="product-list" class="row"></div>
 </section>
 
