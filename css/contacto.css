@@ -1,0 +1,113 @@
+/* Main section */
+main {
+    margin: 5rem; /* Espaciado más adaptable */
+  }
+  
+  .contact-section {
+    text-align: center;
+    font-weight: bold;
+    color: black !important;
+  }
+  
+  /* Sección de contacto */
+  .section-contact {
+    padding: 20px;
+    font-size: 1rem; /* Usar unidades relativas */
+  }
+  
+  .info-box {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .info-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .header {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 20px 0;
+  }
+  
+  h2 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande */
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .SARAH {
+      font-size: 40px; /* Tamaño de la fuente */
+      color: #f8f5f5; /* Color de texto */
+      text-align: center; /* Centra el texto */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Agrega sombra al texto */
+      margin-bottom: 20px; /* Espacio debajo del título */
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem; /* Tamaño de icono */
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ccc;
+  }
+  
+  .social-icons a.fa {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icons a.fa:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 576px) {
+    main {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    .section-contact {
+      font-size: 0.875rem; /* Ajuste de tamaño */
+    }
+  
+    .info-box {
+      padding: 15px;
+    }
+  
+    .info-box img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* Estilos para pantallas medianas */
+  @media (min-width: 576px) and (max-width: 768px) {
+    .info-box {
+      padding: 15px;
+    }
+  
+    .info-box img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  
+  .Contacto{
+    text-align: center;
+  }
