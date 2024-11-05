@@ -44,7 +44,7 @@ function loadProducts() {
 
                 const buttonadd = document.createElement('button');
                 buttonadd.className = ' btn-add';
-                buttonadd.textContent = 'Ver detalles';
+                buttonadd.textContent = 'Agregar al carrito';
 
                 
                 button.appendChild(img);
