@@ -44,36 +44,8 @@ main {
     font-weight: bold;
   }
   
-  .SARAH {
-      font-size: 40px; /* Tamaño de la fuente */
-      color: #f8f5f5; /* Color de texto */
-      text-align: center; /* Centra el texto */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Agrega sombra al texto */
-      margin-bottom: 20px; /* Espacio debajo del título */
-  }
+
   
-  .social-icons a {
-    color: white;
-    font-size: 1.5rem; /* Tamaño de icono */
-    margin: 0 10px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #ccc;
-  }
-  
-  .social-icons a.fa {
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 50%;
-    padding: 10px;
-    transition: transform 0.3s;
-  }
-  
-  .social-icons a.fa:hover {
-    transform: scale(1.1);
-  }
   
   /* Estilos para pantallas pequeñas */
   @media (max-width: 576px) {
