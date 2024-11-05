@@ -145,3 +145,36 @@ function loadData() {
 
 // Cargar datos al cargar la página
 window.onload = loadData;
+
+
+<div id="map" style="height: 400px; width: 100%;"></div>
+
+
+  function initMap() {
+    const start = { lat: 10.0121159, lng: -84.2259853 }; // Punto de inicio
+    const end = { lat: 10.015, lng: -84.230 }; // Punto de destino
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: start,
+    });
+
+    const directionsService = new google.maps.DirectionsService();
+    const directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer.setMap(map);
+
+    const request = {
+      origin: start,
+      destination: end,
+      travelMode: google.maps.TravelMode.DRIVING,
+    };
+
+    directionsService.route(request, (result, status) => {
+      if (status === google.maps.DirectionsStatus.OK) {
+        directionsRenderer.setDirections(result);
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    });
+  }
+
