@@ -58,7 +58,7 @@ function displayProducts(products) {
         img.width = 100;
 
         const title = document.createElement('h2');
-        title.className = 'mt-2';
+        title.className = 'mt-2 text-uppercase ';
         title.textContent = product.name;
 
         const precio = document.createElement('h3');

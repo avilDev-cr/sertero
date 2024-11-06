@@ -68,7 +68,6 @@
     <script>
         // Obtiene el producto seleccionado de localStorage
         const product = JSON.parse(localStorage.getItem("selectedProduct"));
-        const userName = ['Juan Perez']
 
         // Verifica si el producto existe y muestra sus detalles
         if (product) {
@@ -101,8 +100,7 @@
                     ${product.user_reviews && product.user_reviews.length > 0 
                         ? product.user_reviews.map(review => `
                             <li ">
-                                <p class="text-left">${userName}</p>
-                                <h4>Juan Perez</h4>
+                                
                                 <h3>${review.review}</h3> <p>  ${'⭐'.repeat(review.rating)} (${review.rating} estrellas)</p>
                             </li>`).join("") 
                         : "<li>No hay reseñas disponibles.</li>"}

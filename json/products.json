@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "name": "Caminadora Profesional PWG-EVOT4",
+        "name": "Caminadora Profesional ",
         "specs": ["Uso doméstico / profesional", "Potencia de 4 CV", "Peso máximo de usuario 180 kg"],
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$1000",
@@ -77,10 +77,10 @@
     },
     {
         "id": 3,
-        "name": "Eliptica semiprofesional PWG-BT-EVOE4",
+        "name": "Eliptica semiprofesional",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$470",
-        "quantity": 5,
+        "quantity": 3,
         "image": "/imgs/PWG-BT-EVOE4-ELIPTICA-SEMI-PROFESI0NAL-MARCA-BODYTONE.webp",
         "category": "Maquinas de cardio",
         "delivery_time": "3-5 días hábiles",
@@ -102,7 +102,7 @@
     },
     {
         "id": 4,
-        "name": "Press de pecho inclinado E03 PWG-E03",
+        "name": "Press de pecho inclinado",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$640",
         "quantity": 5,
@@ -152,7 +152,7 @@
     },
     {
         "id": 6,
-        "name": "Aperturas y deltoides E23 PWG-E23",
+        "name": "Aperturas y deltoides",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$390",
         "quantity": 5,
@@ -177,12 +177,12 @@
     },
     {
         "id": 7,
-        "name": "Squats Smith de piernas E13 PWG-E13",
+        "name": "Squats Smith E13 PWG-E13",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$640",
         "quantity": 5,
         "image": "/imgs/BT-E02-Bodytone-Contractor-de-pecho-Butterfly-95-kg-Mod-600x600.webp",
-        "category": "Maquinas de piernas",
+        "category": "Maquinas de pecho",
         "delivery_time": "4-6 días hábiles",
         "shipping_cost": "$30",
         "delivery_options": ["Envío postal", "Recogida en tienda."],

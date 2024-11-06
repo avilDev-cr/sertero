@@ -147,9 +147,6 @@ function loadData() {
 window.onload = loadData;
 
 
-<div id="map" style="height: 400px; width: 100%;"></div>
-
-
   function initMap() {
     const start = { lat: 10.0121159, lng: -84.2259853 }; // Punto de inicio
     const end = { lat: 10.015, lng: -84.230 }; // Punto de destino

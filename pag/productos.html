@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Gimnasios</title>
+    <title>Productos</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/css/productos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -66,6 +66,56 @@
     
     <div id="product-list" class="row"></div>
 </section>
+<section class="faq container mt-5 mb-5">
+    <h1 class="mb-4 text-center">Preguntas Frecuentes</h1>
+    <div class="accordion" id="accordionExample">
+        <!-- Pregunta 1 -->
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed custom-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    ¿Cuál es el tiempo de entrega de los productos?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body custom-accordion-body">
+                    El tiempo de entrega varía según el producto, pero generalmente es entre 3 y 5 días hábiles.
+                </div>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed custom-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    ¿Cuál es la política de devoluciones?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body custom-accordion-body">
+                    Las devoluciones son aceptadas dentro de los primeros 30 días posteriores a la compra, siempre que el producto esté en su estado original y con su empaque intacto.
+                </div>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed custom-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    ¿Qué métodos de pago aceptan?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body custom-accordion-body">
+                    Aceptamos tarjetas de crédito, transferencias bancarias y pagos a través de PayPal.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Asegúrate de incluir los scripts de Bootstrap al final del body -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
 
 <script src="/js/products.js">
    
@@ -100,6 +150,5 @@
 </footer>
 
 <script src="/index.js"></script>
-<script src="/js/reportes.js"></script>
 </body>
 </html>

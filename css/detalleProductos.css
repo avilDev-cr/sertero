@@ -1,59 +1,69 @@
-
-
 /* Estilos del contenedor del detalle del producto */
 .product-detail {
-    display: flex; /* Utiliza flexbox para el diseño en dos columnas */
-    justify-content: space-between; /* Espacia las columnas */
+    display: flex; /* Diseño en dos columnas */
+    justify-content: space-between; /* Espacio entre columnas */
+    margin-bottom: 40px; /* Espacio debajo del contenedor para separar del footer */
 }
-
 
 .product-image {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%; /* Imagen no excede el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
 }
 
-/* Estilos para la información del producto */
+/* Contenedor de información */
 .info-container {
-    flex: 1; /* La columna de información ocupa el mismo espacio */
-    padding-left: 20px; /* Espacio a la izquierda de la columna de información */
+    flex: 1; /* Ocupa el resto del espacio disponible */
+    padding-left: 20px; /* Espacio a la izquierda */
 }
+
+/* Contenedor de la imagen */
 .image-container {
     display: flex;
-    flex-direction: column; /* Asegura que la imagen y el botón se coloquen uno debajo del otro */
-    align-items: center; /* Centra horizontalmente el contenido */
-    margin-bottom: 20px; /* Espacio entre la imagen y el resto del contenido */
+    flex-direction: column; /* Imagen y botón en columna */
+    align-items: center; /* Centra contenido horizontalmente */
+    margin-bottom: 20px; /* Espacio debajo de la imagen */
+    width: 55%;
 }
 
+/* Botón Agregar al Carrito */
 .btn-add-to-cart {
-    margin-top: 10px; /* Espacio entre la imagen y el botón */
-    background-color: black; /* Color de fondo negro */
-    color: white; /* Color de texto blanco */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
-    font-size: 20px;
+    margin-top: 10px; /* Espacio entre imagen y botón */
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px; /* Tamaño de fuente */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave */
 }
 
 .btn-add-to-cart:hover {
-    background-color: #333; /* Cambia el color de fondo al pasar el mouse */
+    background-color: #333; /* Color al pasar el mouse */
 }
 
-.product-detail {
-    margin-bottom: 40px; /* Aumenta el margen inferior para evitar que el contenido esté pegado al footer */
+/* Título */
+h2 {
+    font-size: 2em; /* Tamaño del título */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    justify-content: flex-start;
 }
 
-h3 {
-    font-size: 1em; /* Cambia el tamaño de la fuente del título a más pequeño */
+/* Estilos para las reseñas */
+.user-reviews h3 {
+    font-size: 1em; /* Tamaño de la fuente de reseñas */
 }
 
 ul {
-    list-style-type: none; /* Quita los puntos de la lista */
+    list-style-type: none; /* Sin puntos en la lista */
     padding: 0; /* Quita el padding */
 }
 
 ul li p {
-    font-style: italic; /* Hace que el texto de las reseñas sea cursivo */
+    font-style: italic; /* Texto cursivo para las reseñas */
+}
+
+/* Separación de la sección de reseñas */
+.user-reviews {
+    margin-top: 30px; /* Espacio encima de la sección de reseñas */
 }

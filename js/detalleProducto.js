@@ -9,7 +9,7 @@
             <img src="${product.image}" alt="${product.name}" class="product-image">
         </div>
         <div class="info-container">
-            <h2>${product.name}</h2>
+            <h2 class="h2name">${product.name}</h2>
             <h3>Especificaciones:</h3>
             <ul>
                 ${product.specs ? product.specs.map(spec => `<li>${spec}</li>`).join("") : "<li>No especificado</li>"}
@@ -32,7 +32,7 @@
                 ${product.user_reviews && product.user_reviews.length > 0 
                     ? product.user_reviews.map(review => `
                         <li>
-                            <p>"${review.review}" - Calificación: ${review.rating} estrellas</p>
+                            <h3>"${review.review}" </h3> <p> Calificación: ${review.rating} estrellas</p>
                         </li>`).join("") 
                     : "<li>No hay reseñas disponibles.</li>"}
             </ul>
