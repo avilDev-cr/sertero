@@ -385,14 +385,14 @@ header a {
     }
     
     .div1 { grid-area: 1 / 1 / 3 / 5; 
-        background-color: #25D366;    
+        
     }
     .div2 { grid-area: 3 / 1 / 5 / 5; 
-        background-color: #253cd3;  }
+    } 
     .div3 { grid-area: 1 / 5 / 5 / 6; 
-        background-color: #eb2828;  
+        
     }
-  
+
     .contact-buttons{
         display: none;
     }
