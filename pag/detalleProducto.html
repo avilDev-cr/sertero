@@ -68,7 +68,7 @@
     <script>
         // Obtiene el producto seleccionado de localStorage
         const product = JSON.parse(localStorage.getItem("selectedProduct"));
-        const userName = ['Juan Perez']
+        const userName = ['Juan Perez', 'Sofia Perez', 'Carlos Ruiz', 'Laura Gómez', 'Pedro Martínez']
 
         // Verifica si el producto existe y muestra sus detalles
         if (product) {
@@ -96,18 +96,24 @@
             `;
             // Muestra las reseñas en el contenedor de reseñas separado
             document.getElementById("user-reviews").innerHTML = `
-                <h2 class="">Reseñas de usuarios</h2>
-                <ul class="d-flex justify-content-between mt-5">
-                    ${product.user_reviews && product.user_reviews.length > 0 
-                        ? product.user_reviews.map(review => `
-                            <li ">
-                                <p class="text-left">${userName}</p>
-                                <h4>Juan Perez</h4>
-                                <h3>${review.review}</h3> <p>  ${'⭐'.repeat(review.rating)} (${review.rating} estrellas)</p>
-                            </li>`).join("") 
-                        : "<li>No hay reseñas disponibles.</li>"}
-                </ul>
-            `;
+            <h2 class="">Reseñas de usuarios</h2>
+            <ul class="d-flex justify-content-around mt-5">
+                ${product.user_reviews && product.user_reviews.length > 0 
+                    ? product.user_reviews.map((review) => {
+                        // Selecciona un nombre de usuario aleatorio
+                        const randomUserName = userName[Math.floor(Math.random() * userName.length)];
+                        return `
+                            <li>
+                               
+                                <h4> <img src="/imgs/icons8-usuario-masculino-en-círculo-25.png" alt="" class="img-fluid rounded-circle pr-1">${randomUserName}</h4>
+                                <h3>${review.review}</h3>
+                                <p> ${'⭐'.repeat(review.rating)} (${review.rating} estrellas)</p>
+                            </li>
+                        `;
+                    }).join("") 
+                    : "<li>No hay reseñas disponibles.</li>"}
+            </ul>
+        `;
         } else {
             document.getElementById("product-detail").innerHTML = "<p>No se encontró el producto.</p>";
         }
