@@ -105,47 +105,54 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
-    
     <script>
       // Cargar el carrito desde el localStorage
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-      function updateCart() {
-        let cartTableBody = document.getElementById("cart-items");
-        cartTableBody.innerHTML = ""; // Limpiar la tabla antes de volver a llenarla
-        let totalPrice = 0;
+// Función para convertir los precios con formato "$1000" a números
+function parsePrice(price) {
+  return parseFloat(price.replace('$', '').replace(',', ''));
+}
 
-        cart.forEach((item, index) => {
-          // Si la cantidad no está definida o es 0, la inicializamos en 1
-          if (item.quantity <= 0 || !item.quantity) {
+function updateCart() {
+    let cartTableBody = document.getElementById("cart-items");
+    cartTableBody.innerHTML = ""; // Limpiar la tabla antes de volver a llenarla
+    let totalPrice = 0;
+
+    cart.forEach((item, index) => {
+        // Si la cantidad no está definida o es 0, la inicializamos en 1
+        if (item.quantity <= 0 || !item.quantity) {
             item.quantity = 1;
-          }
+        }
 
-          // Calculando subtotal y total con el costo de envío
-          const itemSubtotal = item.price * item.quantity;
-          const itemTotal = itemSubtotal + item.shipping_cost;
+        // Convertir el precio y el costo de envío a números usando parsePrice
+        const itemPrice = parsePrice(item.price);  // Convierte el precio de string a número
+        const itemShippingCost = parsePrice(item.shipping_cost);  // Convierte el costo de envío de string a número
 
-          cartTableBody.innerHTML += `
-                <tr>
-                    <td><img src="${item.image}" alt="${item.name}" class="img-fluid" width="50"></td>
-                    <td>${item.name}</td>
-                    <td>${item.price} </td>
-                    <td><input type="number" value="${item.quantity}" min="1" class="form-control quantity-input" data-index="${index}"></td>
-                    <td class="item-subtotal">${itemSubtotal} </td>
-                    <td>${item.shipping_cost} </td>
-                    <td class="item-total">${itemTotal} </td>
-                    <td><button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Eliminar</button></td>
-                </tr>
-            `;
+        // Calculando subtotal y total con el costo de envío
+        const itemSubtotal = itemPrice * item.quantity;
+        const itemTotal = itemSubtotal + itemShippingCost;
 
-          totalPrice += itemTotal; // Sumar el total de cada producto
-        });
+        cartTableBody.innerHTML += `
+            <tr>
+                <td><img src="${item.image}" alt="${item.name}" class="img-fluid" width="50"></td>
+                <td>${item.name}</td>
+                <td>${itemPrice} </td>  <!-- Se muestra el precio como número -->
+                <td><input type="number" value="${item.quantity}" min="1" class="form-control quantity-input" data-index="${index}"></td>
+                <td class="item-subtotal">${itemSubtotal} </td>
+                <td>${itemShippingCost} </td> <!-- Se muestra el costo de envío como número -->
+                <td class="item-total">${itemTotal} </td>
+                <td><button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Eliminar</button></td>
+            </tr>
+        `;
 
-        // Actualizar el total general
-        document.getElementById("total-price").innerText = totalPrice;
-      }
+        totalPrice += itemTotal; // Sumar el total de cada producto
+    });
+
+    // Actualizar el total general
+    document.getElementById("total-price").innerText = totalPrice;
+}
+
 
       // Función para eliminar un producto del carrito
       function removeItem(index) {
@@ -207,6 +214,7 @@
       // Inicializar el carrito al cargar la página
       updateCart();
     </script>
+  
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/50660941802" class="whatsapp-float" target="_blank">
