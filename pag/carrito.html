@@ -115,6 +115,7 @@
     <script>
       // Cargar el carrito desde el localStorage
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let isPickup = false;
 
       // Función para convertir los precios con formato "$1000" a números
       function parsePrice(price) {
@@ -138,7 +139,8 @@
 
           // Calculando subtotal y total con el costo de envío
           const itemSubtotal = itemPrice * item.quantity;
-          const itemTotal = itemSubtotal + itemShippingCost;
+          <!-- const itemTotal = itemSubtotal + itemShippingCost; -->
+          const itemTotal = isPickup ? itemSubtotal : itemSubtotal + itemShippingCost;
 
           cartTableBody.innerHTML += `
             <tr>
@@ -158,7 +160,15 @@
 
         // Actualizar el total general
         document.getElementById("total-price").innerText = totalPrice;
+        document.getElementById("shipping-type").addEventListener("change", updateCart);
+
       }
+  // Escuchar cambios en el tipo de envío
+  document.getElementById("shipping-type").addEventListener("change", function (event) {
+    isPickup = event.target.value === "tienda";
+    updateCart(); // Actualizar la vista del carrito con el nuevo tipo de envío
+  });
+
 
       // Función para eliminar un producto del carrito
       function removeItem(index) {
