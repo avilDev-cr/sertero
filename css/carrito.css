@@ -100,7 +100,9 @@ a:hover {
         max-width: 300px;
         margin: 0 auto;
     }
-
+   
+     
+  
     /* Botón checkout */
     #checkout-btn {
         font-size: 1rem;
@@ -128,18 +130,23 @@ h2 {
     font-weight: bold;
     text-align: center;
     padding: 10px;
+    padding-bottom: 60px;
 }
 
+/* Añade margen inferior al label para separar del siguiente elemento */
 label[for="shipping-type"] {
-    font-size: 1.25rem;
+    font-size: 1.30rem;
     font-weight: bold;
     display: block;
-    margin-bottom: 10px;
-}
+    margin-bottom: 20px; /* Espacio adicional entre título y tabla */
+    text-align: center;
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+
+  }
 
 /* Ajustes del botón */
 #checkout-btn {
-    background-color: #000;
+    background-color: #0a0a0a;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: bold;
@@ -148,15 +155,82 @@ label[for="shipping-type"] {
     border: none;
     cursor: pointer;
     margin-top: 20px;
-    margin-bottom: 2vh; /* Añadido espacio entre el botón y el footer */
+    margin-bottom: 4vh; /* Añadido espacio entre el botón y el footer */
     transition: background-color 0.3s ease;
 }
 
 #checkout-btn:hover {
-    background-color: #444;
+    background-color: #a04343;
 }
 
 /* Footer */
 footer {
     padding-top: 6vh; /* Si el footer tiene padding, puedes añadir más aquí */
+}
+
+
+/* Estilo para centrar el texto y controlar el ancho del combo */
+.centered-select {
+    width: 200px; /* Ajusta el ancho según prefieras */
+    text-align: center;
+    text-align-last: center; /* Centra el texto en algunos navegadores */
+    margin: auto; /* Centra el combo en el contenedor */
+    
+  }
+  
+ 
+  
+  /* Aumenta el margen superior del contenedor del select */
+.mb-3 {
+    margin-top: 50px; /* Aumenta el valor para más espacio */
+
+  }
+  
+  /* Alternativamente, añade margen inferior a la tabla */
+  table {
+    border: 1px solid #0f0f0f; /* Borde ligero para mejorar el contraste */
+    
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Sombra negra */
+    margin-bottom: 30px; /* Aumenta el valor según necesites */
+  }
+  
+/* Estilo del ComboBox con sombra en dos colores */
+#shipping-type {
+    width: 100%; /* Por defecto ocupa el ancho completo del contenedor */
+    max-width: 1300px; /* Ancho máximo en pantallas grandes */
+    font-size: 18px; /* Tamaño de la letra del ComboBox */
+    padding: 10px; /* Espacio interno */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+    border: 1px solid #ddd; /* Borde ligero para mejorar el contraste */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Sombra negra */
+}
+
+/* Ajustes responsivos para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    #shipping-type {
+        max-width: 900px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    #shipping-type {
+        max-width: 700px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    #shipping-type {
+        max-width: 100%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    #shipping-type {
+        max-width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
 }
