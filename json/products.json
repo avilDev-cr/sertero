@@ -5,7 +5,7 @@
         "specs": ["Uso doméstico / profesional", "Potencia de 4 CV", "Peso máximo de usuario 180 kg"],
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$1000",
-        "quantity": 5,
+      
         "image": "../imgs/Bodytone-Caminadora-Profesional-EVOT4-110V-Motor-4HP-AC.jpg.webp",
         "category": "Maquinas de cardio",
         "delivery_time": "3-5 días hábiles",
@@ -30,7 +30,7 @@
         "name": "BICICLETA VERTICAL PWG-EVOU4",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$720",
-        "quantity": 5,
+       
         "image": "../imgs/BT-EVOU4-Bodytone-Bicicleta-Vertical-BT-EVOU4.jpg.webp",
         "category": "Maquinas de cardio",
         "delivery_time": "5-7 días hábiles",
@@ -55,7 +55,7 @@
         "name": "Elíptica evoe2 PWG-EVOE2",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$535",
-        "quantity": 5,
+      
         "image": "/imgs/PWG-SF-RB4616_17.jpg.webp",
         "category": "Maquinas de cardio",
         "delivery_time": "4-6 días hábiles",
@@ -80,7 +80,7 @@
         "name": "Eliptica semiprofesional",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$470",
-        "quantity": 3,
+       
         "image": "/imgs/PWG-BT-EVOE4-ELIPTICA-SEMI-PROFESI0NAL-MARCA-BODYTONE.webp",
         "category": "Maquinas de cardio",
         "delivery_time": "3-5 días hábiles",
@@ -105,7 +105,7 @@
         "name": "Press de pecho inclinado",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$640",
-        "quantity": 5,
+       
         "image": "/imgs/BT-E03-Bodytone-Press-de-pecho-inclinado-incline-Chest-Press-Mod-600x600.webp",
         "category": "Maquinas de pecho",
         "delivery_time": "3-5 días hábiles",
@@ -130,7 +130,7 @@
         "name": "Press de pecho vertical E01 PWG-E01",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$950",
-        "quantity": 5,
+      
         "image": "/imgs/BT-E01-Bodytone-Press-de-pecho-vertical-Chest-Press-95-kg-Mod-600x600.webp",
         "category": "Maquinas de pecho",
         "delivery_time": "4-6 días hábiles",
@@ -155,7 +155,7 @@
         "name": "Aperturas y deltoides",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$390",
-        "quantity": 5,
+  
         "image": "/imgs/BT-E23-Bodytone-Aperturas-y-deltoides-Pec-Fly-and-Rear-Delt-BT-E23.webp",
         "category": "Maquinas de pecho",
         "delivery_time": "3-5 días hábiles",
@@ -181,7 +181,7 @@
         "name": "Squats Smith E13 PWG-E13",
         "description": "Máquina factible para mejorar tu salud.",
         "price": "$640",
-        "quantity": 5,
+       
         "image": "/imgs/BT-E02-Bodytone-Contractor-de-pecho-Butterfly-95-kg-Mod-600x600.webp",
         "category": "Maquinas de pecho",
         "delivery_time": "4-6 días hábiles",

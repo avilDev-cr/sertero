@@ -1,162 +1,273 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sertero - Servicio técnico para gimnasios y residenciales">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sertero - Servicio técnico para gimnasios y residenciales"
+    />
     <title>Sertero</title>
-    <link rel="icon" href="/imgs/faviconsertero.jpg" type="image/jpg">
-    <link rel="shortcut icon" href="/imgs/faviconsertero.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/css/detalleProductos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/imgs/faviconsertero.jpg" type="image/jpg" />
+    <link
+      rel="shortcut icon"
+      href="/imgs/faviconsertero.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/detalleProductos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
 
-<body>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  </head>
+
+  <body>
     <header class="header">
-        <div class="padre">
-            <div class="logo-container">
-                <img src="/imgs/logosertero.JPG" alt="Logo de Sertero" class="logo">
-            </div>
-            <div class="nav">
-                <nav id="hamburgerMenu" class="menu">
-                    <ul>
-                        <li><a href="/index.html#servicios" class="">Servicios</a></li>
-                        <li><a href="/pag/productos.html">Tienda</a></li>
-                        <li><a href="/pag/nosotros.html">Nosotros</a></li>
-                        <li><a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                        
-                    </ul>
-                </nav>
-            </div>
-    
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            <div class="contact-buttons">
-                <a href="https://wa.link/lwjuvu" target="_blank" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="tel:+50660941802" class="btn-telefono">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="mailto:serterorayo@gmail.com" class="btn-correo">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.instagram.com/sertero_mantenimiento_rayo?igsh=ZGUzMzM3NWJiOQ==" target="_blank" class="btn-instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
+      <div class="padre">
+        <div class="logo-container">
+          <img src="/imgs/logosertero.JPG" alt="Logo de Sertero" class="logo" />
         </div>
-        
+        <div class="nav">
+          <nav id="hamburgerMenu" class="menu">
+            <ul>
+              <li><a href="/index.html#servicios" class="">Servicios</a></li>
+              <li><a href="/pag/productos.html">Tienda</a></li>
+              <li><a href="/pag/nosotros.html">Nosotros</a></li>
+              <li>
+                <a href="carrito.html"
+                  ><i class="fa-solid fa-cart-shopping"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="contact-buttons">
+          <a href="https://wa.link/lwjuvu" target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="tel:+50660941802" class="btn-telefono">
+            <i class="fas fa-phone"></i>
+          </a>
+          <a href="mailto:serterorayo@gmail.com" class="btn-correo">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/sertero_mantenimiento_rayo?igsh=ZGUzMzM3NWJiOQ=="
+            target="_blank"
+            class="btn-instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
     </header>
     <section class="container mt-4">
-        <div id="product-detail" class="product-detail">
-            <!-- Detalles del producto se mostrarán aquí -->
-        </div>
+      <div id="product-detail" class="product-detail">
+        <!-- Detalles del producto se mostrarán aquí -->
+      </div>
 
-        <!-- Nuevo contenedor para reseñas -->
-        <div id="user-reviews" class="user-reviews mb-5">
-            <!-- Las reseñas de los usuarios se mostrarán aquí -->
-        </div>
+      <!-- Nuevo contenedor para reseñas -->
+      <div id="user-reviews" class="user-reviews mb-5">
+        <!-- Las reseñas de los usuarios se mostrarán aquí -->
+      </div>
     </section>
 
     <script>
-        // Obtiene el producto seleccionado de localStorage
-        const product = JSON.parse(localStorage.getItem("selectedProduct"));
-        const userName = ['Juan Perez', 'Sofia Perez', 'Carlos Ruiz', 'Laura Gómez', 'Pedro Martínez']
+      // Obtiene el producto seleccionado de localStorage
+      const product = JSON.parse(localStorage.getItem("selectedProduct"));
+      const userName = [
+        "Juan Perez",
+        "Sofia Perez",
+        "Carlos Ruiz",
+        "Laura Gómez",
+        "Pedro Martínez",
+      ];
 
-        // Verifica si el producto existe y muestra sus detalles
-        if (product) {
-            document.getElementById("product-detail").innerHTML = `
+      // Verifica si el producto existe y muestra sus detalles
+      if (product) {
+        document.getElementById("product-detail").innerHTML = `
                 <div class="image-container">
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <img src="${product.image}" alt="${
+          product.name
+        }" class="product-image">
                    
                 </div>
                 <div class="info-container">
                     <h2 class="text-left">${product.name}</h2>
-                    <p class="pt-4"><strong>Descripción:</strong> ${product.description || "No disponible"}</p>
+                    <p class="pt-4"><strong>Descripción:</strong> ${
+                      product.description || "No disponible"
+                    }</p>
                     <p><strong>Precio:</strong> ${product.price}</p>
-                    <p><strong>Cantidad disponible:</strong> ${product.quantity}</p>
-                    <p><strong>Categoría:</strong> ${product.category || "No especificado"}</p>
-                    <p><strong>Tiempo de entrega:</strong> ${product.delivery_time || "No especificado"}</p>
-                    <p><strong>Costo de envío:</strong> ${product.shipping_cost || "No especificado"}</p>
-                    <p><strong>Opciones de entrega:</strong> ${product.delivery_options && product.delivery_options.length > 0 
-                        ? product.delivery_options.join(", ") 
-                        : "No especificadas"}</p>
-                    <p><strong>Información de devolución:</strong> <a href="${product.return_info}" target="_blank">Ver información de cambios y devoluciones</a></p>
-                    <p><strong>Información de contacto:</strong> <a href="${product.contact_info}">Contactar</a></p>
-                    <p><strong>Garantía:</strong> ${product.warranty || "No especificada"}</p>
-                     <button class="btn-add-to-cart mt-4">Agregar al carrito</button>
+                   
+                    <p><strong>Categoría:</strong> ${
+                      product.category || "No especificado"
+                    }</p>
+                    <p><strong>Tiempo de entrega:</strong> ${
+                      product.delivery_time || "No especificado"
+                    }</p>
+                    <p><strong>Costo de envío:</strong> ${
+                      product.shipping_cost || "No especificado"
+                    }</p>
+                    <p><strong>Opciones de entrega:</strong> ${
+                      product.delivery_options &&
+                      product.delivery_options.length > 0
+                        ? product.delivery_options.join(", ")
+                        : "No especificadas"
+                    }</p>
+                    <p><strong>Información de devolución:</strong> <a href="${
+                      product.return_info
+                    }" target="_blank">Ver información de cambios y devoluciones</a></p>
+                    <p><strong>Información de contacto:</strong> <a href="${
+                      product.contact_info
+                    }">Contactar</a></p>
+                    <p><strong>Garantía:</strong> ${
+                      product.warranty || "No especificada"
+                    }</p>
+                    <button class="btn-add-to-cart mt-4">Agregar al carrito</button>
+
                 </div>
             `;
-            // Muestra las reseñas en el contenedor de reseñas separado
-            document.getElementById("user-reviews").innerHTML = `
+        // Muestra las reseñas en el contenedor de reseñas separado
+        document.getElementById("user-reviews").innerHTML = `
             <h2 class="">Reseñas de usuarios</h2>
             <ul class="d-flex justify-content-around mt-5">
-                ${product.user_reviews && product.user_reviews.length > 0 
-                    ? product.user_reviews.map((review) => {
-                        // Selecciona un nombre de usuario aleatorio
-                        const randomUserName = userName[Math.floor(Math.random() * userName.length)];
-                        return `
+                ${
+                  product.user_reviews && product.user_reviews.length > 0
+                    ? product.user_reviews
+                        .map((review) => {
+                          // Selecciona un nombre de usuario aleatorio
+                          const randomUserName =
+                            userName[
+                              Math.floor(Math.random() * userName.length)
+                            ];
+                          return `
                             <li>
                                
                                 <h4> <img src="/imgs/icons8-usuario-masculino-en-círculo-25.png" alt="" class="img-fluid rounded-circle pr-1">${randomUserName}</h4>
                                 <h3>${review.review}</h3>
-                                <p> ${'⭐'.repeat(review.rating)} (${review.rating} estrellas)</p>
+                                <p> ${"⭐".repeat(review.rating)} (${
+                            review.rating
+                          } estrellas)</p>
                             </li>
                         `;
-                    }).join("") 
-                    : "<li>No hay reseñas disponibles.</li>"}
+                        })
+                        .join("")
+                    : "<li>No hay reseñas disponibles.</li>"
+                }
             </ul>
         `;
-        } else {
-            document.getElementById("product-detail").innerHTML = "<p>No se encontró el producto.</p>";
-        }
+      } else {
+        document.getElementById("product-detail").innerHTML =
+          "<p>No se encontró el producto.</p>";
+      }
     </script>
 
+    <script>
+      // Función para agregar el producto al carrito
+      function addToCart(product) {
+        // Obtiene el carrito actual del localStorage o lo inicializa
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  
+        // Verificar si el producto ya existe en el carrito (usando 'id' como clave única)
+        const existingProduct = cart.find((item) => item.id === product.id);
+
+        if (existingProduct) {
+          // Si el producto ya está en el carrito, muestra un mensaje de advertencia
+          Swal.fire({
+            title: "¡Producto ya agregado!",
+            text: `${product.name} ya ha sido agregado a tu carrito.`,
+            icon: "info",
+            confirmButtonText: "Aceptar",
+          });
+        } else {
+          // Si el producto no está en el carrito, lo agrega
+          cart.push(product);
+
+          // Guarda el carrito actualizado en localStorage
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          // Muestra una alerta de confirmación con SweetAlert
+          Swal.fire({
+            title: "Producto agregado al carrito",
+            text: `${product.name} ha sido agregado a tu carrito.`,
+            icon: "success",
+            confirmButtonText: "Aceptar",
+          });
+        }
+      }
+
+      // Añadir evento al botón de agregar al carrito
+      document
+        .querySelector(".btn-add-to-cart")
+        .addEventListener("click", function () {
+          // Asegúrate de pasar el producto adecuado a la función (por ejemplo, un objeto 'product')
+          addToCart(product);
+        });
+    </script>
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Información</h3>
-                    <p>Aquí puedes agregar información relevante sobre la empresa o el servicio.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Enlaces</h3>
-                    <ul>
-                        <li><a href="#">Página Principal</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3>Redes Sociales</h3>
-                    <ul>
-
-                        <li><a
-                                href="https://www.instagram.com/sertero_mantenimiento_rayo?igsh=ZGUzMzM3NWJiOQ==">Instagram</a>
-                        </li>
-                        <li><a href="https://wa.link/lwjuvu">Whatsapp</a></li>
-                    </ul>
-                </div>
-            </div>
-            <p class="mt-5">&copy; 2024 Sertero. Todos los derechos reservados. Servicio técnico para gimnasios y
-                residenciales.</p>
-            <p>Desarrollado por <strong>Andrés Avilés Rodríguez</strong>.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Información</h3>
+            <p>
+              Aquí puedes agregar información relevante sobre la empresa o el
+              servicio.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h3>Enlaces</h3>
+            <ul>
+              <li><a href="#">Página Principal</a></li>
+              <li><a href="#">Servicios</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Redes Sociales</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.instagram.com/sertero_mantenimiento_rayo?igsh=ZGUzMzM3NWJiOQ=="
+                  >Instagram</a
+                >
+              </li>
+              <li><a href="https://wa.link/lwjuvu">Whatsapp</a></li>
+            </ul>
+          </div>
         </div>
+        <p class="mt-5">
+          &copy; 2024 Sertero. Todos los derechos reservados. Servicio técnico
+          para gimnasios y residenciales.
+        </p>
+        <p>Desarrollado por <strong>Andrés Avilés Rodríguez</strong>.</p>
+      </div>
     </footer>
 
-
-
     <script src="../index.js"></script>
-   
-</body>
+  </body>
 </html>
