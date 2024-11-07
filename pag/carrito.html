@@ -100,40 +100,37 @@
       </button>
     </section>
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
       // Cargar el carrito desde el localStorage
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Función para convertir los precios con formato "$1000" a números
-function parsePrice(price) {
-  return parseFloat(price.replace('$', '').replace(',', ''));
-}
+      // Función para convertir los precios con formato "$1000" a números
+      function parsePrice(price) {
+        return parseFloat(price.replace("$", "").replace(",", ""));
+      }
 
-function updateCart() {
-    let cartTableBody = document.getElementById("cart-items");
-    cartTableBody.innerHTML = ""; // Limpiar la tabla antes de volver a llenarla
-    let totalPrice = 0;
+      function updateCart() {
+        let cartTableBody = document.getElementById("cart-items");
+        cartTableBody.innerHTML = ""; // Limpiar la tabla antes de volver a llenarla
+        let totalPrice = 0;
 
-    cart.forEach((item, index) => {
-        // Si la cantidad no está definida o es 0, la inicializamos en 1
-        if (item.quantity <= 0 || !item.quantity) {
+        cart.forEach((item, index) => {
+          // Si la cantidad no está definida o es 0, la inicializamos en 1
+          if (item.quantity <= 0 || !item.quantity) {
             item.quantity = 1;
-        }
+          }
 
-        // Convertir el precio y el costo de envío a números usando parsePrice
-        const itemPrice = parsePrice(item.price);  // Convierte el precio de string a número
-        const itemShippingCost = parsePrice(item.shipping_cost);  // Convierte el costo de envío de string a número
+          // Convertir el precio y el costo de envío a números usando parsePrice
+          const itemPrice = parsePrice(item.price); // Convierte el precio de string a número
+          const itemShippingCost = parsePrice(item.shipping_cost); // Convierte el costo de envío de string a número
 
-        // Calculando subtotal y total con el costo de envío
-        const itemSubtotal = itemPrice * item.quantity;
-        const itemTotal = itemSubtotal + itemShippingCost;
+          // Calculando subtotal y total con el costo de envío
+          const itemSubtotal = itemPrice * item.quantity;
+          const itemTotal = itemSubtotal + itemShippingCost;
 
-        cartTableBody.innerHTML += `
+          cartTableBody.innerHTML += `
             <tr>
                 <td><img src="${item.image}" alt="${item.name}" class="img-fluid" width="50"></td>
                 <td>${item.name}</td>
@@ -146,13 +143,12 @@ function updateCart() {
             </tr>
         `;
 
-        totalPrice += itemTotal; // Sumar el total de cada producto
-    });
+          totalPrice += itemTotal; // Sumar el total de cada producto
+        });
 
-    // Actualizar el total general
-    document.getElementById("total-price").innerText = totalPrice;
-}
-
+        // Actualizar el total general
+        document.getElementById("total-price").innerText = totalPrice;
+      }
 
       // Función para eliminar un producto del carrito
       function removeItem(index) {
@@ -161,32 +157,41 @@ function updateCart() {
         updateCart(); // Actualizar la vista del carrito
       }
 
-      // Escuchar cambios en las cantidades
-      document
-        .getElementById("cart-items")
-        .addEventListener("input", function (event) {
-          if (event.target.classList.contains("quantity-input")) {
-            const index = event.target.getAttribute("data-index");
-            const newQuantity = parseInt(event.target.value);
-            if (newQuantity > 0) {
-              // Actualizar la cantidad del producto
-              cart[index].quantity = newQuantity;
+    // Escuchar cambios en las cantidades
+document
+  .getElementById("cart-items")
+  .addEventListener("input", function (event) {
+    if (event.target.classList.contains("quantity-input")) {
+      const index = event.target.getAttribute("data-index");
+      let newQuantity = parseInt(event.target.value);
 
-              // Actualizar el subtotal del producto
-              const itemSubtotal = cart[index].price * newQuantity;
-              const itemTotal = itemSubtotal + cart[index].shipping_cost;
+      if (newQuantity <= 0) {
+        // Si la cantidad es 0 o negativa, eliminamos el producto
+        removeItem(index);
+      } else {
+        // Si la cantidad es válida, la actualizamos
+        cart[index].quantity = newQuantity;
 
-              // Actualizar el subtotal y el total del producto en la tabla
-              const row = event.target.closest("tr");
-              row.querySelector(".item-subtotal").innerText = itemSubtotal;
-              row.querySelector(".item-total").innerText = itemTotal;
+        // Convertir el precio y el costo de envío a números
+        const itemPrice = parsePrice(cart[index].price);
+        const itemShippingCost = parsePrice(cart[index].shipping_cost);
 
-              // Actualizar el carrito y el total general
-              localStorage.setItem("cart", JSON.stringify(cart)); // Guardar el carrito actualizado
-              updateCart(); // Actualizar la vista del carrito
-            }
-          }
-        });
+        // Calcular el subtotal y el total del producto
+        const itemSubtotal = itemPrice * newQuantity;
+        const itemTotal = itemSubtotal + itemShippingCost;
+
+        // Actualizar la cantidad y los subtotales en la tabla
+        const row = event.target.closest("tr");
+        row.querySelector(".item-subtotal").innerText = itemSubtotal;
+        row.querySelector(".item-total").innerText = itemTotal;
+
+        // Actualizar el carrito y el total general
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCart(); // Actualizar la vista del carrito
+      }
+    }
+  });
+
 
       // Función para proceder al pago (simulación)
       document
@@ -214,7 +219,6 @@ function updateCart() {
       // Inicializar el carrito al cargar la página
       updateCart();
     </script>
-  
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/50660941802" class="whatsapp-float" target="_blank">
