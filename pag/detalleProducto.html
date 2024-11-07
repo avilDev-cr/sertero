@@ -150,7 +150,7 @@
 
                 </div>
             `;
-        // Muestra las reseñas en el contenedor de reseñas separado
+       
         document.getElementById("user-reviews").innerHTML = `
             <h2 class="">Reseñas de usuarios</h2>
             <ul class="d-flex justify-content-around mt-5">
@@ -194,18 +194,15 @@
         // Verificar si el producto ya existe en el carrito (usando 'id' como clave única)
         const existingProduct = cart.find((item) => item.id === product.id);
 
+        
         if (existingProduct) {
-          // Si el producto ya está en el carrito, muestra un mensaje de advertencia
-          Swal.fire({
-            title: "¡Producto ya agregado!",
-            text: `${product.name} ya ha sido agregado a tu carrito.`,
-            icon: "info",
-            confirmButtonText: "Aceptar",
-          });
-        } else {
-          // Si el producto no está en el carrito, lo agrega
-          cart.push(product);
-
+            // Si el producto ya está en el carrito, aumenta su cantidad
+            existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+          } else {
+            // Si el producto no está en el carrito, lo agrega con una cantidad inicial de 1
+            product.quantity = 1;
+            cart.push(product);
+          }
           // Guarda el carrito actualizado en localStorage
           localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -217,7 +214,7 @@
             confirmButtonText: "Aceptar",
           });
         }
-      }
+      
 
       // Añadir evento al botón de agregar al carrito
       document
