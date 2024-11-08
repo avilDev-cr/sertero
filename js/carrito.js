@@ -81,15 +81,8 @@ document
         icon: "success",
         confirmButtonText: "Aceptar",
       });
-      // Redirigir a la página de pago (simulación)
-      window.location.href = "/pago.html";
-    } else {
-      Swal.fire({
-        title: "Tu carrito está vacío",
-        text: "Agrega productos antes de proceder.",
-        icon: "warning",
-        confirmButtonText: "Aceptar",
-      });
+
+     
     }
   });
 
@@ -97,4 +90,3 @@ document
 updateCart();
 
 
-//ES EL MISMO QUE EN CARRITO HTML ....

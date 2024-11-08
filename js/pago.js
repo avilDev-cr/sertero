@@ -111,53 +111,104 @@ document
       }
     }
   });
+// Función para simular el pago al hacer clic en el botón "Realizar Pago"
+document.getElementById("checkout-btn").addEventListener("click", function () {
+  // Validación de campos del formulario de pago
+  const name = document.getElementById("name").value.trim();
+  const cardNumber = document.getElementById("cardnumber").value.trim();
+  const expirationDate = document.getElementById("expirationdate").value.trim();
+  const securityCode = document.getElementById("securitycode").value.trim();
 
-   // Función para simular el pago al hacer clic en el botón "Realizar Pago"
-   document.getElementById("checkout-btn").addEventListener("click", function () {
-    if (cart.length > 0) {
-      const totalAmount = document.getElementById("total-price").innerText;
-      Swal.fire({
-        title: "Monto a pagar",
-        text: `El monto total de tu compra es: ₡${totalAmount}. ¿Deseas confirmar el pago?`,
-        icon: "info",
-        showCancelButton: true,
-        confirmButtonText: "Confirmar",
-        cancelButtonText: "Cancelar"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // Si el usuario confirma el pago
-          Swal.fire({
-            title: "Pago exitoso",
-            text: "¡Gracias por tu compra! Tu pago ha sido procesado.",
-            icon: "success",
-            confirmButtonText: "Aceptar"
-          }).then(() => {
-            // Vaciar el carrito después de confirmar el pago
-            cart = [];
-            localStorage.setItem("cart", JSON.stringify(cart)); // Guardar el carrito vacío
-            updateCart(); // Actualizar la vista del carrito
-           
-          });
-        } else {
-          // Si el usuario cancela el pago
-          Swal.fire({
-            title: "Pago pendiente",
-            text: "Tu pago está pendiente. El carrito permanece con tus productos.",
-            icon: "info",
-            confirmButtonText: "Aceptar"
-          });
-        }
-      });
-    } else {
-      // Si el carrito está vacío
-      Swal.fire({
-        title: "Tu carrito está vacío",
-        text: "Agrega productos antes de proceder.",
-        icon: "warning",
-        confirmButtonText: "Aceptar"
-      });
-    }
-  });
+  // Verificar si todos los campos están completos
+  if (!name || !cardNumber || !expirationDate || !securityCode) {
+    Swal.fire({
+      title: "Campos incompletos",
+      text: "Por favor, completa todos los campos del método de pago antes de continuar.",
+      icon: "error",
+      confirmButtonText: "Aceptar"
+    });
+    return; // Detener la función si algún campo está vacío
+  }
+
+  // Proceder con el pago solo si el carrito tiene productos
+  if (cart.length > 0) {
+    const totalAmount = document.getElementById("total-price").innerText;
+    Swal.fire({
+      title: "Monto a pagar",
+      text: `El monto total de tu compra es: ₡${totalAmount}. ¿Deseas confirmar el pago?`,
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "Confirmar",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma el pago
+        Swal.fire({
+          title: "Pago exitoso",
+          text: "¡Gracias por tu compra! Tu pago ha sido procesado.",
+          icon: "success",
+          confirmButtonText: "Aceptar"
+        }).then(() => {
+          // Vaciar el carrito después de confirmar el pago
+          cart = [];
+          localStorage.setItem("cart", JSON.stringify(cart)); // Guardar el carrito vacío
+          updateCart(); // Actualizar la vista del carrito
+
+          // Restablecer campos del formulario de pago después de la compra
+          document.getElementById("name").value = "";
+          document.getElementById("cardnumber").value = "";
+          document.getElementById("expirationdate").value = "";
+          document.getElementById("securitycode").value = "";
+
+          // Crear la factura en PDF
+          generateInvoicePDF(name, totalAmount);
+        });
+      } else {
+        // Si el usuario cancela el pago
+        Swal.fire({
+          title: "Pago pendiente",
+          text: "Tu pago está pendiente. El carrito permanece con tus productos.",
+          icon: "info",
+          confirmButtonText: "Aceptar"
+        });
+      }
+    });
+  } else {
+    // Si el carrito está vacío
+    Swal.fire({
+      title: "Tu carrito está vacío",
+      text: "Agrega productos antes de proceder.",
+      icon: "warning",
+      confirmButtonText: "Aceptar"
+    });
+  }
+});
+
+// Función para generar la factura en PDF
+function generateInvoicePDF(name, totalAmount) {
+  // Crear una nueva instancia de jsPDF
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Título de la factura
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(18);
+  doc.text("Factura de Compra", 14, 20);
+
+  // Información del cliente
+  doc.setFontSize(12);
+  doc.text(`Nombre del cliente: ${name}`, 14, 30);
+
+  // Detalles de la compra
+  doc.text(`Monto total: ₡${totalAmount}`, 14, 40);
+
+  // Detalles adicionales (puedes personalizarlo)
+  doc.text(`Fecha de la compra: ${new Date().toLocaleDateString()}`, 14, 50);
+
+  // Finalizar el PDF
+  doc.save("factura_compra.pdf");
+}
+
 
 // Inicializar el carrito al cargar la página
 updateCart();
