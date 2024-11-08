@@ -235,9 +235,8 @@ footer {
     }
 }
 
-/* Agregar algo de estilo básico para los logos */
-.logo-container img {
-  width: 80px;
-  height: auto;
-  margin-top: 10px;
-}
+.card-logo {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
