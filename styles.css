@@ -579,35 +579,196 @@ header a {
     box-shadow: 0 0 10px #999;
 }
 
-.footer {
-    background: #000;
-    padding: 20px 0; 
+/* footer section */
+.footer_section {
+    background-color: #000;
     color: #ffffff;
-    
+    padding: 75px 0 40px 0;
+    text-align: center;
 }
 
-.footer ul{
-    list-style-type: none;
-    padding: 0;
+.footer_section h4 {
+    font-size: 28px;
 }
 
-.footer h3 {
-    margin-bottom: 15px; 
+.footer_section h4,
+.footer_section .footer-logo {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
-.footer p {
-    margin: 10px 0; 
-    color: #fff;
+.footer_section p {
+    color: #dbdbdb;
 }
 
-.footer a {
-    
+.footer_section .footer-col {
+    margin-bottom: 30px;
+}
+
+.footer_section .footer_contact .contact_link_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.footer_section .footer_contact .contact_link_box a {
+    margin: 5px 0;
+    color: #ebe0e0;
+}
+
+.footer_section .footer_contact .contact_link_box a i {
+    margin-right: 5px;
+}
+
+/* Cambio de color para los íconos en el footer */
+.footer_section .footer_contact .contact_link_box a i {
+    font-size: 18px; /* Tamaño del ícono */
+    color: #e71f1f; /* Color por defecto (rojo) */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.footer_section .footer_contact .contact_link_box a:hover {
+    color: #ffbe33;
+}
+
+.footer_section .footer-logo {
+    display: block;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 1;
+    color: #c00d0d;
+}
+
+.footer_section .footer-info {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer_section .footer-info p {
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer_section .footer-info p a {
+    color: inherit;
+}
+
+.footer_detail {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer_social {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.footer_social ul {
+    display: flex; /* Utiliza Flexbox para alinear los elementos en una fila */
+    justify-content: space-around; /* Espacia los elementos de manera uniforme */
+    padding: 0; /* Elimina el padding de la lista */
+    list-style-type: none; /* Elimina los puntos de lista */
+}
+
+.footer_social li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.footer_social .iso-pro a {
     text-decoration: none;
-    color: #4a94e4; 
 }
 
-.footer a:hover {
-    text-decoration: underline; 
+.footer_social .iso-pro svg {
+    width: 50px;
+    height: 50px;
+    fill: #e71f1f; /* Default color, change based on your design */
+    transition: transform 0.3s ease-in-out, fill 0.3s ease; /* Transición suave para el cambio de color y tamaño */
 }
 
+/* Efecto de animación en los iconos (escala y rebote) */
+.footer_social .iso-pro a:hover svg {
+    transform: scale(1.2) rotate(10deg); /* Escala y ligero giro al hacer hover */
+    fill: #007bff; /* Color en hover */
+}
 
+/* Animación de rebote */
+.footer_social .iso-pro a:hover svg {
+    animation: bounce 0.6s ease-in-out forwards; /* Llama a la animación de rebote */
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    30% {
+        transform: scale(1.1) translateY(-10px);
+    }
+    50% {
+        transform: scale(0.9) translateY(5px);
+    }
+    70% {
+        transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Estilo de los íconos de redes sociales (fuentes) */
+.footer_social .iso-pro a i {
+    font-size: 50px; /* Tamaño del icono */
+    color: #e71f1f; /* Color por defecto */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color y escala */
+}
+
+/* Efecto de escala y color al hacer hover en los íconos de texto */
+.footer_social .iso-pro a:hover i {
+    color: #007bff; /* Color al pasar el mouse */
+    transform: scale(1.1); /* Escala al pasar el mouse */
+}
+
+/* Estilo del texto debajo de los íconos */
+.footer_social .iso-pro .text {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #f3efef;
+    transition: opacity 0.3s ease; /* Efecto de desvanecimiento en el texto */
+}
+
+/* Desvanecimiento en el texto al hacer hover */
+.footer_social .iso-pro a:hover .text {
+    opacity: 0.6;
+}
+
+.footer-col a {
+    display: block; /* Asegura que los enlaces estén en una columna vertical */
+    color: white; /* Color blanco */
+    text-decoration: none; /* Quita el subrayado por defecto */
+    margin: 10px 0; /* Espaciado entre los enlaces */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.footer-col a:hover {
+    color: red; /* Cambia el color a rojo cuando el enlace tiene el hover */
+}
+
+.footer-info p {
+    font-size: 18px; /* Hace que el texto sea más grande */
+    font-style: italic; /* Aplica un estilo curvado al texto */
+    text-align: center; /* Centra el texto */
+    color: white; /* Cambia el color del texto a blanco (ajustable según lo necesites) */
+    letter-spacing: 1px; /* Espaciado entre letras para mayor claridad */
+}
+
+.footer-info p span {
+    font-weight: bold; /* Hace más destacada la parte de los años */
+}
