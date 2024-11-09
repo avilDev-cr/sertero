@@ -1,0 +1,84 @@
+/* Estilo base para la tarjeta */
+.team-item {
+    background-color: #0f0c0c; /* Color de fondo */
+    border-radius: 10px; /* Esquinas redondeadas */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asegura que la tarjeta ocupe toda la altura disponible */
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6), 0px 4px 12px rgba(255, 0, 0, 0.8); /* sombra roja y negra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el movimiento y sombra */
+    width: 100%; /* Asegura que la tarjeta ocupe todo el espacio disponible */
+    animation: slideUp 0.6s ease-out forwards; /* Animación de entrada */
+    opacity: 0; /* Empieza invisible */
+}
+
+
+
+/* Animación al cargar las tarjetas (entrada desde abajo hacia arriba) */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Comienza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Termina en la posición original */
+    }
+}
+
+/* Efecto de presionar la tarjeta */
+.team-item:active {
+    transform: scale(1.1); /* Aumentar el tamaño al presionar */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8), 0px 8px 18px rgba(255, 0, 0, 1); /* Sombra más intensa */
+    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Transición rápida */
+}
+
+/* Efecto de hover: agrandar la tarjeta y aumentar la sombra */
+.team-item:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8), 0px 6px 18px rgba(255, 0, 0, 1); /* Aumenta el sombreado */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavizar el cambio de tamaño y sombra */
+}
+
+/* Imagen dentro de la tarjeta */
+.team-item .img-fluid {
+    width: 150px; /* Tamaño fijo para todas las imágenes */
+    height: 150px;
+    object-fit: cover; /* Ajustar imagen */
+    margin-bottom: 20px;
+}
+
+/* Título y subtítulo */
+.team-item h5, .team-item span {
+    font-size: 18px; /* Tamaño de fuente más grande */
+    font-weight: bold;
+}
+
+/* Cambiar el tamaño de los iconos de redes sociales */
+.team-item .btn i {
+    font-size: 25px; /* Aumentar el tamaño de los iconos */
+}
+
+/* Ajustar espaciado de iconos */
+.team-item .d-flex {
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Efecto de redes sociales al pasar el mouse */
+.team-item .d-flex a:hover {
+    background-color: #007bff; /* Color de fondo cuando se pasa el mouse */
+}
+
+/* Asegura que las tarjetas no cambien de tamaño por diseño */
+@media (min-width: 992px) {
+    .col-lg-4 {
+        max-width: 400px; /* Ancho máximo para pantallas grandes */
+    }
+}
+.row.g-4 {
+    justify-content: center;
+  }
+  
+ 
