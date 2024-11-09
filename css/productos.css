@@ -21,6 +21,7 @@
     font-size: 1.2em; /* Tamaño de fuente para el título */
     color: #343a40; /* Color del texto */
     margin: 10px 0; /* Espaciado arriba y abajo del título */
+    padding-bottom: 100px; /* Espacio debajo del título */
 }
 .product-card h3 {
     font-size: 1.3em; /* Tamaño de fuente para el título */
@@ -62,7 +63,9 @@
     background-color: #b31414; /* Color de fondo del botón */
 }
 
+/* Agregar un margen superior en el select (styled-select) para separar el combo del título */
 .styled-select {
+    margin-top: 20px; /* Agregar un margen superior para separar el combo del título */
     margin-bottom: 1.2rem;
     width: 210px; /* Ancho */
     padding: 10px; /* Espaciado interno */
@@ -123,4 +126,28 @@ h2 .custom-accordion-button{
 
 .accordion-button::after {
     filter: brightness(0) invert(1);
+}
+
+/* Estilos para el select con ID categorySelect */
+#categorySelect.styled-select {
+    margin-bottom: 1.2rem;
+    width: 210px; /* Ancho */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo */
+    color: #333; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    appearance: none; /* Elimina el estilo por defecto del navegador */
+  
+    background-position: right 10px center; /* Posicionar el icono */
+    background-size: 10px; /* Tamaño del icono */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6), -3px -3px 5px rgba(179, 20, 20, 0.6); /* Sombra roja y negra */
+    transition: all 0.3s ease;
+}
+
+/* Cambiar el color al hacer hover sobre el select */
+#categorySelect.styled-select:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), -4px -4px 8px rgba(179, 20, 20, 0.8); /* Sombra más intensa al pasar el ratón */
+    border-color: #b31414; /* Borde rojo al pasar el mouse */
 }
