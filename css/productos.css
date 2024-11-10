@@ -21,7 +21,7 @@
     font-size: 1.2em; /* Tamaño de fuente para el título */
     color: #343a40; /* Color del texto */
     margin: 10px 0; /* Espaciado arriba y abajo del título */
-    padding-bottom: 100px; /* Espacio debajo del título */
+    padding-bottom: 30px; /* Espacio debajo del título */
 }
 .product-card h3 {
     font-size: 1.3em; /* Tamaño de fuente para el título */
