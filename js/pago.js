@@ -1,8 +1,3 @@
-
-
-
-
-
 // Cargar el carrito desde el localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let isPickup = false;
@@ -29,9 +24,7 @@ function updateCart() {
 
     // Calculando subtotal y total con el costo de envío
     const itemSubtotal = itemPrice * item.quantity;
-    const itemTotal = isPickup
-      ? itemSubtotal
-      : itemSubtotal + itemShippingCost;
+    const itemTotal = isPickup ? itemSubtotal : itemSubtotal + itemShippingCost;
 
     cartTableBody.innerHTML += `
       <tr>
@@ -111,7 +104,7 @@ document
       }
     }
   });
-// Función para simular el pago al hacer clic en el botón "Realizar Pago"
+
 document.getElementById("checkout-btn").addEventListener("click", function () {
   // Validación de campos del formulario de pago
   const name = document.getElementById("name").value.trim();
@@ -125,7 +118,7 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
       title: "Campos incompletos",
       text: "Por favor, completa todos los campos del método de pago antes de continuar.",
       icon: "error",
-      confirmButtonText: "Aceptar"
+      confirmButtonText: "Aceptar",
     });
     return; // Detener la función si algún campo está vacío
   }
@@ -139,7 +132,7 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
       icon: "info",
       showCancelButton: true,
       confirmButtonText: "Confirmar",
-      cancelButtonText: "Cancelar"
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         // Si el usuario confirma el pago
@@ -147,9 +140,12 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
           title: "Pago exitoso",
           text: "¡Gracias por tu compra! Tu pago ha sido procesado.",
           icon: "success",
-          confirmButtonText: "Aceptar"
+          confirmButtonText: "Aceptar",
         }).then(() => {
-          // Vaciar el carrito después de confirmar el pago
+          // Crear la factura en PDF antes de vaciar el carrito
+          generateInvoicePDF();
+
+          // Vaciar el carrito después de generar el PDF
           cart = [];
           localStorage.setItem("cart", JSON.stringify(cart)); // Guardar el carrito vacío
           updateCart(); // Actualizar la vista del carrito
@@ -159,9 +155,6 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
           document.getElementById("cardnumber").value = "";
           document.getElementById("expirationdate").value = "";
           document.getElementById("securitycode").value = "";
-
-          // Crear la factura en PDF
-          generateInvoicePDF(name, totalAmount);
         });
       } else {
         // Si el usuario cancela el pago
@@ -169,7 +162,7 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
           title: "Pago pendiente",
           text: "Tu pago está pendiente. El carrito permanece con tus productos.",
           icon: "info",
-          confirmButtonText: "Aceptar"
+          confirmButtonText: "Aceptar",
         });
       }
     });
@@ -179,135 +172,100 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
       title: "Tu carrito está vacío",
       text: "Agrega productos antes de proceder.",
       icon: "warning",
-      confirmButtonText: "Aceptar"
+      confirmButtonText: "Aceptar",
     });
   }
 });
 
-// Función para generar la factura en PDF
-function generateInvoicePDF(name, totalAmount) {
-  // Crear una nueva instancia de jsPDF
+
+
+function generateInvoicePDF() {
+  // Obtener los productos desde localStorage
+  let carrito = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Crear el documento PDF
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // Título de la factura
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(18);
-  doc.text("Factura de Compra", 14, 20);
+  // Establecer la fuente
+  doc.setFontSize(10);  // Reducir el tamaño de la fuente
 
-  // Información del cliente
-  doc.setFontSize(12);
-  doc.text(`Nombre del cliente: ${name}`, 14, 30);
+  // Agregar información de la empresa
+  doc.text("SERTERO S.A", 10, 10);
+  doc.text("Avenida Central, Alajuela, Costa Rica", 10, 15);
+  doc.text("Teléfono: +506 9040-8945", 10, 20);
+  doc.text("Correo: sertero@gmail.com", 10, 25);
+  
+  // Agregar el número de factura
+  doc.text(`Número de Factura: ${generateRandomInvoiceNumber()}`, 10, 35);
 
-  // Detalles de la compra
-  doc.text(`Monto total: ₡${totalAmount}`, 14, 40);
+  // Obtener el nombre del cliente (suponiendo que tienes esa información)
+  const clienteNombre = "Nombre del Cliente"; // Cambiar por el nombre del cliente real
+  doc.text(`Cliente: ${clienteNombre}`, 10, 40);
 
-  // Detalles adicionales (puedes personalizarlo)
-  doc.text(`Fecha de la compra: ${new Date().toLocaleDateString()}`, 14, 50);
+  // Agregar la fecha de la factura
+  doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 10, 45);
 
-  // Finalizar el PDF
-  doc.save("factura_compra.pdf");
+  // Crear el encabezado de la tabla
+  doc.text("Imagen", 10, 55);
+  doc.text("Nombre", 30, 55);
+  doc.text("Precio", 80, 55);
+  doc.text("Cantidad", 110, 55);
+  doc.text("Subtotal", 140, 55);
+  doc.text("Costo de Envío", 170, 55);
+  doc.text("Total", 200, 55);
+
+  let yPosition = 60;
+
+  // Iterar sobre los productos del carrito y agregar los datos a la tabla del PDF
+  carrito.forEach((producto) => {
+    const itemPrice = parsePrice(producto.price); // Convertir el precio a número
+    const itemShippingCost = parsePrice(producto.shipping_cost); // Convertir costo de envío a número
+    const itemSubtotal = itemPrice * producto.quantity;
+    const itemTotal = itemSubtotal + itemShippingCost;
+
+    // Agregar la imagen del producto (si está disponible)
+    if (producto.image) {
+      doc.addImage(producto.image, "JPEG", 10, yPosition, 15, 15); // Ajustar tamaño y posición
+    }
+
+    // Ajustar la posición para que el nombre no tape las otras columnas
+    doc.text(producto.name, 30, yPosition + 4, { maxWidth: 45, align: "left" });  // Ajuste automático de texto
+    doc.text(`${itemPrice.toLocaleString()}`, 80, yPosition + 4); // Ajustar la posición vertical para evitar solapamientos
+    doc.text(`${producto.quantity}`, 110, yPosition + 4); // Ajustar la posición vertical para evitar solapamientos
+    doc.text(`${itemSubtotal.toLocaleString()}`, 140, yPosition + 4); // Ajustar la posición vertical para evitar solapamientos
+    doc.text(`${itemShippingCost.toLocaleString()}`, 170, yPosition + 4); // Ajustar la posición vertical para evitar solapamientos
+    doc.text(`${itemTotal.toLocaleString()}`, 200, yPosition + 4); // Ajustar la posición vertical para evitar solapamientos
+
+    yPosition += 18; // Incrementar la posición vertical para la siguiente fila, más espacio para la imagen
+  });
+
+  // Agregar el total al final de la factura
+  const totalAmount = carrito.reduce((acc, item) => {
+    const itemPrice = parsePrice(item.price);
+    const itemShippingCost = parsePrice(item.shipping_cost);
+    const itemSubtotal = itemPrice * item.quantity;
+    const itemTotal = itemSubtotal + itemShippingCost;
+    return acc + itemTotal;
+  }, 0);
+
+  // Monto total
+  doc.text(`Monto Total: ${totalAmount.toLocaleString()}`, 10, yPosition + 10);
+
+  // Guardar el PDF
+  doc.save("factura_compras.pdf");
+
+  // Función para convertir los precios con formato "$1000" o "₡1000" a números
+  function parsePrice(price) {
+    // Eliminar símbolos de moneda y comas, luego convertir a número
+    return parseFloat(price.replace(/[₡$,]/g, ""));
+  }
+
+  // Función para generar un número de factura aleatorio
+  function generateRandomInvoiceNumber() {
+    return Math.floor(Math.random() * 1000000);
+  }
 }
-
 
 // Inicializar el carrito al cargar la página
 updateCart();
-
-//formulario
-
-// Evento de envío del formulario
-document.getElementById("payment-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita el envío del formulario sin validación
-  
-    const cardNumber = document.getElementById("card-number").value.trim();
-    const cardLogoContainer = document.getElementById("card-logo-container");
-  
-    // Limpiar cualquier logo previamente mostrado
-    cardLogoContainer.innerHTML = '';
-  
-    // Validación de la tarjeta (solo 16 dígitos)
-    if (!/^\d{16}$/.test(cardNumber)) {
-      // Mostrar mensaje de error con SweetAlert2
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Por favor, ingresa un número de tarjeta válido (16 dígitos).'
-      });
-      return;
-    }
-  
-    // Verificación de la marca de la tarjeta basada en el BIN (Bank Identification Number)
-    const cardType = getCardType(cardNumber);
-
-    if (cardType) {
-      // Mostrar el logo de la tarjeta
-      let cardLogo = '';
-      switch (cardType) {
-        case 'visa':
-          cardLogo = '<img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" alt="Visa" class="card-logo">';
-          break;
-        case 'mastercard':
-          cardLogo = '<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.elpoderdelasideas.com%2Fvale-la-pena-cambio-logo-mastercard-confia-plenamente-ello%2F&psig=AOvVaw0pIV_VRkN5ioOLCDjboScI&ust=1731119631368000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjrk6fZy4kDFQAAAAAdAAAAABAE" alt="MasterCard" class="card-logo">';
-          break;
-        case 'amex':
-          cardLogo = '<img src="https://1000marcas.net/wp-content/uploads/2020/03/logo-American-Express.png" alt="American Express" class="card-logo">';
-          break;
-        default:
-          cardLogo = '<p>Marca de tarjeta no reconocida.</p>';
-      }
-    
-    
-  
-      cardLogoContainer.innerHTML = cardLogo;
-    } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'No se pudo identificar la marca de la tarjeta.'
-      });
-    }
-  });
-  
-  // Función para determinar la marca de la tarjeta según el BIN (primeros 6 dígitos)
-  function getCardType(cardNumber) {
-    const firstTwoDigits = cardNumber.substring(0, 2);
-    const firstFourDigits = cardNumber.substring(0, 4);
-  
-    // Luhn Algorithm para verificar si el número es válido
-    if (!luhnCheck(cardNumber)) {
-      return null; // Si la tarjeta no pasa el algoritmo Luhn, es inválida
-    }
-  
-    // Verificación por tipo de tarjeta basada en los primeros dígitos (BIN)
-    if (/^4/.test(firstTwoDigits)) {
-      return 'visa'; // Tarjetas Visa comienzan con 4
-    } else if (/^5[1-5]/.test(firstTwoDigits)) {
-      return 'mastercard'; // MasterCard comienza con 51-55
-    } else if (/^3[47]/.test(firstTwoDigits)) {
-      return 'amex'; // American Express comienza con 34 o 37
-    } else {
-      return null; // Si no es uno de los tipos conocidos, retornar null
-    }
-  }
-  
-  // Algoritmo de Luhn para validar el número de tarjeta
-  function luhnCheck(cardNumber) {
-    let sum = 0;
-    let shouldDouble = false;
-  
-    // Empezamos desde el último dígito y vamos hacia atrás
-    for (let i = cardNumber.length - 1; i >= 0; i--) {
-      let digit = parseInt(cardNumber.charAt(i), 10);
-  
-      if (shouldDouble) {
-        digit *= 2;
-        if (digit > 9) digit -= 9; // Sumar los dígitos si el resultado es mayor que 9
-      }
-  
-      sum += digit;
-      shouldDouble = !shouldDouble; // Alternamos entre multiplicar por 2 y no
-    }
-  
-    return (sum % 10 === 0); // El número es válido si la suma es múltiplo de 10
-  }
-  
