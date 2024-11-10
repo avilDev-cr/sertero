@@ -185,8 +185,8 @@ function generateInvoicePDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // Establecer la fuente
-  doc.setFontSize(10);
+  // Establecer la fuente en negrita
+  doc.setFont("helvetica", "bold");
 
   // --- HEADER ---
   const headerHeight = 40;
@@ -209,8 +209,6 @@ function generateInvoicePDF() {
   const clienteNombre = document.getElementById("name").value.trim();
 
   doc.text(`Cliente: ${clienteNombre}`, doc.internal.pageSize.width / 2, headerHeight + 15, { align: "center" });
-
-
   doc.text(`Fecha: ${new Date().toLocaleDateString()}`, doc.internal.pageSize.width / 2, headerHeight + 20, { align: "center" });
 
   // Espacio entre el encabezado y el contenido
@@ -296,15 +294,15 @@ function generateInvoicePDF() {
     return acc + itemTotal;
   }, 0);
 
-  // Ajustar la posición para el "Monto Total"
-  const totalTextX = doc.internal.pageSize.width - 50;
-  doc.text(`Monto Total: ${totalAmount.toLocaleString()}`, totalTextX, yPosition + 10, { align: "right" });
+// Ajustar la posición para el "Monto Total" hacia la izquierda
+const totalTextX = doc.internal.pageSize.width - 200; // Ajustar la posición hacia la izquierda
+doc.text(`Monto Total: ${totalAmount.toLocaleString()}`, totalTextX, yPosition + 10, { align: "left" });
+
 
   // --- FOOTER ---
   doc.setFillColor(0, 0, 0);
   doc.rect(0, doc.internal.pageSize.height - 20, doc.internal.pageSize.width, 20, 'F');
   doc.setTextColor(255, 255, 255);
-  
 
   // Guardar el PDF
   doc.save("factura_compras.pdf");
