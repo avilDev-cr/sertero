@@ -305,7 +305,7 @@ doc.text(`Monto Total: ${totalAmount.toLocaleString()}`, totalTextX, yPosition +
   doc.setTextColor(255, 255, 255);
 
   // Guardar el PDF
-  doc.save("factura_compras.pdf");
+  doc.save("FACTURA_SERTERO.pdf");
 
   // Función para convertir los precios con formato "$1000" o "₡1000" a números
   function parsePrice(price) {
