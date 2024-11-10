@@ -206,8 +206,10 @@ function generateInvoicePDF() {
   doc.setFontSize(12);
   doc.text(`Número de Factura: ${generateRandomInvoiceNumber()}`, doc.internal.pageSize.width / 2, headerHeight + 10, { align: "center" });
 
-  const clienteNombre = "Nombre del Cliente";
+  const clienteNombre = document.getElementById("name").value.trim();
+
   doc.text(`Cliente: ${clienteNombre}`, doc.internal.pageSize.width / 2, headerHeight + 15, { align: "center" });
+
 
   doc.text(`Fecha: ${new Date().toLocaleDateString()}`, doc.internal.pageSize.width / 2, headerHeight + 20, { align: "center" });
 
@@ -302,7 +304,7 @@ function generateInvoicePDF() {
   doc.setFillColor(0, 0, 0);
   doc.rect(0, doc.internal.pageSize.height - 20, doc.internal.pageSize.width, 20, 'F');
   doc.setTextColor(255, 255, 255);
-  doc.text("Gracias por su compra", doc.internal.pageSize.width / 2, doc.internal.pageSize.height - 10, { align: "center" });
+  
 
   // Guardar el PDF
   doc.save("factura_compras.pdf");
