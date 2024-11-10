@@ -48,7 +48,7 @@ function updateCart() {
   // Aquí asignamos el total calculado al campo "Monto a pagar"
   document.getElementById(
     "amount-to-pay"
-  ).value = `₡${totalPrice.toLocaleString()}`;
+  ).value = `${totalPrice.toLocaleString()}`;
 
   document
     .getElementById("shipping-type")
