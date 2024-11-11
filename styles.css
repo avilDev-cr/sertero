@@ -193,10 +193,13 @@ header {
 
 
 #servicios h2 {
-    font-size: 2em;
+    font-size: 3em;
     margin-bottom: 40px;
-    color: #333;
+    color: #fff8f8;
+    font-style: italic;
+
 }
+
 
 .fondo-agendar {
     position: relative;
@@ -553,7 +556,54 @@ header a {
     font-size: 1.2rem;
 }
 
+/* Aplica el estilo a todas las tarjetas */
+.card {
+    border: 2px solid #ff0000; /* Borde de color rojo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 8px 15px rgba(196, 9, 9, 0.5); /* Sombra negra */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 350px; /* Aumenta el ancho de las tarjetas */
+  }
+  
+  /* Cambia la sombra y el efecto al pasar el mouse */
+  .card:hover {
+    box-shadow: 0 12px 25px rgba(255, 0, 0, 0.7); /* Sombra roja al hacer hover */
+    transform: translateY(-5px); /* Efecto de elevación */
+  }
 
+  .servicios .card {
+    background-color: black; /* Fondo negro para las tarjetas */
+    color: white; /* Letras en blanco */
+  }
+  
+  .servicios .card-title, 
+  .servicios .card-text, 
+  .servicios .text-agendar {
+    color: white; /* Asegura que los textos dentro de la tarjeta estén en blanco */
+  }
+  
+
+.button-agendar {
+    background-color: #111111; /* Color de fondo (WhatsApp verde) */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.text-agendar {
+    color: #ffffff; /* Texto blanco */
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bi-whatsapp {
+    color: #ffffff; /* Icono blanco */
+}
 
 
 .whatsapp-float {
@@ -772,3 +822,40 @@ header a {
 .footer-info p span {
     font-weight: bold; /* Hace más destacada la parte de los años */
 }
+
+#carouselExample .carousel-item img {
+    height: 800px; /* Ajusta esta altura según lo que necesites */
+    object-fit: cover; /* Esto asegura que la imagen mantenga su proporción sin distorsionarse */
+  }
+  
+  .carousel-item {
+    position: relative; /* Necesario para posicionar el cuadro dentro de la imagen */
+  }
+  
+  .carousel-caption {
+    width: auto; /* Asegura que el cuadro no se extienda demasiado */
+    max-width: 600px; /* Ancho máximo del cuadro */
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2rem; /* Tamaño de la fuente */
+    color: white; /* Color del texto */
+    background-color: black; /* Fondo negro */
+    padding: 5px 10px; /* Espaciado interno reducido */
+    border: 2px solid red; /* Borde rojo */
+    box-shadow: 0 0 10px red, 0 0 15px black; /* Sombra roja y negra */
+    border-radius: 5px; /* Bordes redondeados */
+    animation: fadeInUp 1s ease-out; /* Animación de entrada */
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

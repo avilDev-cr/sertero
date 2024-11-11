@@ -135,7 +135,7 @@ h2 {
 
 /* Añade margen inferior al label para separar del siguiente elemento */
 label[for="shipping-type"] {
-    font-size: 1.30rem;
+    font-size: 1.0rem;
     font-weight: bold;
     display: block;
     margin-bottom: 20px; /* Espacio adicional entre título y tabla */
