@@ -7,7 +7,7 @@ function parsePrice(price) {
   return parseFloat(price.replace("$", "").replace(",", ""));
 }
 
-function updateCart() {
+/*function updateCart() {
   let cartTableBody = document.getElementById("cart-items");
   cartTableBody.innerHTML = ""; // Limpiar la tabla antes de volver a llenarla
   let totalPrice = 0;
@@ -53,7 +53,58 @@ function updateCart() {
   document
     .getElementById("shipping-type")
     .addEventListener("change", updateCart);
+}*/
+
+
+function updateCart() {
+  let cartTableBody = document.getElementById("cart-items");
+  cartTableBody.innerHTML = ""; // Limpiar la tabla antes de volver a llenarla
+  let totalPrice = 0;
+
+  cart.forEach((item, index) => {
+    // Si la cantidad no está definida o es 0, la inicializamos en 1
+    if (item.quantity <= 0 || !item.quantity) {
+      item.quantity = 1;
+    }
+
+    // Convertir el precio a número usando parsePrice
+    const itemPrice = parsePrice(item.price);
+    const itemShippingCost = parsePrice(item.shipping_cost);
+
+    // Si es recogida en tienda, el costo de envío es 0
+    const shippingCostToDisplay = isPickup ? 0 : itemShippingCost;
+
+    // Calcular subtotal y total
+    const itemSubtotal = itemPrice * item.quantity;
+    const itemTotal = itemSubtotal + shippingCostToDisplay;
+
+    // Renderizar la fila de la tabla
+    cartTableBody.innerHTML += `
+      <tr>
+          <td><img src="${item.image}" alt="${item.name}" class="img-fluid" width="50"></td>
+          <td>${item.name}</td>
+          <td>${itemPrice}</td>
+          <td><input type="number" value="${item.quantity}" min="1" class="form-control quantity-input" data-index="${index}"></td>
+          <td class="item-subtotal">${itemSubtotal}</td>
+          <td class="item-shipping">${shippingCostToDisplay}</td>
+          <td class="item-total">${itemTotal}</td>
+          <td><button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Eliminar</button></td>
+      </tr>
+    `;
+
+    totalPrice += itemTotal;
+  });
+
+  // Actualizar el total general en la tabla
+  document.getElementById("total-price").innerText = totalPrice;
+
+  // Asignar el total calculado al campo "Monto a pagar"
+  document.getElementById("amount-to-pay").value = `${totalPrice.toLocaleString()}`;
+
+  // Escuchar cambios en el tipo de envío
+  document.getElementById("shipping-type").addEventListener("change", updateCart);
 }
+
 
 // Escuchar cambios en el tipo de envío
 document
