@@ -348,7 +348,7 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
 
 
 
-function generateInvoicePDF() {
+/*function generateInvoicePDF() {
   // Obtener los productos desde localStorage
   let carrito = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -381,6 +381,8 @@ function generateInvoicePDF() {
 
   doc.text(`Cliente: ${clienteNombre}`, doc.internal.pageSize.width / 2, headerHeight + 15, { align: "center" });
   doc.text(`Fecha: ${new Date().toLocaleDateString()}`, doc.internal.pageSize.width / 2, headerHeight + 20, { align: "center" });
+
+ 
 
   // Espacio entre el encabezado y el contenido
   const contentStartY = headerHeight + 30;
@@ -487,7 +489,159 @@ doc.text(`Monto Total: ${totalAmount.toLocaleString()}`, totalTextX, yPosition +
   function generateRandomInvoiceNumber() {
     return Math.floor(Math.random() * 1000000);
   }
+}*/
+
+
+function generateInvoicePDF() {
+  // Obtener los productos desde localStorage
+  let carrito = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Obtener el tipo de envío seleccionado
+  const shippingType = document.getElementById("shipping-type").value;
+
+  // Crear el documento PDF
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Establecer la fuente en negrita
+  doc.setFont("helvetica", "bold");
+
+  // --- HEADER ---
+  const headerHeight = 40;
+
+  doc.setFillColor(0, 0, 0); // Color negro
+  doc.rect(0, 0, doc.internal.pageSize.width, headerHeight, 'F');
+  doc.setTextColor(255, 255, 255);
+
+  doc.setFontSize(12);
+  doc.text("SERTERO S.A", doc.internal.pageSize.width / 2, 10, { align: "center" });
+  doc.setFontSize(10);
+  doc.text("Avenida Central, Alajuela, Costa Rica", doc.internal.pageSize.width / 2, 15, { align: "center" });
+  doc.text("Teléfono: +506 9040-8945", doc.internal.pageSize.width / 2, 20, { align: "center" });
+  doc.text("Correo: sertero@gmail.com", doc.internal.pageSize.width / 2, 25, { align: "center" });
+
+  doc.setTextColor(0, 0, 0);
+  doc.setFontSize(12);
+  doc.text(`Número de Factura: ${generateRandomInvoiceNumber()}`, doc.internal.pageSize.width / 2, headerHeight + 10, { align: "center" });
+
+  const clienteNombre = document.getElementById("name").value.trim();
+  doc.text(`Cliente: ${clienteNombre}`, doc.internal.pageSize.width / 2, headerHeight + 15, { align: "center" });
+  doc.text(`Fecha: ${new Date().toLocaleDateString()}`, doc.internal.pageSize.width / 2, headerHeight + 20, { align: "center" });
+
+  // Incluir el tipo de envío seleccionado
+  const shippingText = shippingType === "tienda" ? "Recogida en tienda" : "Envío a domicilio";
+  doc.text(`Tipo de Envío: ${shippingText}`, doc.internal.pageSize.width / 2, headerHeight + 25, { align: "center" });
+
+  // Espacio entre el encabezado y el contenido
+  const contentStartY = headerHeight + 30;
+
+  // --- TABLA DE PRODUCTOS ---
+  const paddingLeft = 15;  // Padding lateral de 15 unidades
+  const columnWidth = (doc.internal.pageSize.width - 2 * paddingLeft) / 6; // Ajustar el ancho de las columnas
+
+  // Cabecera de la tabla
+  doc.text("Imagen", paddingLeft, contentStartY + 5);
+  doc.text("Nombre", paddingLeft + columnWidth, contentStartY + 5);
+  doc.text("Precio", paddingLeft + 2 * columnWidth, contentStartY + 5);
+  doc.text("Cantidad", paddingLeft + 3 * columnWidth, contentStartY + 5);
+  doc.text("Subtotal", paddingLeft + 4 * columnWidth, contentStartY + 5);
+  doc.text("Envío", paddingLeft + 5 * columnWidth, contentStartY + 5);
+  doc.text("Total", paddingLeft + 6 * columnWidth, contentStartY + 5);
+
+  let yPosition = contentStartY + 10;
+
+  // Función para dividir texto largo en varias líneas
+  function splitTextToFit(text, maxWidth) {
+    const lines = [];
+    let currentLine = "";
+    const words = text.split(" ");
+
+    words.forEach(word => {
+      const testLine = currentLine ? currentLine + " " + word : word;
+      const testWidth = doc.getTextWidth(testLine);
+
+      if (testWidth <= maxWidth) {
+        currentLine = testLine;
+      } else {
+        lines.push(currentLine);
+        currentLine = word;
+      }
+    });
+
+    if (currentLine) {
+      lines.push(currentLine);
+    }
+
+    return lines;
+  }
+
+  // Iterar sobre los productos del carrito y agregar los datos a la tabla
+  carrito.forEach((producto) => {
+    const itemPrice = parsePrice(producto.price);
+    const itemShippingCost = parsePrice(producto.shipping_cost);
+    const itemSubtotal = itemPrice * producto.quantity;
+    const itemTotal = itemSubtotal + (shippingType === "tienda" ? 0 : itemShippingCost);  // Ajustar el total dependiendo del tipo de envío
+
+    // Agregar la imagen del producto (si está disponible)
+    if (producto.image) {
+      doc.addImage(producto.image, "JPEG", paddingLeft, yPosition, 15, 15);
+    }
+
+    // Dividir el nombre largo en varias líneas
+    const nombreLines = splitTextToFit(producto.name, columnWidth);
+
+    // Dibujar el nombre del producto, dividiéndolo en líneas si es necesario
+    let nombreYPosition = yPosition;
+    nombreLines.forEach((line, index) => {
+      doc.text(line, paddingLeft + columnWidth, nombreYPosition + index * 5);
+    });
+
+    // Resto de la tabla
+    doc.text(`${itemPrice.toLocaleString()}`, paddingLeft + 2 * columnWidth, yPosition + 4);
+    doc.text(`${producto.quantity}`, paddingLeft + 3 * columnWidth, yPosition + 4);
+    doc.text(`${itemSubtotal.toLocaleString()}`, paddingLeft + 4 * columnWidth, yPosition + 4);
+
+    // Mostrar "0" si el tipo de envío es "tienda"
+    const shippingCostToDisplay = shippingType === "tienda" ? 0 : itemShippingCost;
+    doc.text(`${shippingCostToDisplay.toLocaleString()}`, paddingLeft + 5 * columnWidth, yPosition + 4);
+
+    doc.text(`${itemTotal.toLocaleString()}`, paddingLeft + 6 * columnWidth, yPosition + 4);
+
+    yPosition += 15 + (nombreLines.length - 1) * 5; // Aumentar la posición Y según las líneas del nombre
+  });
+
+  // Agregar el total al final de la factura
+  const totalAmount = carrito.reduce((acc, item) => {
+    const itemPrice = parsePrice(item.price);
+    const itemShippingCost = parsePrice(item.shipping_cost);
+    const itemSubtotal = itemPrice * item.quantity;
+    const itemTotal = itemSubtotal + (shippingType === "tienda" ? 0 : itemShippingCost);  // Ajuste en el total
+    return acc + itemTotal;
+  }, 0);
+
+  // Ajustar la posición para el "Monto Total" hacia la izquierda
+  const totalTextX = doc.internal.pageSize.width - 200; // Ajustar la posición hacia la izquierda
+  doc.text(`Monto Total: ${totalAmount.toLocaleString()}`, totalTextX, yPosition + 10, { align: "left" });
+
+  // --- FOOTER ---
+  doc.setFillColor(0, 0, 0);
+  doc.rect(0, doc.internal.pageSize.height - 20, doc.internal.pageSize.width, 20, 'F');
+  doc.setTextColor(255, 255, 255);
+
+  // Guardar el PDF
+  doc.save("FACTURA_SERTERO.pdf");
+
+  // Función para convertir los precios con formato "$1000" o "₡1000" a números
+  function parsePrice(price) {
+    return parseFloat(price.replace(/[₡$,]/g, ""));
+  }
+
+  // Función para generar un número de factura aleatorio
+  function generateRandomInvoiceNumber() {
+    return Math.floor(Math.random() * 1000000);
+  }
 }
+
 
 
 // Inicializar el carrito al cargar la página
