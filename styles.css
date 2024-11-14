@@ -859,3 +859,12 @@ header a {
     }
   }
   
+  /* Asegura que los iconos se vean bien en pantallas pequeñas */
+@media (max-width: 768px) {
+    .contact-buttons a {
+        width: 40%; /* Aumenta el tamaño de los iconos en pantallas más pequeñas */
+        font-size: 10vw; /* Ajusta el tamaño de los iconos de acuerdo con el tamaño de pantalla */
+        justify-content: center; 
+        text-align: center;
+    }
+}
