@@ -75,7 +75,7 @@
   </header>
 
 
-  <section class="container mt-5">
+  <!-- <section class="container mt-5">
     <h2>Tu carrito de compras</h2>
     <table class="table">
       <thead>
@@ -91,12 +91,12 @@
         </tr>
       </thead>
       <tbody id="cart-items">
-        <!-- Los productos del carrito se mostrarán aquí -->
-      </tbody>
+       Los productos del carrito se mostrarán aquí -->
+      <!-- </tbody>
     </table>
 
     <div class="mb-3 text-center">
-      <!-- Centra todo el contenedor -->
+       Centra todo el contenedor 
       <label for="shipping-type" class="form-label">Selecciona el tipo de envío</label>
       <select class="form-select form-select-sm centered-select" id="shipping-type" aria-label="Tipo de envío">
         <option value="postal">Envío Postal</option>
@@ -108,7 +108,45 @@
       <h4>Total: <span id="total-price">0</span></h4>
     </div>
 
+  </section> --> 
+
+  <section class="container mt-5">
+    <h2>Tu carrito de compras</h2>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Costo de Envío</th>
+            <th>Total</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Los productos del carrito se mostrarán aquí -->
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="mb-3 text-center">
+      <label for="shipping-type" class="form-label">Selecciona el tipo de envío</label>
+      <select class="form-select form-select-sm centered-select" id="shipping-type" aria-label="Tipo de envío">
+        <option value="postal">Envío Postal</option>
+        <option value="tienda">Recogida en Tienda</option>
+      </select>
+    </div>
+  
+    <div class="d-flex justify-content-end">
+      <h4>Total: <span id="total-price">0</span></h4>
+    </div>
   </section>
+  
+
+
 
 
   <!-- PAGO DEL CARRITO-Prueba-->
