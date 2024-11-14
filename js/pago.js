@@ -105,7 +105,7 @@ document
     }
   });
 
-document.getElementById("checkout-btn").addEventListener("click", function () {
+/*document.getElementById("checkout-btn").addEventListener("click", function () {
   // Validación de campos del formulario de pago
   const name = document.getElementById("name").value.trim();
   const cardNumber = document.getElementById("cardnumber").value.trim();
@@ -175,7 +175,127 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
       confirmButtonText: "Aceptar",
     });
   }
+});*/
+
+document.getElementById("checkout-btn").addEventListener("click", function () {
+  // Validación de campos del formulario de pago
+  const name = document.getElementById("name").value.trim();
+  const cardNumber = document.getElementById("cardnumber").value.trim();
+  const expirationDate = document.getElementById("expirationdate").value.trim();
+  const securityCode = document.getElementById("securitycode").value.trim();
+
+  // Verificar si todos los campos están completos
+  if (!name || !cardNumber || !expirationDate || !securityCode) {
+    Swal.fire({
+      title: "Campos incompletos",
+      text: "Por favor, completa todos los campos del método de pago antes de continuar.",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    });
+    return;
+  }
+
+  // Limpiar el número de tarjeta (eliminar espacios)
+  const cleanCardNumber = cardNumber.replace(/\s+/g, "");
+
+  // Validación del número de tarjeta (Visa, MasterCard, American Express)
+  const visaRegex = /^4[0-9]{12,15}$/; // Visa inicia con 4 (13-16 dígitos)
+  const masterRegex = /^(51|52)[0-9]{14}$/; // MasterCard inicia con 51 o 52 (16 dígitos)
+  const amexRegex = /^(34|37)[0-9]{13}$/; // American Express inicia con 34 o 37 (15 dígitos)
+
+  if (!visaRegex.test(cleanCardNumber) && !masterRegex.test(cleanCardNumber) && !amexRegex.test(cleanCardNumber)) {
+    Swal.fire({
+      title: "Tarjeta inválida",
+      text: "Por favor, ingresa un número de tarjeta válido. Visa debe empezar con 4, MasterCard con 51 o 52, y American Express con 34 o 37.",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    });
+    return;
+  }
+
+  // Validación de la fecha de expiración (MM/YY)
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth() + 1;
+
+  // Separar el mes y el año de la fecha ingresada
+  const [expMonth, expYear] = expirationDate.split("/").map(num => parseInt(num, 10));
+
+  // Convertir el año a formato completo (por ejemplo, "24" a "2024")
+  const fullExpYear = expYear < 100 ? 2000 + expYear : expYear;
+
+  // Validar que el mes esté entre 1 y 12
+  if (isNaN(expMonth) || isNaN(fullExpYear) || expMonth < 1 || expMonth > 12) {
+    Swal.fire({
+      title: "Fecha de expiración inválida",
+      text: "El formato de la fecha debe ser MM/YY.",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    });
+    return;
+  }
+
+  // Verificar que la tarjeta no haya expirado
+  if (fullExpYear < currentYear || (fullExpYear === currentYear && expMonth < currentMonth)) {
+    Swal.fire({
+      title: "Fecha de expiración inválida",
+      text: "La fecha de expiración no puede ser anterior al mes y año actual.",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    });
+    return;
+  }
+
+  // Proceder con el pago solo si el carrito tiene productos
+  if (cart.length > 0) {
+    const totalAmount = document.getElementById("total-price").innerText;
+    Swal.fire({
+      title: "Monto a pagar",
+      text: `El monto total de tu compra es: ₡${totalAmount}. ¿Deseas confirmar el pago?`,
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "Confirmar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Pago exitoso",
+          text: "¡Gracias por tu compra! Tu pago ha sido procesado.",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+        }).then(() => {
+          generateInvoicePDF(); // Crear la factura en PDF
+
+          // Vaciar el carrito y restablecer el formulario
+          cart = [];
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCart();
+
+          document.getElementById("name").value = "";
+          document.getElementById("cardnumber").value = "";
+          document.getElementById("expirationdate").value = "";
+          document.getElementById("securitycode").value = "";
+        });
+      } else {
+        Swal.fire({
+          title: "Pago pendiente",
+          text: "Tu pago está pendiente. El carrito permanece con tus productos.",
+          icon: "info",
+          confirmButtonText: "Aceptar",
+        });
+      }
+    });
+  } else {
+    Swal.fire({
+      title: "Tu carrito está vacío",
+      text: "Agrega productos antes de proceder.",
+      icon: "warning",
+      confirmButtonText: "Aceptar",
+    });
+  }
 });
+
+
 
 function generateInvoicePDF() {
   // Obtener los productos desde localStorage
