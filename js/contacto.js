@@ -2,22 +2,22 @@ document.getElementById("submitButton").addEventListener("click", function (even
     event.preventDefault(); // Evitar el envío del formulario
 
     // Obtener los valores de los campos
-    const name = document.getElementById("text-input").value;
-    const email = document.getElementById("email-input").value;
-    const comment = document.getElementById("textarea-input").value;
-    const contactMethod = document.getElementById("select").value;
-    const clothing = Array.from(
-        document.getElementById("multiple-select").selectedOptions
+    const name = document.getElementById("inputNombre").value;
+    const email = document.getElementById("inputEmail").value;
+    const comment = document.getElementById("inputComentario").value;
+    const contactMethod = document.getElementById("selectContacto").value;
+    const products = Array.from(
+        document.getElementById("selectProductos").selectedOptions
     )
         .map((option) => option.text)
         .join(", ");
     const gender = document.querySelector(
-        'input[name="inline-radios"]:checked'
+        'input[name="radioGenero"]:checked'
     )
-        ? document.querySelector('input[name="inline-radios"]:checked').value
+        ? document.querySelector('input[name="radioGenero"]:checked').value
         : "";
     const howMet = Array.from(
-        document.querySelectorAll('input[type="checkbox"]:checked')
+        document.querySelectorAll('input[name="checkOrigen"]:checked')
     )
         .map((checkbox) => checkbox.parentNode.innerText.trim())
         .join(", ");
@@ -33,13 +33,13 @@ document.getElementById("submitButton").addEventListener("click", function (even
         errorMessage += "Por favor, introduce un email válido.\n";
     }
 
-    if (!validateRequiredFields(name, email, comment, contactMethod, clothing, gender, howMet)) {
+    if (!validateRequiredFields(name, email, comment, contactMethod, products, gender, howMet)) {
         errorMessage += "Todos los campos son obligatorios, excepto el de enviar archivo.\n";
     }
 
     // Validaciones para selecciones
-    if (!validateSelections(contactMethod, clothing, gender, howMet)) {
-        errorMessage += "Debes seleccionar al menos una opción de Método de contacto, Tipo de ropa, Género y Cómo nos conociste.\n";
+    if (!validateSelections(contactMethod, products, gender, howMet)) {
+        errorMessage += "Debes seleccionar al menos una opción de Método de contacto, Productos, Género y Cómo nos conociste.\n";
     }
 
     if (errorMessage) {
@@ -52,7 +52,7 @@ document.getElementById("submitButton").addEventListener("click", function (even
     localStorage.setItem("email", email);
     localStorage.setItem("comentario", comment);
     localStorage.setItem("metodoContacto", contactMethod);
-    localStorage.setItem("tipoRopa", clothing);
+    localStorage.setItem("productos", products);
     localStorage.setItem("genero", gender);
     localStorage.setItem("comoConociste", howMet);
 
@@ -61,7 +61,7 @@ document.getElementById("submitButton").addEventListener("click", function (even
     console.log("Email:", email);
     console.log("Comentario/Solicitud:", comment);
     console.log("Método de contacto:", contactMethod);
-    console.log("Tipo de ropa:", clothing);
+    console.log("Productos de interés:", products);
     console.log("Género:", gender);
     console.log("¿Cómo nos conociste?", howMet);
 });
@@ -79,34 +79,34 @@ function validateEmail(email) {
 }
 
 // Función para validar que todos los campos requeridos estén llenos
-function validateRequiredFields(name, email, comment, contactMethod, clothing, gender) {
+function validateRequiredFields(name, email, comment, contactMethod, products, gender) {
     return name.trim() !== "" && email.trim() !== "" && comment.trim() !== "";
 }
 
 // Función para validar selecciones
-function validateSelections(contactMethod, clothing, gender, howMet) {
-    return contactMethod !== "0" && clothing !== "" && gender !== "" && howMet !== "";
+function validateSelections(contactMethod, products, gender, howMet) {
+    return contactMethod !== "0" && products !== "" && gender !== "" && howMet !== "";
 }
 
 document.getElementById("redButton").addEventListener("click", function () {
     // Limpiar el formulario sin eliminar datos de localStorage
-    document.getElementById("text-input").value = "";
-    document.getElementById("email-input").value = "";
-    document.getElementById("textarea-input").value = "";
-    document.getElementById("select").value = "0";
+    document.getElementById("inputNombre").value = "";
+    document.getElementById("inputEmail").value = "";
+    document.getElementById("inputComentario").value = "";
+    document.getElementById("selectContacto").value = "0";
 
     // Limpiar el select múltiple
-    const multipleSelect = document.getElementById("multiple-select");
-    for (let option of multipleSelect.options) {
+    const selectProductos = document.getElementById("selectProductos");
+    for (let option of selectProductos.options) {
         option.selected = false;
     }
 
     // Limpiar los radio buttons
-    const radios = document.querySelectorAll('input[name="inline-radios"]');
+    const radios = document.querySelectorAll('input[name="radioGenero"]');
     radios.forEach(radio => radio.checked = false);
 
     // Limpiar checkboxes
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('input[name="checkOrigen"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
 
     console.log("Formulario ha sido limpiado, datos en localStorage permanecen.");
@@ -114,64 +114,32 @@ document.getElementById("redButton").addEventListener("click", function () {
 
 // Función para recuperar datos del localStorage (opcional)
 function loadData() {
-    document.getElementById("text-input").value = localStorage.getItem("nombre") || "";
-    document.getElementById("email-input").value = localStorage.getItem("email") || "";
-    document.getElementById("textarea-input").value = localStorage.getItem("comentario") || "";
-    document.getElementById("select").value = localStorage.getItem("metodoContacto") || "0";
+    document.getElementById("inputNombre").value = localStorage.getItem("nombre") || "";
+    document.getElementById("inputEmail").value = localStorage.getItem("email") || "";
+    document.getElementById("inputComentario").value = localStorage.getItem("comentario") || "";
+    document.getElementById("selectContacto").value = localStorage.getItem("metodoContacto") || "0";
 
     // Rellenar el select múltiple
-    const selectedClothes = localStorage.getItem("tipoRopa")
-        ? localStorage.getItem("tipoRopa").split(", ")
+    const selectedProducts = localStorage.getItem("productos")
+        ? localStorage.getItem("productos").split(", ")
         : [];
-    const multipleSelect = document.getElementById("multiple-select");
-    for (let option of multipleSelect.options) {
-        option.selected = selectedClothes.includes(option.text);
+    const selectProductos = document.getElementById("selectProductos");
+    for (let option of selectProductos.options) {
+        option.selected = selectedProducts.includes(option.text);
     }
 
     // Rellenar el radio button
     const genderStored = localStorage.getItem("genero");
     if (genderStored) {
-        document.querySelector(`input[name="inline-radios"][value="${genderStored}"]`).checked = true;
+        document.querySelector(`input[name="radioGenero"][value="${genderStored}"]`).checked = true;
     }
 
-    // Rellenar checkboxes
-    const howMet = localStorage.getItem("comoConociste")
-        ? localStorage.getItem("comoConociste").split(", ")
-        : [];
-    for (let checkbox of document.querySelectorAll('input[type="checkbox"]')) {
-        checkbox.checked = howMet.includes(checkbox.parentNode.innerText.trim());
+    // Rellenar los checkboxes
+    const howMetStored = localStorage.getItem("comoConociste");
+    if (howMetStored) {
+        const selectedHowMet = howMetStored.split(", ");
+        document.querySelectorAll('input[name="checkOrigen"]').forEach(checkbox => {
+            checkbox.checked = selectedHowMet.includes(checkbox.value);
+        });
     }
 }
-
-// Cargar datos al cargar la página
-window.onload = loadData;
-
-
-  function initMap() {
-    const start = { lat: 10.0121159, lng: -84.2259853 }; // Punto de inicio
-    const end = { lat: 10.015, lng: -84.230 }; // Punto de destino
-
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 14,
-      center: start,
-    });
-
-    const directionsService = new google.maps.DirectionsService();
-    const directionsRenderer = new google.maps.DirectionsRenderer();
-    directionsRenderer.setMap(map);
-
-    const request = {
-      origin: start,
-      destination: end,
-      travelMode: google.maps.TravelMode.DRIVING,
-    };
-
-    directionsService.route(request, (result, status) => {
-      if (status === google.maps.DirectionsStatus.OK) {
-        directionsRenderer.setDirections(result);
-      } else {
-        window.alert("Directions request failed due to " + status);
-      }
-    });
-  }
-
