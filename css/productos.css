@@ -1,3 +1,6 @@
+
+
+
 /* Estilos para las tarjetas de productos */
 .product-card {
     background-color: #ffffff; /* Fondo blanco para las tarjetas */
@@ -150,4 +153,42 @@ h2 .custom-accordion-button{
 #categorySelect.styled-select:hover {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), -4px -4px 8px rgba(179, 20, 20, 0.8); /* Sombra más intensa al pasar el ratón */
     border-color: #b31414; /* Borde rojo al pasar el mouse */
+}
+@media (max-width: 768px) {
+    .header-productos {
+        
+        flex-direction: column;
+        justify-content: center; /* Para alinear el contenido a la izquierda */
+    }
+    
+    .header-productos h1 {
+        margin-bottom: 10px; /* Espacio entre el título y el selector */
+    }
+
+    .header-productos div {
+        width: 100%; /* Asegura que el selector ocupe todo el ancho disponible */
+    }
+.categoria{
+    margin-left: 4rem;
+    
+}
+   
+}
+
+.header-productos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem; /* mb-4 en Bootstrap equivale a 1.5rem */
+}
+
+/* Título y contenedor del select */
+.header-productos h1 {
+    font-size: 2rem; /* Puedes ajustar el tamaño según prefieras */
+}
+
+.header-productos label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 0.5rem; /* me-2 en Bootstrap equivale a 0.5rem */
 }

@@ -53,16 +53,16 @@
     
 </header>
 
-<section class="productos container mt-4 mb-4">
+<section class="productos container mt-4 mb-4 ">
   <!-- Contenedor flex para alinear el título y el selector -->
-  <div class="d-flex justify-content-between align-items-center mb-4">
+  <div class="header-productos ">
       <!-- Título a la izquierda -->
       <h1>Máquinas de Gimnasio</h1>
       
       <!-- Contenedor del label y select a la derecha -->
       <div class="d-flex align-items-center">
-          <label for="categorySelect" class="me-2" style="font-size: 1.2rem; font-weight: bold;">CATEGORÍAS:</label>
-          <select id="categorySelect" class="styled-select" onchange="filterProductos(this.value)">
+         
+          <select id="categorySelect" class="styled-select categoria" onchange="filterProductos(this.value)">
               <option value="">Selecciona una categoría</option>
               <option value="Maquinas de cardio">Maquinas de cardio</option>
               <option value="Maquinas de pecho">Maquinas de pecho</option>
