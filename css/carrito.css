@@ -1,5 +1,5 @@
 /* Estilos generales */
-card {
+.card {
     margin: auto;
     max-width: 950px;
     width: 90%;
@@ -107,6 +107,9 @@ a:hover {
     #checkout-btn {
         font-size: 1rem;
         padding: 12px 30px;
+    }
+    .table{
+        max-width: 100%;
     }
 }
 
