@@ -169,8 +169,15 @@ h2 .custom-accordion-button{
         width: 100%; /* Asegura que el selector ocupe todo el ancho disponible */
     }
 .categoria{
-    margin-left: 4rem;
+    margin-left: 3rem;
     
+    
+}
+
+#categorySelect.styled-select {
+    margin-bottom: 0.1rem;
+    width: 400px; /* Ancho */
+  
 }
    
 }
