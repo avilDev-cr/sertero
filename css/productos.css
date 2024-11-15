@@ -168,11 +168,7 @@ h2 .custom-accordion-button{
     .header-productos div {
         width: 100%; /* Asegura que el selector ocupe todo el ancho disponible */
     }
-.categoria{
-    margin-left: 3rem;
-    
-    
-}
+
 
 #categorySelect.styled-select {
     margin-bottom: 0.1rem;
