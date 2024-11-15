@@ -1,69 +1,93 @@
-/* Estilos del contenedor del detalle del producto */
+/* Estilos generales para el contenedor del detalle del producto */
 .product-detail {
-    display: flex; /* Diseño en dos columnas */
-    justify-content: space-between; /* Espacio entre columnas */
-    margin-bottom: 40px; /* Espacio debajo del contenedor para separar del footer */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .product-image {
-    max-width: 100%; /* Imagen no excede el ancho del contenedor */
-    height: auto; /* Mantiene la proporción */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Contenedor de información */
 .info-container {
-    flex: 1; /* Ocupa el resto del espacio disponible */
-    padding-left: 20px; /* Espacio a la izquierda */
+    flex: 1;
+    padding-left: 20px;
 }
 
-/* Contenedor de la imagen */
 .image-container {
     display: flex;
-    flex-direction: column; /* Imagen y botón en columna */
-    align-items: center; /* Centra contenido horizontalmente */
-    margin-bottom: 20px; /* Espacio debajo de la imagen */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
     width: 55%;
 }
 
-/* Botón Agregar al Carrito */
 .btn-add-to-cart {
-    margin-top: 10px; /* Espacio entre imagen y botón */
+    margin-top: 10px;
     background-color: black;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 20px; /* Tamaño de fuente */
+    font-size: 20px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Transición suave */
+    transition: background-color 0.3s;
 }
 
 .btn-add-to-cart:hover {
-    background-color: #333; /* Color al pasar el mouse */
+    background-color: #333;
 }
 
-/* Título */
 h2 {
-    font-size: 2em; /* Tamaño del título */
-    text-transform: uppercase; /* Todo en mayúsculas */
+    font-size: 2em;
+    text-transform: uppercase;
     justify-content: flex-start;
 }
 
-/* Estilos para las reseñas */
 .user-reviews h3 {
-    font-size: 1em; /* Tamaño de la fuente de reseñas */
+    font-size: 1em;
 }
 
 ul {
-    list-style-type: none; /* Sin puntos en la lista */
-    padding: 0; /* Quita el padding */
+    list-style-type: none;
+    padding: 0;
 }
 
 ul li p {
-    font-style: italic; /* Texto cursivo para las reseñas */
+    font-style: italic;
 }
 
-/* Separación de la sección de reseñas */
 .user-reviews {
-    margin-top: 30px; /* Espacio encima de la sección de reseñas */
+    margin-top: 10rem;
+}
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .image-container, .info-container {
+        width: 100%;
+        padding-left: 0; 
+    }
+
+    .btn-add-to-cart {
+        width: 100%; 
+        text-align: center;
+    }
+
+    .user-reviews ul {
+       
+        display: flex;
+        flex-direction: column; 
+        width: 100%; 
+    }
+
+    .user-reviews ul li {
+        width: 100%; 
+        padding-bottom: 2rem;
+    }
 }
