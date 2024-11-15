@@ -398,11 +398,12 @@ header a {
     
     } 
     .div2 img{
+        
         padding: 1rem;
         width: 100%;
     }
     .div3 { grid-area: 1 / 5 / 5 / 6; 
-        
+        margin-top: 9rem;
     }
 
     .contact-buttons{
@@ -824,7 +825,7 @@ header a {
 }
 
 #carouselExample .carousel-item img {
-    height: 800px; /* Ajusta esta altura según lo que necesites */
+    height: 100%; /* Ajusta esta altura según lo que necesites */
     object-fit: cover; /* Esto asegura que la imagen mantenga su proporción sin distorsionarse */
   }
   
@@ -834,7 +835,7 @@ header a {
   
   .carousel-caption {
     width: auto; /* Asegura que el cuadro no se extienda demasiado */
-    max-width: 600px; /* Ancho máximo del cuadro */
+    max-width: 100%; /* Ancho máximo del cuadro */
   }
   
   .carousel-caption h5 {
