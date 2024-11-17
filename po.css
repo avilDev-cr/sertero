@@ -1,3 +1,504 @@
+header h1 {
+    margin-top: .2rem;
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.0em;
+    margin-top: 0.5em;
+}
+header {
+    background: #000;
+    color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo {
+    width: 10px; 
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+
+.hamburger {
+    position: fixed;
+    cursor: pointer;
+    font-size: 30px;
+    right: 30px;
+    top: 20px;
+    z-index: 1000;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));
+}
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    color: white;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.menu.open {
+    right: 0; 
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 10px 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 0px 10px;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+    border-radius: 1.4rem;
+}
+
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+
+
+
+
+.contact-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.contact-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    width: 26%; 
+    font-size: 5vw;
+    padding: 4%; 
+    border-radius: 10%;
+    text-align: center;
+    margin: 3%;
+}
+
+
+.btn-whatsapp {
+    background-color: #25D366;
+}
+
+.btn-telefono {
+    background-color: #7d7d7d; 
+}
+
+.btn-correo {
+    background-color: #b3190b; 
+}
+
+.btn-instagram {
+    background-color: #ffa500; 
+}
+
+
+.contact-buttons a:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+
+.service-place-section h2{
+    margin-top: 3rem;
+}
+
+#servicios .services {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos de las cards */
+#servicios .service {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 20px;
+    width: calc(50% - 20px);
+    text-align: left;
+    opacity: 0; 
+    transform: translateY(25px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease; /* Unifica transiciones */
+}
+
+.service-visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.service:last-of-type {
+    border-bottom: none;
+}
+
+
+#servicios h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: #fff8f8;
+    font-style: italic;
+
+}
+
+
+.fondo-agendar {
+    position: relative;
+    background-image: url('/imgs/chica30.png');
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    padding: 20% 0;  
+    color: white;  
+    text-align: center;
+    z-index: 1;
+}
+
+.fondo-agendar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+
+
+
+
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.logo {
+    width: 150px; 
+    height: auto;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 2rem; 
+    margin-top: 0.5em;
+    text-align: center;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px; 
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 0;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    color: #ddd;
+}
+
+
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -250px; 
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: right 0.3s ease;
+        z-index: 999;
+        
+    }
+
+    .menu.open {
+
+        padding-top: 4rem;
+        right: 0; 
+      
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 10rem;
+        
+    }
+    .menu ul li a{
+        font-size: 16px;
+     text-align: end;
+     padding-right: 2rem;
+        
+    }
+    .hamburger {
+        display: block; 
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+    
+
+    .service-place {
+        
+        display: flex; /* Para alinear los elementos en una fila */
+    }
+    .service-place-section h2{
+        margin-top: 5rem;
+        text-align: center;
+    }
+    
+    .place {
+        position: relative; /* Necesario para posicionar el texto absoluto */
+        margin: 10px; /* Espaciado entre imágenes */
+    }
+    
+    .place img {
+        display: block; /* Para quitar el espacio debajo de la imagen */
+        width: 100%; /* Para que la imagen ocupe todo el ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+    .servicios{
+        margin-top: 5rem;
+    }
+    .text-overlay {
+        position: absolute; /* Posición absoluta para el texto */
+        top: 50%; /* Centra verticalmente */
+        left: 50%; /* Centra horizontalmente */
+        transform: translate(-50%, -50%); /* Ajusta la posición al centro */
+        color: white; /* Color del texto */
+        font-size: 1.2rem; /* Tamaño del texto */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+        text-align: center; /* Centrar texto */
+      
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-buttons a {
+        width: 65px;
+        height: 65px; 
+        font-size: 28px; 
+        padding: 10px; 
+        margin: 5px;
+    }
+    .padre{
+        width: 100%;
+        display: flex;
+        margin-left: 4rem;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .nav{
+        width: auto;
+        margin-left: 10rem;
+        
+       
+    }
+
+    .contact-buttons{
+        display: none;
+    }
+    h2{
+        text-align: center;
+        padding-top: 3rem;
+   
+    }
+    .h2footer{
+        text-align: center;
+      
+    }
+    .hamburger {
+        display: none; 
+    }
+
+    .menu {
+       
+      padding: 0;
+        position: static; 
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        display: flex; 
+        
+        
+    }
+
+    .menu ul {
+        display: flex; 
+        gap: 3rem;
+        width: 0rem;
+    }
+
+    .menu ul li {
+        margin: 0;
+       
+    }
+
+    .menu ul li a {
+        color: #fff; 
+    }
+
+    .logo-container {
+        display: flex;
+        flex-direction: row;
+       
+     
+        width: 12rem;
+    }
+
+    
+    .logo {
+        margin-bottom: 0.2rem;
+        width: 8rem; 
+        height: auto;
+        border-radius: 0.5rem;
+       
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between; 
+        align-items: flex-end;
+        width: 100%; 
+    }
+    .contact-buttons a {
+        width: 30px;
+        height: 30px; 
+        font-size: 16px;
+        padding: 3px; 
+        margin: 3px; 
+    }
+
+    .service-place {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .place {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .place img {
+        display: block;
+        width: 100%;
+    }
+    .hero-text{
+        font-size: 4rem;
+    }
+   
+    .contact-buttons-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        max-width: 80%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+ 
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        padding-bottom: 80px;
+        font-size: 2.2em;
+        box-sizing: border-box;
+    }
+
+    .padre {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav, .logo-container, .contact-buttons {
+        flex: 1; /* Ajusta según lo necesario */
+    }
+}
+
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.menu ul li {
+    padding: 0px 0; 
+    margin: 0;
+    display: block;
+    
+}
+
+
+
+.menu ul li a{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
 /* Estilo para el título */
 .wrap_title {
     text-align: center;
@@ -223,4 +724,309 @@ hr {
 
 .custom-button span {
     font-weight: bold;
+}
+
+.text-agendar {
+    color: #ffffff; /* Texto blanco */
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+.bi-whatsapp {
+    color: #ffffff; /* Icono blanco */
+}
+
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-float i {
+    margin-top: 16px;
+}
+
+.whatsapp-float:hover {
+    box-shadow: 0 0 10px #999;
+}
+
+
+
+
+
+/* Estilos para el footer */
+.footer_section {
+    background-color: #000;
+    color: #ffffff;
+    padding: 75px 0 40px 0;
+    text-align: center;
+}
+
+.footer_section h4 {
+    font-size: 28px;
+}
+
+.footer_section h4,
+.footer_section .footer-logo {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.footer_section p {
+    color: #dbdbdb;
+}
+
+.footer_section .footer-col {
+    margin-bottom: 30px;
+}
+
+.footer_section .footer_contact .contact_link_box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer_section .footer_contact .contact_link_box a {
+    margin: 5px 0;
+    color: #ebe0e0;
+}
+
+.footer_section .footer_contact .contact_link_box a i {
+    margin-right: 5px;
+}
+
+/* Cambio de color para los íconos en el footer */
+.footer_section .footer_contact .contact_link_box a i {
+    font-size: 18px; /* Tamaño del ícono */
+    color: #e71f1f; /* Color por defecto (rojo) */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.footer_section .footer_contact .contact_link_box a:hover {
+    color: #ffbe33;
+}
+
+.footer_section .footer-logo {
+    display: block;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 1;
+    color: #c00d0d;
+}
+
+.footer_section .footer-info {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer_section .footer-info p {
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer_section .footer-info p a {
+    color: inherit;
+}
+
+.footer_detail {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer_social {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.footer_social ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer_social li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.footer_social .iso-pro a {
+    text-decoration: none;
+}
+
+.footer_social .iso-pro svg {
+    width: 50px;
+    height: 50px;
+    fill: #e71f1f;
+    transition: transform 0.3s ease-in-out, fill 0.3s ease;
+}
+
+/* Efecto de animación en los iconos */
+.footer_social .iso-pro a:hover svg {
+    transform: scale(1.2) rotate(10deg);
+    fill: #007bff;
+}
+
+/* Animación de rebote */
+.footer_social .iso-pro a:hover svg {
+    animation: bounce 0.6s ease-in-out forwards;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    30% {
+        transform: scale(1.1) translateY(-10px);
+    }
+    50% {
+        transform: scale(0.9) translateY(5px);
+    }
+    70% {
+        transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Estilo de los íconos de redes sociales */
+.footer_social .iso-pro a i {
+    font-size: 50px;
+    color: #e71f1f;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto de escala y color al hacer hover en los íconos de texto */
+.footer_social .iso-pro a:hover i {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Estilo del texto debajo de los íconos */
+.footer_social .iso-pro .text {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #f3efef;
+    transition: opacity 0.3s ease;
+}
+
+.footer_social .iso-pro a:hover .text {
+    opacity: 0.6;
+}
+
+.footer-col a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: red;
+}
+
+.footer-info p {
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.footer-info p span {
+    font-weight: bold;
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 768px) {
+    .footer_section .container {
+        padding: 0 15px;
+    }
+
+    /* Estilo para columnas en pantallas pequeñas */
+    .footer_section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_section .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Centrar la información de contacto */
+    .footer_section .footer_contact .contact_link_box {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Hacer que los iconos de redes sociales se alineen en una fila */
+    .footer_social ul {
+        flex-direction: column;
+    }
+
+    .footer_social li {
+        margin: 10px 0;
+    }
+
+    /* Ajustar tamaños de íconos y texto */
+    .footer_social .iso-pro svg,
+    .footer_social .iso-pro a i {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer_social .iso-pro .text {
+        font-size: 12px;
+    }
+}
+
+/* Media Query para dispositivos extra pequeños */
+@media (max-width: 480px) {
+    .footer_section {
+        padding: 60px 0 20px;
+    }
+
+    .footer_section h4 {
+        font-size: 24px;
+    }
+
+    .footer_section .footer-logo {
+        font-size: 30px;
+    }
+
+    /* Ajustar los íconos y redes sociales en dispositivos muy pequeños */
+    .footer_social .iso-pro svg,
+    .footer_social .iso-pro a i {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer_section .footer_contact .contact_link_box a {
+        font-size: 14px;
+    }
 }
