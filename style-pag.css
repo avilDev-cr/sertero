@@ -1,0 +1,226 @@
+/* Estilo para el título */
+.wrap_title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: rgb(253, 249, 249); /* Texto en blanco */
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 40px; /* Separación superior */
+    margin-bottom: 20px; /* Separación inferior ampliada */
+    font-weight: bold;
+    text-shadow: 
+    2px 2px 5px rgba(0, 0, 0, 0.7),  /* Sombra negra */
+    -2px -2px 3px rgba(255, 0, 0, 0.6); /* Sombra roja */
+    letter-spacing: 2px; /* Espaciado entre letras (opcional) */
+    text-transform: uppercase;
+}
+
+/* Estilo para el bloque del título */
+.block-effect {
+    font-style: italic; /* Letra cursiva */
+}
+
+/* Sombra en rojo y negro */
+.block-reveal {
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.7),  /* Sombra negra */
+        -2px -2px 3px rgba(143, 42, 138, 0.6); /* Sombra roja */
+    font-style: italic; /* Letra cursiva */
+}
+
+.row .text-center h3,
+.row .text-center p {
+    color: white; /* Cambia el color de la letra a blanco */
+}
+
+/* Estilos para las imágenes circulares */
+.img-circle {
+    width: 150px; /* Tamaño fijo de la imagen */
+    height: 150px; /* Mantener la imagen cuadrada */
+    border-radius: 50%; /* Hacerla circular */
+    object-fit: cover; /* Ajustar la imagen dentro del círculo */
+    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo para el título */
+h3 {
+    margin-top: 20px; /* Espacio entre la imagen y el título */
+    margin-bottom: 15px; /* Espacio entre el título y el contenido */
+}
+
+/* Estilo para el párrafo */
+p.lead {
+    padding-top: 20px; /* Espacio entre el título y el contenido */
+}
+
+/* Estilo para cada tarjeta */
+.tarjeta {
+    border: 2px solid #ebe2e3; /* Borde rojo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Efecto de transición al pasar el mouse */
+    margin-bottom: 30px; /* Espacio inferior entre las tarjetas */
+    background-color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 0, 0, 0.6); /* Sombra sutil + sombra roja alrededor */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.tarjeta:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Ajustar margen de la imagen */
+.img-responsive {
+    width: 600px;  /* Ancho reducido */
+    height: 300px;  /* Altura reducida */
+    object-fit: cover; /* Ajusta la imagen para que no se distorsione */
+    margin-left: -80px;  /* Ajusta este valor para mover la imagen a la izquierda */
+}
+
+/* Estilo personalizado para la línea divisora */
+hr {
+    border: 0;  /* Elimina el borde por defecto */
+    height: 2px; /* Establece el grosor de la línea */
+    background-color:#e71f1f; /* Color de la línea */
+    margin-top: 20px;  /* Espacio arriba de la línea */
+    margin-bottom: 20px;  /* Espacio debajo de la línea */
+    width: 100%; /* Hace que la línea ocupe todo el ancho disponible */
+}
+
+/* Establecer el color de la letra a blanco en todo el contenido */
+#useit .lead,
+#useit p {
+    color: rgb(255, 255, 255);
+}
+
+.section-heading {
+    color: rgb(241, 225, 225);
+    text-shadow: 2px 2px 4px rgb(151, 144, 144); /* Ajusta los valores para el sombreado */
+}
+
+/* Estilos para la galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Cambia el valor mínimo para hacer las imágenes más anchas */
+    grid-gap: 15px; /* Reduce ligeramente el espaciado entre las imágenes */
+}
+
+.gallery .item {
+    overflow: hidden; /* Para ocultar las partes de las imágenes que sobresalen */
+    position: relative;
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    background-color: transparent; /* Elimina cualquier fondo no deseado */
+}
+
+.gallery .item img {
+    width: 130%;
+    height: 100%;
+    object-fit: cover; /* Ajusta las imágenes para que cubran el contenedor */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom al pasar el cursor sobre la imagen */
+.gallery .item:hover img {
+    transform: scale(1.1); /* Hace que la imagen se agrande ligeramente */
+}
+
+/* Media Queries para Responsividad */
+
+/* En pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 576px) {
+    .wrap_title {
+        font-size: 2.2rem; /* Reduce el tamaño de la fuente para pantallas pequeñas */
+        margin-top: 20px; /* Reduce la separación superior */
+        margin-bottom: 10px; /* Reduce la separación inferior */
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Una sola columna para pantallas pequeñas */
+        grid-gap: 10px; /* Menor espaciado entre imágenes */
+    }
+
+    .img-responsive {
+        width: 100%;  /* Hace que las imágenes ocupen todo el ancho disponible */
+        height: auto;  /* Ajusta la altura automáticamente */
+        margin-left: 0; /* Elimina el margen izquierdo */
+    }
+
+    .tarjeta {
+        padding: 15px; /* Reduce el espaciado interior de las tarjetas */
+    }
+}
+
+/* En pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+    .wrap_title {
+        font-size: 2.5rem; /* Ajusta el tamaño de la fuente para tabletas */
+        margin-top: 30px; /* Ajusta la separación superior */
+        margin-bottom: 15px; /* Ajusta la separación inferior */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+    }
+
+    .img-responsive {
+        width: 100%; /* Hace que las imágenes ocupen todo el ancho disponible */
+        height: auto; /* Ajusta la altura automáticamente */
+        margin-left: 0; /* Elimina el margen izquierdo */
+    }
+
+    .tarjeta {
+        padding: 18px; /* Ajusta el espaciado interior de las tarjetas */
+    }
+}
+
+/* En pantallas grandes (escritorios y pantallas más grandes) */
+@media (min-width: 1200px) {
+    .wrap_title {
+        font-size: 3rem; /* Tamaño de fuente más grande en pantallas grandes */
+        margin-top: 40px; /* Mantiene la separación superior */
+        margin-bottom: 20px; /* Mantiene la separación inferior */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Mantiene varias columnas */
+        grid-gap: 15px; /* Espaciado entre imágenes */
+    }
+
+    .img-responsive {
+        width: 600px; /* Ancho fijo para imágenes en pantallas grandes */
+        height: 300px; /* Altura fija para imágenes en pantallas grandes */
+        margin-left: -80px; /* Mantiene el margen izquierdo */
+    }
+
+    .tarjeta {
+        padding: 20px; /* Espaciado interior de las tarjetas */
+    }
+}
+
+.content-section-c{
+
+   background-image: url('/imgs/chicos.jpeg');
+   height: 200px;
+}
+
+.custom-button {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-button:hover {
+    background-color: #444; /* Fondo gris oscuro al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.custom-button span {
+    font-weight: bold;
+}
