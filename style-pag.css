@@ -761,7 +761,7 @@ hr {
     box-shadow: 0 0 10px #999;
 }
 
-/* footer section */
+/* Estilos para el footer */
 .footer_section {
     background-color: #000;
     color: #ffffff;
@@ -789,13 +789,9 @@ hr {
 }
 
 .footer_section .footer_contact .contact_link_box {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .footer_section .footer_contact .contact_link_box a {
@@ -852,10 +848,10 @@ hr {
 }
 
 .footer_social ul {
-    display: flex; /* Utiliza Flexbox para alinear los elementos en una fila */
-    justify-content: space-around; /* Espacia los elementos de manera uniforme */
-    padding: 0; /* Elimina el padding de la lista */
-    list-style-type: none; /* Elimina los puntos de lista */
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style-type: none;
 }
 
 .footer_social li {
@@ -870,19 +866,19 @@ hr {
 .footer_social .iso-pro svg {
     width: 50px;
     height: 50px;
-    fill: #e71f1f; /* Default color, change based on your design */
-    transition: transform 0.3s ease-in-out, fill 0.3s ease; /* Transición suave para el cambio de color y tamaño */
+    fill: #e71f1f;
+    transition: transform 0.3s ease-in-out, fill 0.3s ease;
 }
 
-/* Efecto de animación en los iconos (escala y rebote) */
+/* Efecto de animación en los iconos */
 .footer_social .iso-pro a:hover svg {
-    transform: scale(1.2) rotate(10deg); /* Escala y ligero giro al hacer hover */
-    fill: #007bff; /* Color en hover */
+    transform: scale(1.2) rotate(10deg);
+    fill: #007bff;
 }
 
 /* Animación de rebote */
 .footer_social .iso-pro a:hover svg {
-    animation: bounce 0.6s ease-in-out forwards; /* Llama a la animación de rebote */
+    animation: bounce 0.6s ease-in-out forwards;
 }
 
 @keyframes bounce {
@@ -903,17 +899,17 @@ hr {
     }
 }
 
-/* Estilo de los íconos de redes sociales (fuentes) */
+/* Estilo de los íconos de redes sociales */
 .footer_social .iso-pro a i {
-    font-size: 50px; /* Tamaño del icono */
-    color: #e71f1f; /* Color por defecto */
-    transition: transform 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color y escala */
+    font-size: 50px;
+    color: #e71f1f;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Efecto de escala y color al hacer hover en los íconos de texto */
 .footer_social .iso-pro a:hover i {
-    color: #007bff; /* Color al pasar el mouse */
-    transform: scale(1.1); /* Escala al pasar el mouse */
+    color: #007bff;
+    transform: scale(1.1);
 }
 
 /* Estilo del texto debajo de los íconos */
@@ -922,36 +918,105 @@ hr {
     margin-top: 5px;
     font-size: 14px;
     color: #f3efef;
-    transition: opacity 0.3s ease; /* Efecto de desvanecimiento en el texto */
+    transition: opacity 0.3s ease;
 }
 
-/* Desvanecimiento en el texto al hacer hover */
 .footer_social .iso-pro a:hover .text {
     opacity: 0.6;
 }
 
 .footer-col a {
-    display: block; /* Asegura que los enlaces estén en una columna vertical */
-    color: white; /* Color blanco */
-    text-decoration: none; /* Quita el subrayado por defecto */
-    margin: 10px 0; /* Espaciado entre los enlaces */
-    font-size: 16px; /* Tamaño de la fuente */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 .footer-col a:hover {
-    color: red; /* Cambia el color a rojo cuando el enlace tiene el hover */
+    color: red;
 }
 
 .footer-info p {
-    font-size: 18px; /* Hace que el texto sea más grande */
-    font-style: italic; /* Aplica un estilo curvado al texto */
-    text-align: center; /* Centra el texto */
-    color: white; /* Cambia el color del texto a blanco (ajustable según lo necesites) */
-    letter-spacing: 1px; /* Espaciado entre letras para mayor claridad */
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
 }
 
 .footer-info p span {
-    font-weight: bold; /* Hace más destacada la parte de los años */
+    font-weight: bold;
 }
 
+/* Media Queries para adaptabilidad */
+@media (max-width: 768px) {
+    .footer_section .container {
+        padding: 0 15px;
+    }
+
+    /* Estilo para columnas en pantallas pequeñas */
+    .footer_section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_section .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Centrar la información de contacto */
+    .footer_section .footer_contact .contact_link_box {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Hacer que los iconos de redes sociales se alineen en una fila */
+    .footer_social ul {
+        flex-direction: column;
+    }
+
+    .footer_social li {
+        margin: 10px 0;
+    }
+
+    /* Ajustar tamaños de íconos y texto */
+    .footer_social .iso-pro svg,
+    .footer_social .iso-pro a i {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer_social .iso-pro .text {
+        font-size: 12px;
+    }
+}
+
+/* Media Query para dispositivos extra pequeños */
+@media (max-width: 480px) {
+    .footer_section {
+        padding: 60px 0 20px;
+    }
+
+    .footer_section h4 {
+        font-size: 24px;
+    }
+
+    .footer_section .footer-logo {
+        font-size: 30px;
+    }
+
+    /* Ajustar los íconos y redes sociales en dispositivos muy pequeños */
+    .footer_social .iso-pro svg,
+    .footer_social .iso-pro a i {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer_section .footer_contact .contact_link_box a {
+        font-size: 14px;
+    }
+}
