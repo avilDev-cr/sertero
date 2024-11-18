@@ -8,6 +8,7 @@
   <title>Sertero</title>
   <link rel="icon" href="/imgs/faviconsertero.jpg" type="image/jpg">
   <link rel="shortcut icon" href="/imgs/faviconsertero.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="/prueba.css"> <!--QUITar-->
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/block.css">
   <link rel="stylesheet" href="/css/button.css">
@@ -21,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body style="background-color: rgb(37, 14, 14);">
+<body style="background-color: rgb(10, 10, 10);">
 
   <header class="header">
     <div class="padre">
@@ -80,7 +81,7 @@
 
 
 
-
+<!--
 
   <main>
 
@@ -218,7 +219,227 @@
       ride: 'carousel' // Activar la animación automática
     });
   </script>
+-->
+
+
+<main>
+
+
+    <!--TARJETAS INFO-->
+    <div id="whatis" class="content-section-b" style="border-top: 0">
+      <div class="container">
+          <!-- Título centrado con estilos personalizados -->
+          <div class="row">
+              <div class="col-12 text-center">
+                  <h2 class="wrap_title">Rompe tus límites, no tu equipo de entrenamiento</h2>
+              </div>
+          </div>
+
+          <!-- Espacio adicional entre el título y el contenido -->
+          <div class="spacer" style="height: 50px;"></div>
+          <div class="row">
+              <style>
+                  /* Aseguramos que las tarjetas estén alineadas en la misma línea */
+                  .row {
+                      display: flex;
+                      /* Usar Flexbox para controlar la disposición en fila */
+                      justify-content: space-between;
+                      /* Espacio uniforme entre las tarjetas */
+                      flex-wrap: nowrap;
+                      /* Evita que las tarjetas se acomoden en varias líneas */
+                      gap: 20px;
+                      /* Espacio entre las tarjetas (ajustar el valor según se necesite) */
+                      margin-left: 0;
+                      margin-right: 0;
+                  }
+
+                  /* Ajustes para las columnas que contienen las tarjetas */
+                  .col-sm-4 {
+                      flex: 1 1 calc(33.33% - 20px);
+                      /* Cada tarjeta ocupa un 33.33% del ancho disponible */
+                      box-sizing: border-box;
+                      padding: 15px;
+                      /* Añadir espacio entre las tarjetas */
+                  }
+              </style>
+              <div class="col-sm-4 wow fadeInDown text-center tarjeta" id="tarjeta1">
+                  <img class="rotate img-circle" src="/imgs/ARCHIVO01.png" alt="Imagen de gimnasio">
+                  <h3>Mantén tu gimnasio seguro, limpio, bonito y fresco</h3>
+                  <p class="lead">¡Di adiós a las inspecciones en papel que se pierden u olvidan! Con Sertero,
+                      centraliza todo tu mantenimiento en una sola plataforma. Mantén a tu equipo de limpieza y
+                      técnicos enfocados en las tareas prioritarias, mejorando la eficiencia y asegurando que nada se
+                      quede sin resolver. ¡Transforma tu gestión de mantenimiento y alcanza un nivel superior de
+                      productividad!</p>
+              </div>
+
+              <div class="col-sm-4 wow fadeInDown text-center tarjeta" id="tarjeta2">
+                  <img class="rotate img-circle" src="/imgs/herramienta.png" alt="Imagen de equipo duradero">
+                  <h3>Asegurar equipo duradero con inspecciones</h3>
+                  <p class="lead">Maximiza el valor de todas tus máquinas de gimnasio con un mantenimiento preventivo
+                      de calidad. Asegura el mejor retorno de inversión al tener a tus técnicos realizando revisiones
+                      periódicas de cada equipo, desde máquinas de remo hasta cintas de correr, ventiladores, correas
+                      y más. Detecta el desgaste a tiempo y mantén todo en condiciones óptimas para ofrecer una
+                      experiencia sin interrupciones a tus usuarios. ¡Con un mantenimiento adecuado, tus máquinas
+                      durarán más y rendirán mejor!</p>
+              </div>
+
+              <div class="col-sm-4 wow fadeInDown text-center tarjeta" id="tarjeta3">
+                  <img class="rotate img-circle" src="/imgs/solic.jpg" alt="Imagen de solicitud de mantenimiento">
+                  <h3>Centralizar las solicitudes de mantenimiento en un solo lugar</h3>
+                  <p class="lead">¿El elíptico no funciona? Simplemente toma una foto de la pieza rota, añade una
+                      breve descripción y envíala a nuestro portal de contacto. Nuestro equipo de mantenimiento
+                      recibirá la solicitud y se encargará de asignarla al técnico más cercano para su pronta
+                      reparación. ¡Actuamos rápidamente para evitar que se convierta en un problema de seguridad para
+                      tus clientes!</p>
+              </div>
+          </div>
+
+
+
+      </div>
+  </div>
+
+  <!-- Use it -->
+
+  <!-- Título centrado con estilos personalizados -->
+  <div class="row">
+      <div class="col-12 text-center">
+          <h2 class="wrap_title">Brindamos un servicio personalizado para cada lugar</h2>
+      </div>
+  </div>
+
+  <!-- Primera sección (como está actualmente) -->
+  <div id="useit" class="content-section-a">
+      <div class="container">
+          <div class="row">
+              <!-- Imagen a la derecha -->
+              <div class="col-sm-6 col-md-6 pull-right wow fadeInRightBig">
+                  <img class="img-responsive" src="/imgs/hoteles.jpg" alt="">
+              </div>
+              <!-- Contenido a la izquierda -->
+              <div class="col-sm-6 col-md-6 wow fadeInLeftBig" data-animation-delay="200">
+                  <h3 class="section-heading">HOTELES</h3>
+                  <p class="lead">
+                      En nuestro servicio personalizado, nos enfocamos en ofrecer a cada hotel una experiencia única,
+                      adaptada a las necesidades específicas de sus huéspedes. Ya sea que busques mejorar la
+                      comodidad, optimizar el servicio al cliente o implementar innovadoras soluciones tecnológicas,
+                      estamos aquí para ayudarte a transformar tu espacio en un referente de excelencia.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <hr>
+
+  <!-- Segunda sección (imagen a la izquierda y contenido a la derecha) -->
+  <div id="useit" class="content-section-a">
+      <div class="container">
+          <div class="row">
+              <!-- Imagen a la izquierda -->
+              <div class="col-sm-6 col-md-6 wow fadeInLeftBig">
+                  <img class="img-responsive" src="/imgs/residenciales.jpg" alt="">
+              </div>
+              <!-- Contenido a la derecha -->
+              <div class="col-sm-6 col-md-6 pull-left wow fadeInRightBig" data-animation-delay="200">
+                  <h3 class="section-heading">RESIDENCIALES</h3>
+                  <p class="lead">
+                      Ofrecemos soluciones personalizadas para residenciales, mejorando espacios comunes, optimizando
+                      la distribución y ofreciendo tecnología avanzada para el confort de los residentes. Trabajamos
+                      estrechamente con cada cliente para crear ambientes únicos y de alta calidad.
+
+
+
+
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <hr>
+
+  <!-- Tercera sección (igual que la primera) -->
+  <div id="useit" class="content-section-a">
+      <div class="container">
+          <div class="row">
+              <!-- Imagen a la derecha -->
+              <div class="col-sm-6 col-md-6 pull-right wow fadeInRightBig">
+                  <img class="img-responsive" src="/imgs/residencialgym.jpeg" alt="">
+              </div>
+              <!-- Contenido a la izquierda -->
+              <div class="col-sm-6 col-md-6 wow fadeInLeftBig" data-animation-delay="200">
+                  <h3 class="section-heading">CENTROS DE REHABILITACIÓN FÍSICA</h3>
+                  <p class="lead">
+                      Ofrecemos mantenimiento especializado para equipos de rehabilitación física, asegurando su
+                      óptimo funcionamiento y creando espacios seguros y cómodos para los pacientes. Trabajamos con
+                      cada centro para garantizar un ambiente de recuperación eficaz y de alta calidad.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div id="screen" class="content-section-b">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                  <h2>PRODUCTOS</h2>
+                  <p class="lead" style="margin-top:0">LO MEJOR EN EQUIPOS SERTERO</p>
+              </div>
+          </div>
+          <div class="row wow bounceInUp">
+              <!-- Galería de imágenes -->
+              <div class="gallery">
+                  <a href="/imgs/BT-E03-Bodytone-Press-de-pecho-inclinado-incline-Chest-Press-Mod-600x600.webp" class="image-link">
+                      <div class="item">
+                          <img class="img-responsive img-rounded" src="/imgs/BT-E03-Bodytone-Press-de-pecho-inclinado-incline-Chest-Press-Mod-600x600.webp">
+                      </div>
+                  </a>
+                  <a href="/imgs/BT-EVOU4-Bodytone-Bicicleta-Vertical-BT-EVOU4.jpg.webp" class="image-link">
+                      <div class="item">
+                          <img class="img-responsive img-rounded" src="/imgs/BT-EVOU4-Bodytone-Bicicleta-Vertical-BT-EVOU4.jpg.webp" alt="Bodytone Bicicleta Vertical">
+                      </div>
+                  </a>
+                  <a href="/imgs/BT-E23-Bodytone-Aperturas-y-deltoides-Pec-Fly-and-Rear-Delt-BT-E23.webp" class="image-link">
+                      <div class="item">
+                          <img class="img-responsive img-rounded" src="/imgs/BT-E23-Bodytone-Aperturas-y-deltoides-Pec-Fly-and-Rear-Delt-BT-E23.webp" alt="Aperturas y deltoides Bodytone">
+                      </div>
+                  </a>
+                  <!-- Agrega más imágenes si es necesario -->
+              </div>
+              
+          </div>
+      </div>
+  </div>
+
+  <hr>
   
+  <div class="content-section-c">
+      <div class="container">
+          <div class="row justify-content-center">
+              <!-- Título y descripción centralizada -->
+              <div class="col-md-6 text-center text-white">
+                  <h2>¡Nuevos Lanzamientos!</h2>
+                  <p class="lead" style="margin-top: 0;">Descubre nuestros últimos productos.</p>
+  
+                  <!-- Botón Tienda -->
+                  <div class="mockup-content">
+                      <div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1">
+                          <button type="button" class="custom-button" onclick="window.location.href='/pag/productos.html';">
+                              <span>MÁS</span>
+                            </button>
+                            
+                      </div>
+                  </div>
+              </div>  
+          </div>
+      </div>
+  </div>
+  
+
+</main>
 
   <a href="https://wa.me/50660941802" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
