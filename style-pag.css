@@ -251,7 +251,7 @@ header a {
     color: #ddd;
 }
 
-/* Medias queries para pantallas pequeñas */
+
 @media (max-width: 768px) {
     .menu {
         position: fixed;
@@ -264,25 +264,28 @@ header a {
         justify-content: flex-start;
         transition: right 0.3s ease;
         z-index: 999;
+        
     }
 
     .menu.open {
+
         padding-top: 4rem;
         right: 0; 
+      
     }
 
     .menu ul {
         flex-direction: column;
         gap: 20px;
         margin-top: 10rem;
+        
     }
-
-    .menu ul li a {
+    .menu ul li a{
         font-size: 16px;
-        text-align: end;
-        padding-right: 2rem;
+     text-align: end;
+     padding-right: 2rem;
+        
     }
-
     .hamburger {
         display: block; 
     }
@@ -290,44 +293,43 @@ header a {
     .logo-container {
         margin-left: 0;
     }
+    
 
     .service-place {
-        display: flex;
+        
+        display: flex; /* Para alinear los elementos en una fila */
     }
-
-    .service-place-section h2 {
+    .service-place-section h2{
         margin-top: 5rem;
         text-align: center;
     }
-
+    
     .place {
-        position: relative;
-        margin: 10px;
+        position: relative; /* Necesario para posicionar el texto absoluto */
+        margin: 10px; /* Espaciado entre imágenes */
     }
-
+    
     .place img {
-        display: block;
-        width: 100%;
-        height: auto;
+        display: block; /* Para quitar el espacio debajo de la imagen */
+        width: 100%; /* Para que la imagen ocupe todo el ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
     }
-
-    .servicios {
+    .servicios{
         margin-top: 5rem;
     }
-
     .text-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 1.2rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-        text-align: center;
+        position: absolute; /* Posición absoluta para el texto */
+        top: 50%; /* Centra verticalmente */
+        left: 50%; /* Centra horizontalmente */
+        transform: translate(-50%, -50%); /* Ajusta la posición al centro */
+        color: white; /* Color del texto */
+        font-size: 1.2rem; /* Tamaño del texto */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+        text-align: center; /* Centrar texto */
+      
     }
 }
 
-/* Medias queries para pantallas grandes (min-width: 768px) */
 @media (min-width: 768px) {
     .contact-buttons a {
         width: 65px;
@@ -336,79 +338,85 @@ header a {
         padding: 10px; 
         margin: 5px;
     }
-
-    .padre {
+    .padre{
         width: 100%;
         display: flex;
         margin-left: 4rem;
         justify-content: space-evenly;
         align-items: center;
     }
-
-    .nav {
+    .nav{
         width: auto;
         margin-left: 10rem;
+        
+       
     }
 
-    .contact-buttons {
+    .contact-buttons{
         display: none;
     }
-
-    h2 {
+    h2{
         text-align: center;
         padding-top: 3rem;
+   
     }
-
-    .h2footer {
+    .h2footer{
         text-align: center;
+      
     }
-
     .hamburger {
         display: none; 
     }
 
     .menu {
-        padding: 0;
+       
+      padding: 0;
         position: static; 
         width: auto;
         height: auto;
         background-color: transparent;
         display: flex; 
+        
+        
     }
 
     .menu ul {
         display: flex; 
         gap: 3rem;
+        width: 0rem;
     }
 
     .menu ul li {
         margin: 0;
+       
     }
 
     .menu ul li a {
-        color: #fff;
+        color: #fff; 
     }
 
     .logo-container {
         display: flex;
         flex-direction: row;
+       
+     
         width: 12rem;
     }
 
+    
     .logo {
         margin-bottom: 0.2rem;
         width: 8rem; 
         height: auto;
         border-radius: 0.5rem;
+       
     }
-
     .header-content {
         display: flex;
         justify-content: space-between; 
         align-items: flex-end;
         width: 100%; 
     }
-
     .contact-buttons a {
         width: 30px;
         height: 30px; 
@@ -421,21 +429,20 @@ header a {
         display: flex;
         justify-content: space-between;
     }
-
+    
     .place {
         position: relative;
         display: inline-block;
     }
-
+    
     .place img {
         display: block;
         width: 100%;
     }
-
-    .hero-text {
+    .hero-text{
         font-size: 4rem;
     }
-
+   
     .contact-buttons-footer {
         margin-top: 20px;
         display: flex;
@@ -445,6 +452,7 @@ header a {
         margin-right: auto;
     }
 
+ 
     .text-overlay {
         position: absolute;
         bottom: 0;
@@ -464,9 +472,8 @@ header a {
         justify-content: space-between;
         align-items: center;
     }
-
     .nav, .logo-container, .contact-buttons {
-        flex: 1;
+        flex: 1; /* Ajusta según lo necesario */
     }
 }
 
