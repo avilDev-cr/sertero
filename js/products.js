@@ -69,7 +69,7 @@ function displayProducts(products) {
         button.appendChild(title);
         button.appendChild(precio);
 
-        const buttonAdd = document.createElement('button');
+        /*const buttonAdd = document.createElement('button');
         buttonAdd.className = 'btn-add mb-2';
         buttonAdd.textContent = 'Agregar al carrito';
         buttonAdd.onclick = () => addToCart(product.id);
@@ -77,7 +77,18 @@ function displayProducts(products) {
         cardDiv.appendChild(button);
         cardDiv.appendChild(buttonAdd);
         colDiv.appendChild(cardDiv);
-        productListElement.appendChild(colDiv);
+        productListElement.appendChild(colDiv);*/
+
+         // Cambia el texto del botón y acción
+         const buttonAdd = document.createElement('button');
+         buttonAdd.className = 'btn-add mb-2';
+         buttonAdd.textContent = 'Más detalles'; // Cambiado de "Agregar al carrito" a "Más detalles"
+         buttonAdd.onclick = () => viewProductDetail(product.id); // Redirigir al detalle del producto
+ 
+         cardDiv.appendChild(button);
+         cardDiv.appendChild(buttonAdd);
+         colDiv.appendChild(cardDiv);
+         productListElement.appendChild(colDiv);
     });
 }
 
