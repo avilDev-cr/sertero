@@ -328,6 +328,10 @@ header a {
         text-align: center; /* Centrar texto */
       
     }
+    .row{
+      
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 768px) {

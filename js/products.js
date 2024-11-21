@@ -1,6 +1,7 @@
 // Variable global para almacenar los productos
 let allProducts = [];
 
+
 // Función que filtra productos por categoría
 function filterProductos(category) {
     const productListElement = document.getElementById('product-list');
@@ -20,6 +21,30 @@ function filterProductos(category) {
     displayProducts(filteredProducts);
 }
 
+function addToCart(product) {
+    // Busca si el producto ya está en el carrito
+    const existingProduct = cart.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        // Incrementa la cantidad si ya existe en el carrito
+        existingProduct.quantity += 1;
+    } else {
+        // Agrega un nuevo producto al carrito
+        cart.push({
+            ...product,
+            quantity: 1, // Agrega cantidad inicial
+        });
+    }
+
+    // Actualiza el carrito en el localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    Swal.fire({
+        title: "Producto agregado",
+        text: `"${product.name}" ha sido agregado al carrito.`,
+        icon: "success",
+        confirmButtonText: "Aceptar",
+    });
+}
 
 function loadProducts() {
     fetch('/json/products.json') 
@@ -36,7 +61,6 @@ function loadProducts() {
         .catch(error => console.error("Hubo un problema al cargar los productos:", error));
 }
 
-// Nueva función para mostrar productos
 function displayProducts(products) {
     const productListElement = document.getElementById('product-list');
     productListElement.innerHTML = ''; // Limpiar la lista de productos
@@ -69,28 +93,19 @@ function displayProducts(products) {
         button.appendChild(title);
         button.appendChild(precio);
 
-        /*const buttonAdd = document.createElement('button');
+        // Botón "Agregar al carrito"
+        const buttonAdd = document.createElement('button');
         buttonAdd.className = 'btn-add mb-2';
         buttonAdd.textContent = 'Agregar al carrito';
-        buttonAdd.onclick = () => addToCart(product.id);
+        buttonAdd.onclick = () => addToCart(product);
 
         cardDiv.appendChild(button);
         cardDiv.appendChild(buttonAdd);
         colDiv.appendChild(cardDiv);
-        productListElement.appendChild(colDiv);*/
-
-         // Cambia el texto del botón y acción
-         const buttonAdd = document.createElement('button');
-         buttonAdd.className = 'btn-add mb-2';
-         buttonAdd.textContent = 'Más detalles'; // Cambiado de "Agregar al carrito" a "Más detalles"
-         buttonAdd.onclick = () => viewProductDetail(product.id); // Redirigir al detalle del producto
- 
-         cardDiv.appendChild(button);
-         cardDiv.appendChild(buttonAdd);
-         colDiv.appendChild(cardDiv);
-         productListElement.appendChild(colDiv);
+        productListElement.appendChild(colDiv);
     });
 }
+
 
 
 

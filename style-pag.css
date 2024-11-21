@@ -200,11 +200,6 @@ header {
     z-index: -1; 
 }
 
-
-
-
-
-
 .logo-container {
     display: flex;
     flex-direction: column;
@@ -328,6 +323,13 @@ header a {
         text-align: center; /* Centrar texto */
       
     }
+
+    .row{
+      display: flex;
+        
+    }
+
+  
 }
 
 @media (min-width: 768px) {
@@ -475,6 +477,8 @@ header a {
     .nav, .logo-container, .contact-buttons {
         flex: 1; /* Ajusta según lo necesario */
     }
+
+    
 }
 
 
@@ -651,6 +655,10 @@ hr {
     .tarjeta {
         padding: 15px; /* Reduce el espaciado interior de las tarjetas */
     }
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* En pantallas medianas (tabletas) */
@@ -673,6 +681,19 @@ hr {
 
     .tarjeta {
         padding: 18px; /* Ajusta el espaciado interior de las tarjetas */
+    }
+
+    .row{
+        display: flex;
+        /* Usar Flexbox para controlar la disposición en fila */
+        justify-content: space-between;
+        /* Espacio uniforme entre las tarjetas */
+        flex-wrap: nowrap;
+        /* Evita que las tarjetas se acomoden en varias líneas */
+        gap: 20px;
+        /* Espacio entre las tarjetas (ajustar el valor según se necesite) */
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -698,6 +719,20 @@ hr {
     .tarjeta {
         padding: 20px; /* Espaciado interior de las tarjetas */
     }
+
+    .row{
+        display: flex;
+        /* Usar Flexbox para controlar la disposición en fila */
+        justify-content: space-between;
+        /* Espacio uniforme entre las tarjetas */
+        flex-wrap: nowrap;
+        /* Evita que las tarjetas se acomoden en varias líneas */
+        gap: 20px;
+        /* Espacio entre las tarjetas (ajustar el valor según se necesite) */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
 }
 
 .content-section-c{
@@ -770,263 +805,166 @@ hr {
 
 
 
+@media (max-width: 768px) {
+    /* Ajustar la disposición de las tarjetas en columnas */
+    .row {
+        flex-wrap: wrap;
+        justify-content: center; /* Centrar las tarjetas en dispositivos pequeños */
+    }
 
-/* Estilos para el footer */
-.footer_section {
-    background-color: #000;
-    color: #ffffff;
-    padding: 75px 0 40px 0;
-    text-align: center;
+    .col-servicios {
+        flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho disponible */
+        margin-bottom: 20px; /* Espacio entre las tarjetas */
+    }
+
+    /* Ajustar imágenes en las secciones */
+    .img-responsive {
+        width: 100%; /* Las imágenes ocuparán el ancho disponible */
+        height: auto; /* Mantener proporción */
+    }
+
+    /* Centrando textos y ajustando márgenes */
+    .text-center h2,
+    .text-center p {
+        margin: 10px 0;
+        font-size: 1.2em; /* Reducir el tamaño del texto */
+    }
+
+    
+    /* Reducir el tamaño de las galerías de imágenes */
+    .gallery .item {
+        margin-bottom: 15px;
+    }
 }
 
-.footer_section h4 {
-    font-size: 28px;
+/* Para pantallas grandes */
+@media (min-width: 769px) {
+    .row {
+        display: flex;
+        justify-content: space-between; /* Espaciado uniforme entre tarjetas */
+        flex-wrap: nowrap; /* Evitar que las tarjetas bajen a otra línea */
+    }
+
+    .col-servicios {
+        flex: 1 1 calc(33.33% - 20px); /* Cada tarjeta ocupa un tercio del ancho menos margen */
+        margin: 10px; /* Margen entre las tarjetas */
+    }
+
+    .tarjeta img {
+        max-width: 150px; /* Ajusta el tamaño máximo de las imágenes */
+        margin: 0 auto 15px; /* Centrar y agregar espacio inferior */
+    }
+
+    .tarjeta h3 {
+        font-size: 1.5em; /* Ajustar tamaño del título */
+    }
+
+    .tarjeta p {
+        font-size: 1em; /* Ajustar tamaño del texto */
+    }
 }
 
-.footer_section h4,
-.footer_section .footer-logo {
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-style: italic;
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .content-section-a .row {
+        display: flex;
+        flex-direction: column; /* Organizar elementos en una sola columna */
+        align-items: center; /* Centrar contenido horizontalmente */
+        text-align: center; /* Centrar texto */
+    }
+
+    .content-section-a img {
+        width: 100%; /* Asegurar que la imagen ocupe todo el ancho disponible */
+        height: auto; /* Mantener proporción */
+        margin-bottom: 15px; /* Espacio entre imagen y texto */
+    }
+
+    .content-section-a .col-md-6 {
+        width: 100%; /* Cada columna ocupa el 100% del ancho */
+        padding: 0 15px; /* Agregar espacio lateral */
+    }
+
+    .section-heading {
+        font-size: 1.5em; /* Reducir tamaño del título */
+        margin-top: 15px;
+    }
+
+    .lead {
+        font-size: 1em; /* Ajustar tamaño del texto */
+    }
+
+    hr {
+        margin: 20px 0; /* Reducir espacio de separación */
+    }
+}
+/* Estilos generales para el contenedor */
+.container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
-.footer_section p {
-    color: #dbdbdb;
-}
-
-.footer_section .footer-col {
+/* Estilos para la fila */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 
-.footer_section .footer_contact .contact_link_box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+/* Estilos para las columnas */
+.col-img, .col-text {
+    flex: 1 1 48%; /* Hace que cada columna ocupe casi la mitad del ancho */
+    padding: 0 15px; /* Espacio lateral */
 }
 
-.footer_section .footer_contact .contact_link_box a {
-    margin: 5px 0;
-    color: #ebe0e0;
+.col-img {
+    margin-bottom: 15px;
 }
 
-.footer_section .footer_contact .contact_link_box a i {
-    margin-right: 5px;
+.img-responsive {
+    width: 80%;
+    height: auto;
 }
 
-/* Cambio de color para los íconos en el footer */
-.footer_section .footer_contact .contact_link_box a i {
-    font-size: 18px; /* Tamaño del ícono */
-    color: #e71f1f; /* Color por defecto (rojo) */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+.section-heading {
+    font-size: 1.4em; /* Texto más pequeño */
+    margin-top: 20px;
 }
 
-.footer_section .footer_contact .contact_link_box a:hover {
-    color: #ffbe33;
+.lead {
+    font-size: 1em; /* Texto más pequeño */
+    line-height: 1.5;
 }
 
-.footer_section .footer-logo {
-    display: block;
-    font-weight: bold;
-    font-size: 38px;
-    line-height: 1;
-    color: #c00d0d;
+hr {
+    margin: 40px 0;
 }
 
-.footer_section .footer-info {
-    text-align: center;
-    margin-top: 25px;
-}
-
-.footer_section .footer-info p {
-    color: #ffffff;
-    margin: 0;
-}
-
-.footer_section .footer-info p a {
-    color: inherit;
-}
-
-.footer_detail {
-    text-align: center;
-    padding: 20px;
-}
-
-.footer_social {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-
-.footer_social ul {
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    list-style-type: none;
-}
-
-.footer_social li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.footer_social .iso-pro a {
-    text-decoration: none;
-}
-
-.footer_social .iso-pro svg {
-    width: 50px;
-    height: 50px;
-    fill: #e71f1f;
-    transition: transform 0.3s ease-in-out, fill 0.3s ease;
-}
-
-/* Efecto de animación en los iconos */
-.footer_social .iso-pro a:hover svg {
-    transform: scale(1.2) rotate(10deg);
-    fill: #007bff;
-}
-
-/* Animación de rebote */
-.footer_social .iso-pro a:hover svg {
-    animation: bounce 0.6s ease-in-out forwards;
-}
-
-@keyframes bounce {
-    0% {
-        transform: scale(1) translateY(0);
-    }
-    30% {
-        transform: scale(1.1) translateY(-10px);
-    }
-    50% {
-        transform: scale(0.9) translateY(5px);
-    }
-    70% {
-        transform: scale(1.05) translateY(-5px);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-
-/* Estilo de los íconos de redes sociales */
-.footer_social .iso-pro a i {
-    font-size: 50px;
-    color: #e71f1f;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* Efecto de escala y color al hacer hover en los íconos de texto */
-.footer_social .iso-pro a:hover i {
-    color: #007bff;
-    transform: scale(1.1);
-}
-
-/* Estilo del texto debajo de los íconos */
-.footer_social .iso-pro .text {
-    text-align: center;
-    margin-top: 5px;
-    font-size: 14px;
-    color: #f3efef;
-    transition: opacity 0.3s ease;
-}
-
-.footer_social .iso-pro a:hover .text {
-    opacity: 0.6;
-}
-
-.footer-col a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    margin: 10px 0;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.footer-col a:hover {
-    color: red;
-}
-
-.footer-info p {
-    font-size: 18px;
-    font-style: italic;
-    text-align: center;
-    color: white;
-    letter-spacing: 1px;
-}
-
-.footer-info p span {
-    font-weight: bold;
-}
-
-/* Media Queries para adaptabilidad */
+/* Estilos para vista móvil */
 @media (max-width: 768px) {
-    .footer_section .container {
-        padding: 0 15px;
-    }
-
-    /* Estilo para columnas en pantallas pequeñas */
-    .footer_section .row {
+    /* En dispositivos móviles las imágenes se colocan encima del texto */
+    .row {
         flex-direction: column;
         align-items: center;
     }
 
-    .footer_section .footer-col {
+    .col-img, .col-text {
         width: 100%;
-        margin-bottom: 20px;
+        padding: 0 3px;
+    }
+
+    .section-heading {
+        font-size: 1.5em;
         text-align: center;
     }
 
-    /* Centrar la información de contacto */
-    .footer_section .footer_contact .contact_link_box {
-        align-items: center;
+    .lead {
+        font-size: 1em;
         text-align: center;
     }
 
-    /* Hacer que los iconos de redes sociales se alineen en una fila */
-    .footer_social ul {
-        flex-direction: column;
-    }
-
-    .footer_social li {
-        margin: 10px 0;
-    }
-
-    /* Ajustar tamaños de íconos y texto */
-    .footer_social .iso-pro svg,
-    .footer_social .iso-pro a i {
-        width: 40px;
-        height: 40px;
-    }
-
-    .footer_social .iso-pro .text {
-        font-size: 12px;
-    }
-}
-
-/* Media Query para dispositivos extra pequeños */
-@media (max-width: 480px) {
-    .footer_section {
-        padding: 60px 0 20px;
-    }
-
-    .footer_section h4 {
-        font-size: 24px;
-    }
-
-    .footer_section .footer-logo {
-        font-size: 30px;
-    }
-
-    /* Ajustar los íconos y redes sociales en dispositivos muy pequeños */
-    .footer_social .iso-pro svg,
-    .footer_social .iso-pro a i {
-        width: 35px;
-        height: 35px;
-    }
-
-    .footer_section .footer_contact .contact_link_box a {
-        font-size: 14px;
+    hr {
+        margin: 20px 0;
     }
 }
