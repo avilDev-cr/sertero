@@ -163,6 +163,7 @@ header {
     transform: translateY(0); 
 }
 
+
 .service:last-of-type {
     border-bottom: none;
 }
@@ -259,14 +260,13 @@ header a {
         justify-content: flex-start;
         transition: right 0.3s ease;
         z-index: 999;
-        
+
     }
 
     .menu.open {
 
         padding-top: 4rem;
         right: 0; 
-      
     }
 
     .menu ul {
@@ -411,7 +411,6 @@ header a {
         width: 8rem; 
         height: auto;
         border-radius: 0.5rem;
-       
     }
     .header-content {
         display: flex;
@@ -454,7 +453,6 @@ header a {
         margin-right: auto;
     }
 
- 
     .text-overlay {
         position: absolute;
         bottom: 0;
@@ -667,6 +665,7 @@ hr {
         font-size: 2.5rem; /* Ajusta el tamaño de la fuente para tabletas */
         margin-top: 30px; /* Ajusta la separación superior */
         margin-bottom: 15px; /* Ajusta la separación inferior */
+    
     }
 
     .gallery {
