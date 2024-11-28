@@ -63,6 +63,8 @@ function loadProducts() {
 
 function displayProducts(products) {
     const productListElement = document.getElementById('product-list');
+    const buttonAdd = document.createElement('button');
+
     productListElement.innerHTML = ''; // Limpiar la lista de productos
 
     products.forEach(product => {
@@ -93,16 +95,31 @@ function displayProducts(products) {
         button.appendChild(title);
         button.appendChild(precio);
 
-        // Botón "Agregar al carrito"
+        // // Botón "Agregar al carrito"
+        // const buttonAdd = document.createElement('button');
+        // buttonAdd.className = 'btn-add mb-2';
+        // buttonAdd.textContent = 'Agregar al carrito';
+        // buttonAdd.onclick = () => addToCart(product);
+
+        // cardDiv.appendChild(button);
+        // cardDiv.appendChild(buttonAdd);
+        // colDiv.appendChild(cardDiv);
+        // productListElement.appendChild(colDiv);
+
+
+
+        productListElement.appendChild(colDiv);
+        // Cambia el texto del botón y acción
         const buttonAdd = document.createElement('button');
         buttonAdd.className = 'btn-add mb-2';
-        buttonAdd.textContent = 'Agregar al carrito';
-        buttonAdd.onclick = () => addToCart(product);
+        buttonAdd.textContent = 'Más detalles'; // Cambiado de "Agregar al carrito" a "Más detalles"
+        buttonAdd.onclick = () => viewProductDetail(product.id); // Redirigir al detalle del producto
 
         cardDiv.appendChild(button);
         cardDiv.appendChild(buttonAdd);
         colDiv.appendChild(cardDiv);
         productListElement.appendChild(colDiv);
+
     });
 }
 
