@@ -783,7 +783,7 @@ header a {
 
 /* Estilo de los íconos de redes sociales (fuentes) */
 .footer_social .iso-pro a i {
-    font-size: 50px; /* Tamaño del icono */
+    font-size: 10px; /* Tamaño del icono */
     color: #e71f1f; /* Color por defecto */
     transition: transform 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color y escala */
 }
