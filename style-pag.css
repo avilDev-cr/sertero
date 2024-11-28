@@ -719,19 +719,7 @@ hr {
         padding: 20px; /* Espaciado interior de las tarjetas */
     }
 
-    .row{
-        display: flex;
-        /* Usar Flexbox para controlar la disposición en fila */
-        justify-content: space-between;
-        /* Espacio uniforme entre las tarjetas */
-        flex-wrap: nowrap;
-        /* Evita que las tarjetas se acomoden en varias líneas */
-        gap: 20px;
-        /* Espacio entre las tarjetas (ajustar el valor según se necesite) */
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
+ 
 }
 
 .content-section-c{
