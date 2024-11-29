@@ -22,7 +22,7 @@
     }
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .body-grafico {
         background-color: #121212;
         color: #ffffff;
@@ -42,6 +42,36 @@
         align-items: center;
         color: #ffffff;
         font-size: 0.6rem;
+    }
+}*/
+
+
+@media (max-width: 568px) {
+    .body-grafico {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 100%;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto !important;
+        max-height: 300px; /* Ajusta el máximo de altura para móviles */
+       border-radius: 8px;
+    }
+
+    .h1Grafico {
+        font-size: 1.8rem;
+    }
+
+    .legend-item {
+        margin: 0 15px;
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        font-size: 0.4rem;
     }
 }
 
