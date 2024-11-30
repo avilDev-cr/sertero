@@ -1,4 +1,4 @@
-document.getElementById("submitButton").addEventListener("click", function (event) {
+/*document.getElementById("submitButton").addEventListener("click", function (event) {
     event.preventDefault(); // Evitar el envío del formulario
 
     // Obtener los valores de los campos
@@ -55,6 +55,94 @@ document.getElementById("submitButton").addEventListener("click", function (even
     localStorage.setItem("productos", products);
     localStorage.setItem("genero", gender);
     localStorage.setItem("comoConociste", howMet);
+
+    // Imprimir los valores en la consola
+    console.log("Nombre:", name);
+    console.log("Email:", email);
+    console.log("Comentario/Solicitud:", comment);
+    console.log("Método de contacto:", contactMethod);
+    console.log("Productos de interés:", products);
+    console.log("Género:", gender);
+    console.log("¿Cómo nos conociste?", howMet);
+});*/
+
+
+document.getElementById("submitButton").addEventListener("click", function (event) {
+    event.preventDefault(); // Evitar el envío del formulario
+
+    // Obtener los valores de los campos
+    const name = document.getElementById("inputNombre").value;
+    const email = document.getElementById("inputEmail").value;
+    const comment = document.getElementById("inputComentario").value;
+    const contactMethod = document.getElementById("selectContacto").value;
+    const products = Array.from(
+        document.getElementById("selectProductos").selectedOptions
+    )
+        .map((option) => option.text)
+        .join(", ");
+    const gender = document.querySelector(
+        'input[name="radioGenero"]:checked'
+    )
+        ? document.querySelector('input[name="radioGenero"]:checked').value
+        : "";
+    const howMet = Array.from(
+        document.querySelectorAll('input[name="checkOrigen"]:checked')
+    )
+        .map((checkbox) => checkbox.parentNode.innerText.trim())
+        .join(", ");
+
+    // Validaciones
+    let errorMessage = "";
+
+    if (!validateName(name)) {
+        errorMessage += "El nombre solo debe contener letras.\n";
+    }
+
+    if (!validateEmail(email)) {
+        errorMessage += "Por favor, introduce un email válido.\n";
+    }
+
+    if (!validateRequiredFields(name, email, comment, contactMethod, products, gender, howMet)) {
+        errorMessage += "Todos los campos son obligatorios, excepto el de enviar archivo.\n";
+    }
+
+    if (!validateSelections(contactMethod, products, gender, howMet)) {
+        errorMessage += "Debes seleccionar al menos una opción de Método de contacto, Productos, Género y Cómo nos conociste.\n";
+    }
+
+    if (errorMessage) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error en el formulario',
+            text: errorMessage,
+        });
+        return; // Detener la ejecución si hay errores
+    }
+
+    // Almacenar los valores en localStorage
+    localStorage.setItem("nombre", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("comentario", comment);
+    localStorage.setItem("metodoContacto", contactMethod);
+    localStorage.setItem("productos", products);
+    localStorage.setItem("genero", gender);
+    localStorage.setItem("comoConociste", howMet);
+
+    // Mostrar el mensaje con SweetAlert2
+    Swal.fire({
+        title: 'Mensaje enviado',
+        html: `
+            <strong>Nombre:</strong> ${name}<br>
+            <strong>Email:</strong> ${email}<br>
+            <strong>Comentario/Solicitud:</strong> ${comment}<br>
+            <strong>Método de contacto:</strong> ${contactMethod}<br>
+            <strong>Productos de interés:</strong> ${products}<br>
+            <strong>Género:</strong> ${gender}<br>
+            <strong>¿Cómo nos conociste?:</strong> ${howMet}
+        `,
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    });
 
     // Imprimir los valores en la consola
     console.log("Nombre:", name);
