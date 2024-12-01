@@ -302,7 +302,7 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
     const totalAmount = document.getElementById("total-price").innerText;
     Swal.fire({
       title: "Monto a pagar",
-      text: `El monto total de tu compra es: ₡${totalAmount}. ¿Deseas confirmar el pago?`,
+      text: `El monto total de tu compra es: ${totalAmount}. ¿Deseas confirmar el pago?`,
       icon: "info",
       showCancelButton: true,
       confirmButtonText: "Confirmar",
