@@ -523,13 +523,6 @@ header a {
     font-style: italic; /* Letra cursiva */
 }
 
-/* Sombra en rojo y negro */
-.block-reveal {
-    text-shadow: 
-        2px 2px 5px rgba(0, 0, 0, 0.7),  /* Sombra negra */
-        -2px -2px 3px rgba(143, 42, 138, 0.6); /* Sombra roja */
-    font-style: italic; /* Letra cursiva */
-}
 
 .row .text-center h3,
 .row .text-center p {
